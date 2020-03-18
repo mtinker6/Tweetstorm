@@ -1,0 +1,11 @@
+event,candidate,overall_polarity,overall_subjectivity,top_theme_1,top_theme_2,top_theme_3,top_theme_4,top_theme_5,swing_state_1,swing_state_2,swing_state_3
+First debate,Trump,0.277875622,0.071180721,tax,climate change,policies,wall,fraud,Hillary,Hillary,Trump
+Second debate,Trump,0.484590888,0.399544361,tax,hello,world,apple,haha,Trump,Trump,Trump
+Third debate,Trump,0.961186348,0.113407489,tax,gun control,email,medicare,troll,Trump,Hillary,Hillary
+Fourth debate,Trump,0.207150122,0.311497954,email,tax,climate change,gun control,wall,Trump,Trump,Trump
+Before Election,Trump,0.531697885,0.42104626,tax,troll,gun control,fossil fuel,apple,Trump,Trump,Trump
+First debate,Hillary,0.251901577,0.913698358,tax,climate change,policies,wall,fraud,Hillary,Hillary,Trump
+Second debate,Hillary,0.048616201,0.732271978,tax,hello,world,apple,haha,Trump,Trump,Trump
+Third debate,Hillary,0.594514653,0.097885291,tax,gun control,email,medicare,troll,Trump,Hillary,Hillary
+Fourth debate,Hillary,0.913822803,0.924267098,email,tax,climate change,gun control,wall,Trump,Trump,Trump
+Before Election,Hillary,-0.600702197,0.498141554,tax,troll,gun control,fossil fuel,apple,Trump,Trump,Trump

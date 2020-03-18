@@ -1,0 +1,251 @@
+date,state,preferred_candidate,polarity,subjectivity,top_theme_1,top_theme_2,top_theme_3,top_theme_4,top_theme_5
+First debate,state1,Hillary,0.868352048,0.376783358,tax,climate change,policies,wall,fraud
+First debate,state2,Hillary,0.925081741,0.970820498,tax,hello,world,apple,haha
+First debate,state3,Trump,-0.365416185,0.068398252,tax,gun control,email,medicare,troll
+First debate,state4,Trump,0.007610823,0.617004082,email,tax,climate change,gun control,wall
+First debate,state5,Trump,0.112543738,0.453781643,tax,troll,gun control,fossil fuel,apple
+First debate,state6,Hillary,-0.719084238,0.747739791,tax,climate change,policies,wall,fraud
+First debate,state7,Hillary,0.095522334,0.921489077,tax,hello,world,apple,haha
+First debate,state8,Trump,-0.159260434,0.935854963,tax,gun control,email,medicare,troll
+First debate,state9,Trump,-0.124284655,0.015097032,email,tax,climate change,gun control,wall
+First debate,state10,Trump,-0.112825256,0.703835961,tax,troll,gun control,fossil fuel,apple
+First debate,state11,Hillary,0.179519545,0.513434709,tax,climate change,policies,wall,fraud
+First debate,state12,Hillary,0.122994394,0.310704901,tax,hello,world,apple,haha
+First debate,state13,Trump,-0.556163531,0.613773398,tax,gun control,email,medicare,troll
+First debate,state14,Trump,0.416505708,0.533591588,email,tax,climate change,gun control,wall
+First debate,state15,Trump,-0.933887593,0.428729991,tax,troll,gun control,fossil fuel,apple
+First debate,state16,Hillary,0.821655607,0.595613165,tax,climate change,policies,wall,fraud
+First debate,state17,Hillary,0.595816836,0.370406632,tax,climate change,policies,wall,fraud
+First debate,state18,Trump,-0.012167996,0.134740825,tax,hello,world,apple,haha
+First debate,state19,Trump,0.157832048,0.044568062,tax,gun control,email,medicare,troll
+First debate,state20,Trump,0.110593283,0.672806223,email,tax,climate change,gun control,wall
+First debate,state21,Hillary,-0.916294333,0.935068996,tax,troll,gun control,fossil fuel,apple
+First debate,state22,Hillary,-0.148762898,0.963169635,tax,climate change,policies,wall,fraud
+First debate,state23,Trump,0.916348675,0.663510308,tax,hello,world,apple,haha
+First debate,state24,Trump,0.740141745,0.250518298,tax,gun control,email,medicare,troll
+First debate,state25,Trump,0.641837801,0.094481292,email,tax,climate change,gun control,wall
+First debate,state26,Hillary,-0.162452087,0.307014963,tax,troll,gun control,fossil fuel,apple
+First debate,state27,Hillary,0.982964125,0.387410633,tax,climate change,policies,wall,fraud
+First debate,state28,Trump,-0.874822153,0.850469559,tax,hello,world,apple,haha
+First debate,state29,Trump,-0.175747581,0.083461794,tax,gun control,email,medicare,troll
+First debate,state30,Trump,0.75602568,0.113843519,email,tax,climate change,gun control,wall
+First debate,state31,Hillary,0.223677642,0.031492831,tax,troll,gun control,fossil fuel,apple
+First debate,state32,Hillary,0.598945166,0.462694884,tax,climate change,policies,wall,fraud
+First debate,state33,Trump,-0.762512449,0.866855528,tax,climate change,policies,wall,fraud
+First debate,state34,Trump,0.592225989,0.006038583,tax,hello,world,apple,haha
+First debate,state35,Trump,-0.584747334,0.169022595,tax,gun control,email,medicare,troll
+First debate,state36,Hillary,-0.190078722,0.824928565,email,tax,climate change,gun control,wall
+First debate,state37,Hillary,-0.236937099,0.559692831,tax,troll,gun control,fossil fuel,apple
+First debate,state38,Trump,0.767567418,0.267007258,tax,climate change,policies,wall,fraud
+First debate,state39,Trump,0.951054273,0.907595036,tax,hello,world,apple,haha
+First debate,state40,Trump,0.180826751,0.88054149,tax,gun control,email,medicare,troll
+First debate,state41,Hillary,-0.280047579,0.499730989,email,tax,climate change,gun control,wall
+First debate,state42,Hillary,-0.339506631,0.123704499,tax,troll,gun control,fossil fuel,apple
+First debate,state43,Trump,0.757498919,0.140270481,tax,climate change,policies,wall,fraud
+First debate,state44,Trump,0.479331387,0.859063465,tax,hello,world,apple,haha
+First debate,state45,Trump,-0.035317343,0.929672264,tax,gun control,email,medicare,troll
+First debate,state46,Hillary,0.81879809,0.577524657,email,tax,climate change,gun control,wall
+First debate,state47,Hillary,0.640432426,0.114474596,tax,troll,gun control,fossil fuel,apple
+First debate,state48,Trump,-0.775815802,0.053904447,tax,climate change,policies,wall,fraud
+First debate,state49,Trump,-0.541544539,0.384280851,tax,climate change,policies,wall,fraud
+First debate,state50,Trump,0.580691941,0.070067689,tax,hello,world,apple,haha
+Second debate,state1,Hillary,-0.359676242,0.027250811,tax,climate change,policies,wall,fraud
+Second debate,state2,Hillary,0.756968341,0.814456757,apple,hello,Education,apple,haha
+Second debate,state3,Trump,0.866479976,0.360923407,tax,gun control,Education,medicare,troll
+Second debate,state4,Trump,-0.413667784,0.328429123,email,tax,Education,gun control,wall
+Second debate,state5,Trump,0.812587898,0.589787908,apple,troll,gun control,fossil fuel,apple
+Second debate,state6,Hillary,0.851407117,0.913600422,tax,climate change,policies,wall,fraud
+Second debate,state7,Hillary,-0.979981113,0.224503733,apple,hello,world,apple,haha
+Second debate,state8,Trump,-0.427286017,0.162669698,apple,gun control,email,medicare,troll
+Second debate,state9,Trump,0.080734182,0.233311767,email,tax,climate change,gun control,wall
+Second debate,state10,Trump,0.2506941,0.89106987,apple,troll,gun control,fossil fuel,apple
+Second debate,state11,Hillary,0.000684705,0.579437579,tax,climate change,policies,wall,fraud
+Second debate,state12,Hillary,0.522455664,0.938352388,tax,hello,world,apple,haha
+Second debate,state13,Trump,0.639271939,0.284744256,tax,gun control,email,medicare,troll
+Second debate,state14,Trump,0.911459074,0.302574873,email,tax,climate change,gun control,wall
+Second debate,state15,Trump,0.274611159,0.988456428,tax,troll,gun control,fossil fuel,apple
+Second debate,state16,Hillary,0.704971291,0.27176683,apple,climate change,policies,wall,fraud
+Second debate,state17,Hillary,-0.953386549,0.401927917,tax,climate change,policies,wall,fraud
+Second debate,state18,Trump,-0.01214989,0.356356071,tax,hello,world,apple,haha
+Second debate,state19,Trump,-0.506814363,0.136640452,tax,gun control,email,medicare,troll
+Second debate,state20,Trump,-0.834635985,0.546150813,email,Education,climate change,gun control,wall
+Second debate,state21,Hillary,-0.920096751,0.924198895,apple,troll,gun control,fossil fuel,apple
+Second debate,state22,Hillary,-0.306975969,0.582785914,apple,climate change,policies,wall,fraud
+Second debate,state23,Trump,0.54839126,0.968156852,apple,hello,world,apple,haha
+Second debate,state24,Trump,-0.992427498,0.219370613,apple,gun control,email,medicare,troll
+Second debate,state25,Trump,-0.080268158,0.905911941,email,tax,Education,gun control,wall
+Second debate,state26,Hillary,0.493621659,0.668762466,apple,troll,gun control,fossil fuel,apple
+Second debate,state27,Hillary,0.784250485,0.798461229,apple,climate change,policies,wall,fraud
+Second debate,state28,Trump,-0.072222861,0.090572604,apple,hello,world,apple,haha
+Second debate,state29,Trump,-0.197644961,0.806715589,apple,gun control,email,medicare,troll
+Second debate,state30,Trump,0.015228014,0.881136539,email,tax,Education,gun control,wall
+Second debate,state31,Hillary,-0.319638097,0.121988917,apple,troll,gun control,fossil fuel,apple
+Second debate,state32,Hillary,0.981436156,0.003835861,apple,climate change,Education,wall,fraud
+Second debate,state33,Trump,0.634374237,0.892747713,apple,climate change,policies,wall,fraud
+Second debate,state34,Trump,0.891771896,0.062235296,apple,hello,world,apple,haha
+Second debate,state35,Trump,-0.961955089,0.99596201,tax,gun control,Education,medicare,troll
+Second debate,state36,Hillary,-0.155365173,0.179088207,email,tax,Education,gun control,wall
+Second debate,state37,Hillary,-0.229204577,0.234849953,apple,troll,Education,fossil fuel,apple
+Second debate,state38,Trump,0.740415379,0.563912118,apple,climate change,Education,wall,fraud
+Second debate,state39,Trump,-0.569727223,0.101606308,apple,hello,Education,apple,haha
+Second debate,state40,Trump,0.977055946,0.599392132,apple,gun control,email,medicare,troll
+Second debate,state41,Hillary,0.630832097,0.629210738,email,tax,climate change,gun control,wall
+Second debate,state42,Hillary,-0.7963694,0.691630973,tax,troll,gun control,fossil fuel,apple
+Second debate,state43,Trump,0.77330947,0.742624504,apple,climate change,policies,wall,fraud
+Second debate,state44,Trump,-0.607468441,0.734643207,apple,hello,Education,apple,haha
+Second debate,state45,Trump,-0.313469386,0.615401537,tax,gun control,Education,medicare,troll
+Second debate,state46,Hillary,-0.228203791,0.443024742,email,tax,Education,gun control,wall
+Second debate,state47,Hillary,0.233246828,0.478448492,tax,troll,Education,fossil fuel,apple
+Second debate,state48,Trump,-0.759555936,0.102479357,tax,climate change,policies,wall,fraud
+Second debate,state49,Trump,0.282535111,0.449008962,tax,climate change,policies,wall,fraud
+Second debate,state50,Trump,0.424741683,0.089059201,tax,hello,world,apple,haha
+Third debate,state1,Hillary,-0.359676242,0.027250811,tax,climate change,policies,wall,fraud
+Third debate,state2,Hillary,0.756968341,0.814456757,apple,hello,Education,apple,haha
+Third debate,state3,Trump,0.866479976,0.360923407,climate change,gun control,Education,medicare,troll
+Third debate,state4,Trump,-0.413667784,0.328429123,climate change,tax,Education,gun control,wall
+Third debate,state5,Trump,0.812587898,0.589787908,climate change,troll,gun control,fossil fuel,apple
+Third debate,state6,Hillary,0.851407117,0.913600422,climate change,climate change,policies,wall,fraud
+Third debate,state7,Hillary,-0.979981113,0.224503733,climate change,hello,world,apple,haha
+Third debate,state8,Trump,-0.427286017,0.162669698,climate change,gun control,email,medicare,troll
+Third debate,state9,Trump,0.080734182,0.233311767,climate change,tax,climate change,gun control,wall
+Third debate,state10,Trump,0.2506941,0.89106987,climate change,troll,gun control,fossil fuel,apple
+Third debate,state11,Hillary,0.000684705,0.579437579,climate change,climate change,policies,wall,fraud
+Third debate,state12,Hillary,0.522455664,0.938352388,climate change,hello,world,apple,haha
+Third debate,state13,Trump,0.639271939,0.284744256,climate change,gun control,email,medicare,troll
+Third debate,state14,Trump,0.911459074,0.302574873,climate change,tax,climate change,gun control,wall
+Third debate,state15,Trump,0.274611159,0.988456428,tax,troll,gun control,fossil fuel,apple
+Third debate,state16,Hillary,0.704971291,0.27176683,apple,climate change,policies,wall,fraud
+Third debate,state17,Hillary,-0.953386549,0.401927917,tax,climate change,policies,wall,fraud
+Third debate,state18,Trump,-0.01214989,0.356356071,tax,hello,world,apple,haha
+Third debate,state19,Trump,-0.506814363,0.136640452,tax,gun control,email,medicare,troll
+Third debate,state20,Trump,-0.834635985,0.546150813,email,Education,climate change,gun control,wall
+Third debate,state21,Hillary,-0.920096751,0.924198895,apple,troll,climate change,fossil fuel,apple
+Third debate,state22,Hillary,-0.306975969,0.582785914,apple,climate change,climate change,Education,fraud
+Third debate,state23,Trump,0.54839126,0.968156852,apple,hello,climate change,Education,haha
+Third debate,state24,Trump,-0.992427498,0.219370613,apple,gun control,climate change,Education,troll
+Third debate,state25,Trump,-0.080268158,0.905911941,email,tax,climate change,Education,wall
+Third debate,state26,Hillary,0.493621659,0.668762466,apple,troll,gun control,Education,apple
+Third debate,state27,Hillary,0.784250485,0.798461229,apple,climate change,policies,Education,fraud
+Third debate,state28,Trump,-0.072222861,0.090572604,climate change,hello,world,Education,haha
+Third debate,state29,Trump,-0.197644961,0.806715589,climate change,gun control,email,Education,troll
+Third debate,state30,Trump,0.015228014,0.881136539,climate change,tax,Education,Education,wall
+Third debate,state31,Hillary,-0.319638097,0.121988917,climate change,troll,gun control,fossil fuel,apple
+Third debate,state32,Hillary,0.981436156,0.003835861,climate change,climate change,Education,wall,fraud
+Third debate,state33,Trump,0.634374237,0.892747713,climate change,climate change,policies,wall,fraud
+Third debate,state34,Trump,0.891771896,0.062235296,apple,hello,world,apple,haha
+Third debate,state35,Trump,-0.961955089,0.99596201,tax,gun control,Education,medicare,troll
+Third debate,state36,Hillary,-0.155365173,0.179088207,email,Education,Education,gun control,wall
+Third debate,state37,Hillary,-0.229204577,0.234849953,apple,troll,Education,fossil fuel,apple
+Third debate,state38,Trump,0.740415379,0.563912118,apple,climate change,Education,wall,fraud
+Third debate,state39,Trump,-0.569727223,0.101606308,apple,hello,Education,apple,haha
+Third debate,state40,Trump,0.977055946,0.599392132,apple,gun control,email,medicare,troll
+Third debate,state41,Hillary,0.630832097,0.629210738,email,tax,climate change,gun control,wall
+Third debate,state42,Hillary,-0.7963694,0.691630973,tax,troll,gun control,fossil fuel,apple
+Third debate,state43,Trump,0.77330947,0.742624504,apple,climate change,policies,wall,fraud
+Third debate,state44,Trump,-0.607468441,0.734643207,climate change,hello,Education,apple,haha
+Third debate,state45,Trump,-0.313469386,0.615401537,climate change,gun control,Education,medicare,troll
+Third debate,state46,Hillary,-0.228203791,0.443024742,climate change,tax,Education,gun control,wall
+Third debate,state47,Hillary,0.233246828,0.478448492,climate change,troll,Education,fossil fuel,apple
+Third debate,state48,Trump,-0.759555936,0.102479357,tax,climate change,policies,wall,fraud
+Third debate,state49,Trump,0.282535111,0.449008962,tax,climate change,policies,wall,fraud
+Third debate,state50,Trump,0.424741683,0.089059201,tax,hello,world,apple,haha
+Fourth debate,state1,Hillary,-0.359676242,0.027250811,tax,climate change,policies,wall,fraud
+Fourth debate,state2,Hillary,0.756968341,0.814456757,wall,hello,Education,apple,haha
+Fourth debate,state3,Trump,0.866479976,0.360923407,wall,gun control,Education,medicare,troll
+Fourth debate,state4,Trump,-0.413667784,0.328429123,wall,tax,Education,gun control,wall
+Fourth debate,state5,Trump,0.812587898,0.589787908,wall,troll,gun control,fossil fuel,apple
+Fourth debate,state6,Hillary,0.851407117,0.913600422,wall,climate change,policies,wall,fraud
+Fourth debate,state7,Hillary,-0.979981113,0.224503733,wall,hello,world,apple,haha
+Fourth debate,state8,Trump,-0.427286017,0.162669698,wall,gun control,email,medicare,troll
+Fourth debate,state9,Trump,0.080734182,0.233311767,climate change,tax,climate change,gun control,wall
+Fourth debate,state10,Trump,0.2506941,0.89106987,climate change,troll,gun control,fossil fuel,apple
+Fourth debate,state11,Hillary,0.000684705,0.579437579,climate change,climate change,policies,wall,fraud
+Fourth debate,state12,Hillary,0.522455664,0.938352388,climate change,hello,wall,apple,haha
+Fourth debate,state13,Trump,0.639271939,0.284744256,climate change,gun control,wall,medicare,troll
+Fourth debate,state14,Trump,0.911459074,0.302574873,climate change,tax,wall,gun control,wall
+Fourth debate,state15,Trump,0.274611159,0.988456428,tax,troll,wall,fossil fuel,apple
+Fourth debate,state16,Hillary,0.704971291,0.27176683,apple,climate change,wall,wall,fraud
+Fourth debate,state17,Hillary,-0.953386549,0.401927917,tax,climate change,policies,wall,fraud
+Fourth debate,state18,Trump,-0.01214989,0.356356071,tax,hello,world,apple,haha
+Fourth debate,state19,Trump,-0.506814363,0.136640452,tax,gun control,email,gun control,troll
+Fourth debate,state20,Trump,-0.834635985,0.546150813,email,Education,climate change,gun control,wall
+Fourth debate,state21,Hillary,-0.920096751,0.924198895,apple,troll,climate change,gun control,apple
+Fourth debate,state22,Hillary,-0.306975969,0.582785914,apple,climate change,climate change,gun control,fraud
+Fourth debate,state23,Trump,0.54839126,0.968156852,apple,hello,climate change,gun control,haha
+Fourth debate,state24,Trump,-0.992427498,0.219370613,apple,gun control,climate change,gun control,troll
+Fourth debate,state25,Trump,-0.080268158,0.905911941,email,tax,climate change,Education,wall
+Fourth debate,state26,Hillary,0.493621659,0.668762466,apple,troll,gun control,Education,apple
+Fourth debate,state27,Hillary,0.784250485,0.798461229,wall,climate change,policies,Education,fraud
+Fourth debate,state28,Trump,-0.072222861,0.090572604,wall,hello,world,Education,haha
+Fourth debate,state29,Trump,-0.197644961,0.806715589,wall,gun control,email,Education,troll
+Fourth debate,state30,Trump,0.015228014,0.881136539,climate change,tax,Education,Education,wall
+Fourth debate,state31,Hillary,-0.319638097,0.121988917,climate change,troll,gun control,fossil fuel,apple
+Fourth debate,state32,Hillary,0.981436156,0.003835861,gun control,climate change,Education,wall,fraud
+Fourth debate,state33,Trump,0.634374237,0.892747713,gun control,climate change,policies,wall,fraud
+Fourth debate,state34,Trump,0.891771896,0.062235296,gun control,hello,world,apple,haha
+Fourth debate,state35,Trump,-0.961955089,0.99596201,gun control,gun control,Education,medicare,troll
+Fourth debate,state36,Hillary,-0.155365173,0.179088207,gun control,Education,Education,gun control,wall
+Fourth debate,state37,Hillary,-0.229204577,0.234849953,apple,troll,Education,fossil fuel,apple
+Fourth debate,state38,Trump,0.740415379,0.563912118,apple,climate change,Education,wall,fraud
+Fourth debate,state39,Trump,-0.569727223,0.101606308,apple,hello,Education,apple,haha
+Fourth debate,state40,Trump,0.977055946,0.599392132,apple,gun control,email,medicare,troll
+Fourth debate,state41,Hillary,0.630832097,0.629210738,email,tax,climate change,gun control,wall
+Fourth debate,state42,Hillary,-0.7963694,0.691630973,tax,troll,gun control,fossil fuel,apple
+Fourth debate,state43,Trump,0.77330947,0.742624504,wall,climate change,policies,wall,fraud
+Fourth debate,state44,Trump,-0.607468441,0.734643207,wall,hello,Education,apple,haha
+Fourth debate,state45,Trump,-0.313469386,0.615401537,wall,gun control,Education,medicare,troll
+Fourth debate,state46,Hillary,-0.228203791,0.443024742,wall,tax,Education,gun control,wall
+Fourth debate,state47,Hillary,0.233246828,0.478448492,wall,troll,Education,fossil fuel,apple
+Fourth debate,state48,Trump,-0.759555936,0.102479357,tax,climate change,policies,wall,fraud
+Fourth debate,state49,Trump,0.282535111,0.449008962,tax,climate change,policies,wall,fraud
+Fourth debate,state50,Trump,0.424741683,0.089059201,tax,hello,world,apple,haha
+Before Election,state1,Hillary,-0.359676242,0.027250811,tax,climate change,policies,wall,fraud
+Before Election,state2,Hillary,0.756968341,0.814456757,wall,hello,Education,apple,haha
+Before Election,state3,Trump,0.866479976,0.360923407,wall,gun control,Education,medicare,troll
+Before Election,state4,Trump,-0.413667784,0.328429123,wall,tax,Education,gun control,wall
+Before Election,state5,Trump,0.812587898,0.589787908,wall,troll,gun control,fossil fuel,apple
+Before Election,state6,Hillary,0.851407117,0.913600422,email,climate change,policies,wall,fraud
+Before Election,state7,Hillary,-0.979981113,0.224503733,email,hello,world,apple,haha
+Before Election,state8,Trump,-0.427286017,0.162669698,email,gun control,email,medicare,troll
+Before Election,state9,Trump,0.080734182,0.233311767,email,tax,climate change,gun control,wall
+Before Election,state10,Trump,0.2506941,0.89106987,email,troll,gun control,fossil fuel,apple
+Before Election,state11,Hillary,0.000684705,0.579437579,email,climate change,policies,wall,fraud
+Before Election,state12,Hillary,0.522455664,0.938352388,email,hello,wall,apple,haha
+Before Election,state13,Trump,0.639271939,0.284744256,climate change,gun control,wall,medicare,troll
+Before Election,state14,Trump,0.911459074,0.302574873,climate change,tax,wall,gun control,wall
+Before Election,state15,Trump,0.274611159,0.988456428,tax,troll,wall,fossil fuel,apple
+Before Election,state16,Hillary,0.704971291,0.27176683,apple,climate change,wall,wall,fraud
+Before Election,state17,Hillary,-0.953386549,0.401927917,tax,climate change,policies,wall,fraud
+Before Election,state18,Trump,-0.01214989,0.356356071,tax,email,world,apple,haha
+Before Election,state19,Trump,-0.506814363,0.136640452,tax,email,email,gun control,troll
+Before Election,state20,Trump,-0.834635985,0.546150813,email,email,climate change,gun control,wall
+Before Election,state21,Hillary,-0.920096751,0.924198895,apple,email,climate change,gun control,apple
+Before Election,state22,Hillary,-0.306975969,0.582785914,apple,email,climate change,gun control,fraud
+Before Election,state23,Trump,0.54839126,0.968156852,apple,email,climate change,gun control,haha
+Before Election,state24,Trump,-0.992427498,0.219370613,apple,email,climate change,gun control,troll
+Before Election,state25,Trump,-0.080268158,0.905911941,email,tax,climate change,Education,wall
+Before Election,state26,Hillary,0.493621659,0.668762466,apple,troll,gun control,Education,apple
+Before Election,state27,Hillary,0.784250485,0.798461229,wall,climate change,policies,Education,fraud
+Before Election,state28,Trump,-0.072222861,0.090572604,wall,hello,world,Education,haha
+Before Election,state29,Trump,-0.197644961,0.806715589,wall,gun control,email,Education,troll
+Before Election,state30,Trump,0.015228014,0.881136539,climate change,tax,Education,Education,wall
+Before Election,state31,Hillary,-0.319638097,0.121988917,climate change,troll,gun control,fossil fuel,apple
+Before Election,state32,Hillary,0.981436156,0.003835861,gun control,climate change,Education,wall,fraud
+Before Election,state33,Trump,0.634374237,0.892747713,gun control,climate change,policies,wall,fraud
+Before Election,state34,Trump,0.891771896,0.062235296,gun control,hello,world,apple,haha
+Before Election,state35,Trump,-0.961955089,0.99596201,gun control,gun control,Education,medicare,troll
+Before Election,state36,Hillary,-0.155365173,0.179088207,gun control,Education,Education,gun control,wall
+Before Election,state37,Hillary,-0.229204577,0.234849953,apple,troll,Education,fossil fuel,apple
+Before Election,state38,Trump,0.740415379,0.563912118,apple,email,Education,wall,fraud
+Before Election,state39,Trump,-0.569727223,0.101606308,apple,email,Education,apple,haha
+Before Election,state40,Trump,0.977055946,0.599392132,apple,email,email,medicare,troll
+Before Election,state41,Hillary,0.630832097,0.629210738,email,email,climate change,gun control,wall
+Before Election,state42,Hillary,-0.7963694,0.691630973,tax,email,gun control,fossil fuel,apple
+Before Election,state43,Trump,0.77330947,0.742624504,wall,climate change,policies,wall,fraud
+Before Election,state44,Trump,-0.607468441,0.734643207,wall,hello,Education,apple,haha
+Before Election,state45,Trump,-0.313469386,0.615401537,wall,gun control,Education,medicare,troll
+Before Election,state46,Hillary,-0.228203791,0.443024742,email,tax,Education,gun control,wall
+Before Election,state47,Hillary,0.233246828,0.478448492,email,troll,Education,fossil fuel,apple
+Before Election,state48,Trump,-0.759555936,0.102479357,email,climate change,policies,wall,fraud
+Before Election,state49,Trump,0.282535111,0.449008962,email,climate change,policies,wall,fraud
+Before Election,state50,Trump,0.424741683,0.089059201,email,hello,world,apple,haha
