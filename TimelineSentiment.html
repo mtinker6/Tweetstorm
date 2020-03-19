@@ -69,13 +69,13 @@
 							<img src="images/Trump.jpg" id="imgTrumpLine" width="40" height="40" class="LineChartImage LineChartImageSelectedTrump TrumpSurround" style="vertical-align: bottom;">
 						</td>
 						<td style="width: 80px;text-align: center;padding-right:40px;" class="TrumpPsGraph">
-							<div style="width: 75px;margin: auto;height: 100%;padding:10px 0px;border-radius: 5px;height: 120px;" class="PolarityCell">
+							<div style="width: 75px;margin: auto;height: 100%;padding:10px 0px;border-radius: 5px;height: 120px;" class="PolarityCell PolarityButtonClass">
 								<label class="displayNumber" id="lbTrumpPolarity" style="color:green;font-weight: bold;" ></label>
 								<span class="spanTrumpPolarity" style="float: right;"></span>
 							</div>
 						</td>
 						<td style="width: 80px;text-align: center;padding-right:40px;" class="TrumpPsGraph">
-							<div style="width: 120px;margin: auto;height: 100%;padding:10px 0px;border-radius: 5px;" class="SubjectivityCell">
+							<div style="width: 120px;margin: auto;height: 100%;padding:10px 0px;border-radius: 5px;" class="SubjectivityCell SubjectivityButtonClass">
 								<!-- <label class="displayNumber" id="lbTrumpSubjectivity" style="color:green;font-weight: bold;"></label> -->
 								<svg id="fillgaugeTrumpSubjectivity" width="97%" height="100"></svg>
 							</div>
@@ -86,13 +86,13 @@
 							<img src="images/Hillary.jpg" id="imgHillaryLine" width="40" height="40" class="LineChartImage LineChartImageSelectedHillary HillarySurround" style="vertical-align: bottom;">
 						</td>
 						<td  style="text-align: center;width: 80px;padding-right:40px;" class="HillaryPsGraph">
-							<div style="width: 75px;margin: auto;height: 100%;padding:10px 0px;border-radius: 5px;height: 120px;" class="PolarityCell">
+							<div style="width: 75px;margin: auto;height: 100%;padding:10px 0px;border-radius: 5px;height: 120px;" class="PolarityCell PolarityButtonClass">
 								<label class="displayNumber" id="lbHillaryPolarity" style="color:orange;font-weight: bold;"></label>
 								<span class="spanHillaryPolarity" style="float: right;"></span>
 							</div>
 						</td>
 						<td  style="text-align: center;width: 80px;padding-right:40px;" class="HillaryPsGraph">
-							<div style="width: 120px;margin: auto;height: 100%;padding:10px 0px;border-radius: 5px;" class="SubjectivityCell">
+							<div style="width: 120px;margin: auto;height: 100%;padding:10px 0px;border-radius: 5px;" class="SubjectivityCell SubjectivityButtonClass">
 								<!-- <label class="displayNumber" id="lbHillarySubjectivity" style="color:orange;font-weight: bold;"></label> -->
 								<svg id="fillgaugeHillarySubjectivity" width="97%" height="100"></svg>
 							</div>
@@ -116,82 +116,172 @@
 	var cachedtopthemes;
 
 	//GenerateLineGraph - start
-	var totalWidthLine = 600;
+
+	var totalWidthLine;
+	var totalHeightLine;
+	var marginLine;
+	var widthLine;
+	var heightLine;
+	var lineGraph;
+	var headerLine;
+	var xScaleLine;
+	var yScaleLine;
+	var xAxisLine;
+	var yAxisLine;
+	var xAxisDrawLine;
+	var yAxisDrawLine;
+	var lineCircles;
+	var linePaths;
+	var tip;
+	var svg;
+
+	var lineCircleBarsTrump
+	var lineCirclesTrump
+	var linePathsTrump
+	var lineTextsTrump
+	var lineNumbersTrump
+
+	var lineCirclesHillary
+	var linePathsHillary
+	var lineTextsHillary
+	var lineNumbersHillary
+
+	var numberRange
+
+	totalWidthLine = 650;
 	if(IsMobileDevice()) {
 		totalWidthLine =  WindowScreen() * 0.9
 	}
+	totalHeightLine = totalWidthLine * 0.55;
 
-	var totalHeightLine = totalWidthLine * 0.55;
+	$(window).on('resize', function(){	
+		if ( $(window).width() < 650) { 
+			totalWidthLine =  WindowScreen() * 0.9
+			totalHeightLine = $(window).width() * 0.55
+		}
+		else{
+			totalWidthLine = 650;
+			totalHeightLine = totalWidthLine * 0.55;
+		}
 
-	var marginLine = { top: totalWidthLine * 0.1, right: totalWidthLine * 0.06, bottom: totalWidthLine * 0.045, left: totalWidthLine * 0.06 };
-	var widthLine = totalWidthLine - marginLine.right - marginLine.left;
-	var heightLine = totalHeightLine - marginLine.top - marginLine.bottom;
+		UpdateLineChart();
+		GenerateLineGraph(cachedData, true);
+	});
 
-	var lineGraph = d3
-		.select('#divLineChartGraph')
-		.append('svg')
-		.attr('width', widthLine + marginLine.right + marginLine.left)
-		.attr('height', heightLine + marginLine.top + marginLine.bottom)
-		.append('g')
-		.attr('transform', `translate(${marginLine.left}, ${marginLine.top})`);
+	InitLineGraphFrame();
+	InitLineGraph();
 
-	var headerLine = lineGraph
-		.append('g')
-		.attr('class', 'line-header')
-		.attr('transform', `translate(0,${-marginLine.top})`)
-		.append('text')
-		.attr('font-weight','bold')
-		.append('tspan')
-		.attr('x', widthLine/2 - 70)
-		.attr('dy', '1.0em')
-		.style('font-size', '1.0em')
-		.style('fill', 'steelblue');
+	function UpdateLineChart() {
+		marginLine = { top: 60, right: totalWidthLine * 0.06, bottom: totalWidthLine * 0.045, left: totalWidthLine * 0.06 };
+		widthLine = totalWidthLine - marginLine.right - marginLine.left;
+		heightLine = totalHeightLine - marginLine.top - marginLine.bottom;
 
-	headerLine.text('Sentiment Overall');
+		lineGraphFrame
+			.transition().duration(1000)
+			.attr('width', widthLine + marginLine.right + marginLine.left)
+			.attr('height', heightLine + marginLine.top + marginLine.bottom);
 
-	var  xScaleLine = d3
-		.scaleBand()
-		.rangeRound([0, widthLine])
-		.paddingInner(0.25);
+		lineGraph
+			.transition().duration(1000) 
+			.attr('transform', `translate(${marginLine.left}, ${marginLine.top})`);
 
-	var yScaleLine = d3
-		.scaleLinear()
-		.range([heightLine, 0]);
+		xScaleLine = d3
+			.scaleBand()
+			.rangeRound([0, widthLine])
+			.paddingInner(0.25);
 
-	var xAxisLine = d3
-		.axisBottom(xScaleLine)
-		.ticks(5)
-		.tickSizeInner(5)
-		.tickSizeOuter(0);
+		yScaleLine = d3
+			.scaleLinear()
+			.range([heightLine, 0]);
 
-	var yAxisLine = d3.axisLeft(yScaleLine).tickSize(0);
+		xAxisLine = d3
+			.axisBottom(xScaleLine)
+			.ticks(5)
+			.tickSizeInner(5)
+			.tickSizeOuter(0);
 
-	var xAxisDrawLine = lineGraph
+		yAxisLine = d3.axisLeft(yScaleLine).tickSize(0);
+
+		xAxisDrawLine
+			.attr('transform', `translate(0, ${heightLine})`);
+	}
+
+    function InitLineGraphFrame(){
+		marginLine = { top: 60, right: totalWidthLine * 0.06, bottom: totalWidthLine * 0.045, left: totalWidthLine * 0.06 };
+		widthLine = totalWidthLine - marginLine.right - marginLine.left;
+		heightLine = totalHeightLine - marginLine.top - marginLine.bottom;
+
+		lineGraphFrame = d3
+			.select('#divLineChartGraph')
+			.append('svg')
+			.attr('width', widthLine + marginLine.right + marginLine.left)
+			.attr('height', heightLine + marginLine.top + marginLine.bottom);
+
+		lineGraph = lineGraphFrame.append('g')
+			.attr('transform', `translate(${marginLine.left}, ${marginLine.top})`);
+
+		headerLine = lineGraph
+			.append('g')
+			.attr('class', 'line-header')
+			.attr('transform', `translate(0,-60)`)
+			.append('text')
+			.attr('font-weight','bold')
+			.append('tspan')
+			.attr('x', widthLine/2 - 70)
+			.attr('dy', 15)
+			.style('font-size', 15)
+			.style('fill', 'steelblue');
+
+		headerLine.text('Sentiment Overall');
+
+		xScaleLine = d3
+			.scaleBand()
+			.rangeRound([0, widthLine])
+			.paddingInner(0.25);
+
+		yScaleLine = d3
+			.scaleLinear()
+			.range([heightLine, 0]);
+
+		xAxisLine = d3
+			.axisBottom(xScaleLine)
+			.ticks(5)
+			.tickSizeInner(5)
+			.tickSizeOuter(0);
+
+		yAxisLine = d3.axisLeft(yScaleLine).tickSize(0);
+
+	}
+
+	function InitLineGraph(){
+
+		xAxisDrawLine = lineGraph
 			.append('g')
 			.attr("id", "xaxisDrawLine")
 			.attr('class', 'x_axis')
 			.attr('transform', `translate(0 ${heightLine})`);
 
-	var yAxisDrawLine = lineGraph.append('g').attr('class', 'y axis');
+		yAxisDrawLine = lineGraph.append('g').attr('class', 'y axis');
 
-	var lineCircles = lineGraph.append('g').attr('class', 'lineCircles');
+		lineCircles = lineGraph.append('g').attr('class', 'lineCircles');
 
-	var linePaths = lineGraph.append('g').attr('class', 'linePaths');
+		linePaths = lineGraph.append('g').attr('class', 'linePaths');
 
-	var tip = d3.tip().attr('class', 'd3-tip').html( d => displayToolTip(d));
-	tip.offset([-10, 0])
-	var svg = d3.select('body').append('svg').call(tip);
+		tip = d3.tip().attr('class', 'd3-tip').html( d => displayToolTip(d));
+		tip.offset([-10, 0])
+		svg = d3.select('body').append('svg').call(tip);
 
-	var	lineCircleBarsTrump = lineCircles.append('g').attr('class', 'lineCircleBarsTrump');
-	var	lineCirclesTrump = lineCircles.append('g').attr('class', 'lineCirclesTrump');
-	var linePathsTrump = lineCircles.append('g').attr('class', 'linePathsTrump');
-	var lineTextsTrump = lineCircles.append('g').attr('class', 'lineTextsTrump');
-	var lineNumbersTrump = lineCircles.append('g').attr('class', 'lineNumbersTrump');
+		lineCircleBarsTrump = lineCircles.append('g').attr('class', 'lineCircleBarsTrump');
+		lineCirclesTrump = lineCircles.append('g').attr('class', 'lineCirclesTrump');
+		linePathsTrump = lineCircles.append('g').attr('class', 'linePathsTrump');
+		lineTextsTrump = lineCircles.append('g').attr('class', 'lineTextsTrump');
+		lineNumbersTrump = lineCircles.append('g').attr('class', 'lineNumbersTrump');
 
-	var lineCirclesHillary = lineCircles.append('g').attr('class', 'lineCirclesHillary');
-	var linePathsHillary = lineCircles.append('g').attr('class', 'linePathsHillary');
-	var lineTextsHillary = lineCircles.append('g').attr('class', 'lineTextsHillary');
-	var lineNumbersHillary = lineCircles.append('g').attr('class', 'lineNumbersHillary');
+		lineCirclesHillary = lineCircles.append('g').attr('class', 'lineCirclesHillary');
+		linePathsHillary = lineCircles.append('g').attr('class', 'linePathsHillary');
+		lineTextsHillary = lineCircles.append('g').attr('class', 'lineTextsHillary');
+		lineNumbersHillary = lineCircles.append('g').attr('class', 'lineNumbersHillary');
+	}
 
 	function GenerateLineGraph(dataSet, firstLoad = false) {
 		var selectBtns = $('.btnSentimentSelected');
@@ -211,14 +301,13 @@
 
 		xScaleLine.domain(dataSet.map(d => d.event));
 
-		var numberRange = d3
+		numberRange = d3
 			.line()
 			.x(d => xScaleLine(d.event))
 			.y(d => yScaleLine(d.score))
             .curve(d3.curveMonotoneX);
 
         var dur = 1000;
-
 		var durPath = 500;
 		var delay = 700;
 		var tPath = d3.transition().duration(durPath).delay(delay);
@@ -268,6 +357,8 @@
 						.transition(t)
 						.style("opacity", (d, i) => getLinChartData(d, i, dataSet).BarChartOpacity)
 						.attr('x', d => xScaleLine(d.event))
+						.attr('height', totalHeightLine - 55)
+						.attr('width', xScaleLine.bandwidth())
 				},
 
 				exit => {
@@ -293,6 +384,7 @@
 				update => {
 					update
 						.transition(t)
+						.attr("cx", d => xScaleLine(d.event) + xScaleLine.bandwidth()/2)
 						.attr("cy", d => yScaleLine(d.score))
 						.attr("r", (d, i) => getLinChartData(d, i, dataTrump).Radius)
 				},
@@ -320,6 +412,7 @@
 					update => {
 						update
 							.transition(t)
+							.attr('transform', `translate(${marginLine.left + totalWidthLine * 0.01}, 0)`)
 							.attr('d', numberRange(dataTrump))
 					},
 
@@ -330,35 +423,35 @@
 					}
 				);
 
-		lineTextsHillary
-			.selectAll('.lineTextHillary')
-			.data(dataHillary, d => d.event)
-			.join(
-				enter => {
-					enter
-						.append("text")
-						.attr('class', 'lineTextHillary lineTextSelected')
-						.attr("x", d => xScaleLine(d.event) + xScaleLine.bandwidth()/2 + 10)
-						.attr("y", d => yScaleLine(d.score) - 5)
-						.text("Hillary")
-						.attr("stroke", "white")
-						.style("opacity", (d, i) => getLinChartData(d, i, dataTrump).TextOpacity)
-						.transition(tFast)
-						.attr('stroke',  'orange')
-				},
+		// lineTextsHillary
+		// 	.selectAll('.lineTextHillary')
+		// 	.data(dataHillary, d => d.event)
+		// 	.join(
+		// 		enter => {
+		// 			enter
+		// 				.append("text")
+		// 				.attr('class', 'lineTextHillary lineTextSelected')
+		// 				.attr("x", d => xScaleLine(d.event) + xScaleLine.bandwidth()/2 + 10)
+		// 				.attr("y", d => yScaleLine(d.score) - 5)
+		// 				.text("Hillary")
+		// 				.attr("stroke", "white")
+		// 				.style("opacity", (d, i) => getLinChartData(d, i, dataTrump).TextOpacity)
+		// 				.transition(tFast)
+		// 				.attr('stroke',  'orange')
+		// 		},
 
-				update => {
-					update
-						.transition(t)
-						.attr("y", d => yScaleLine(d.score) - 5)
-				},
+		// 		update => {
+		// 			update
+		// 				.transition(t)
+		// 				.attr("y", d => yScaleLine(d.score) - 5)
+		// 		},
 
-				exit => {
-					exit
-						.transition(t)
-						.remove()
-				}
-			);
+		// 		exit => {
+		// 			exit
+		// 				.transition(t)
+		// 				.remove()
+		// 		}
+		// 	);
 		lineTextsTrump
 			.selectAll('.lineTextTrump')
 			.data(dataTrump, d => d.event)
@@ -366,7 +459,6 @@
 				enter => {
 					enter
 						.append("text")
-
 						.attr("x", d => xScaleLine(d.event) + xScaleLine.bandwidth()/2 + 10)
 						.attr("y", d => yScaleLine(d.score) - 5)
 						.text("Trump")
@@ -380,6 +472,7 @@
 				update => {
 					update
 						.transition(t)
+						.attr("x", d => xScaleLine(d.event) + xScaleLine.bandwidth()/2 + 10)
 						.attr("y", d => yScaleLine(d.score) - 5)
 				},
 
@@ -411,6 +504,7 @@
 				update => {
 					update
 						.transition(t)
+						.attr("x", d => xScaleLine(d.event) + xScaleLine.bandwidth()/2 - 35)
 						.attr("y", d => yScaleLine(d.score) - 5)
 						.text(d => d.score)
 						.style("font-size", (d, i) => getLinChartData(d, i, dataTrump).FontSize)
@@ -445,6 +539,7 @@
 				update => {
 					update
 						.transition(t)
+						.attr('cx', d => xScaleLine(d.event) + xScaleLine.bandwidth()/2)
 						.attr("cy", d => yScaleLine(d.score))
 						.attr('r', (d, i) => getLinChartData(d, i, dataHillary).Radius)
 				},
@@ -474,6 +569,7 @@
 					update
 						.transition(t)
 						.attr('d', numberRange(dataHillary))
+						.attr('transform', `translate(${marginLine.left + totalWidthLine * 0.01}, 0)`)
 				},
 
 				exit => {
@@ -504,6 +600,7 @@
 				update => {
 					update
 						.transition(t)
+						.attr("x", d => xScaleLine(d.event) + xScaleLine.bandwidth()/2 + 10)
 						.attr("y", d => yScaleLine(d.score) - 5)
 				},
 
@@ -535,6 +632,7 @@
 				update => {
 					update
 						.transition(t)
+						.attr("x", d => xScaleLine(d.event) + xScaleLine.bandwidth()/2 - 35)
 						.attr("y", d => yScaleLine(d.score) - 5)
 						.text(d => d.score)
 						.style("font-size", (d, i) => getLinChartData(d, i, dataHillary).FontSize)
@@ -1561,6 +1659,11 @@
 		d3.selectAll('.lineCircle').on('click', d => lineChartNodeClickPre(d.event));
 		d3.selectAll('.lineCircleBar').on('click', d => lineChartNodeClickPre(d.event));
 		d3.selectAll('.btnSentiment').on('click', btnSentimentClick);
+
+		d3.selectAll('.PolarityButtonClass').on('click', () => { $('#PolarityButton').click() });
+
+		d3.selectAll('.SubjectivityButtonClass').on('click',  () => { $('#SubjectivityButton').click() });
+
 		d3.selectAll('.lineCircle').on('mouseover', mouseoverLineCircle);
 		d3.selectAll('.lineCircle').on('mouseout', mouseoutLineCircle);
 		$('.LineChartImage').on('click', LineChartImageClick);
@@ -2122,6 +2225,16 @@ function loadLiquidFillGauge(elementId, value, config) {
 
 	.StatesSelected{
 		background-color: rgba(70, 130, 180, 0.1);
+	}
+
+	.PolarityButtonClass:hover{
+		background-color: rgba(70, 130, 180, 0.1);
+		cursor: pointer;
+	}
+
+	.SubjectivityButtonClass:hover{
+		background-color: rgba(70, 130, 180, 0.1);
+		cursor: pointer;
 	}
 
 	.GreyOut{
