@@ -48,6 +48,8 @@ def get_data_list(path = r"..\03_Data_Partition\pickled data"):
     first_debate_list = {}
     second_debate_list = {}
     third_debate_list = {}
+    vp_debate_list = {}
+    election_day_list = {}
 
     for file in os.listdir(directory):
         filename = os.fsdecode(file)
@@ -61,7 +63,13 @@ def get_data_list(path = r"..\03_Data_Partition\pickled data"):
         if "third-debate" in filename:
             third_debate_list[re.sub(".pkl","",filename)] = pickle.load(open(path + "\\" + filename, 'rb'))
             
-    return (first_debate_list, second_debate_list, third_debate_list)
+        if "vp-debate" in filename:
+            vp_debate_list[re.sub(".pkl","",filename)] = pickle.load(open(path + "\\" + filename, 'rb'))
+                       
+        if "election-day" in filename:
+            election_day_list[re.sub(".pkl","",filename)] = pickle.load(open(path + "\\" + filename, 'rb'))       
+            
+    return (first_debate_list, second_debate_list, third_debate_list, vp_debate_list, election_day_list)
 
 
 # In[3]:
@@ -91,18 +99,21 @@ def combine_data(batch_dict):
 
 def extract_full_data(path = r"..\03_Data_Partition\pickled data"):
     # load each of the pickled batches into dataframes
-    first_debate_list, second_debate_list, third_debate_list = get_data_list(path)
+    first_debate_list, second_debate_list, third_debate_list, vp_debate_list, election_day_list = get_data_list(path)
 
     # combine all the dataframes into one for each event
     first_debate_df = combine_data(first_debate_list)
     second_debate_df = combine_data(second_debate_list)
     third_debate_df = combine_data(third_debate_list)
+    vp_debate_df = combine_data(vp_debate_list)
+    election_day_df = combine_data(election_day_list)
 
     # export as pickles files so do not need to load again
     first_debate_df.to_pickle('first_debate_all.pkl')
     second_debate_df.to_pickle('second_debate_all.pkl')
     third_debate_df.to_pickle('third_debate_all.pkl')
-
+    vp_debate_df.to_pickle('vp_debate_all.pkl')
+    election_day_df.to_pickle('election_day_all.pkl')
 
 # In[ ]:
 
