@@ -4,13 +4,13 @@
 # # Functions
 # This notebook contains functions that are used throughout the project. These are categorised into various purposes, as per the sub headings below.
 
-# In[1]:
+# In[14]:
 
 
 get_ipython().system(' jupyter nbconvert --to script functions.ipynb')
 
 
-# In[2]:
+# In[15]:
 
 
 import pandas as pd
@@ -44,15 +44,9 @@ nlp = English()
 pd.options.display.max_columns = None
 
 
-# In[14]:
-
-
-
-
-
 # ## Text preprocessing
 
-# In[3]:
+# In[16]:
 
 
 def lemmatize_with_postag(sentence):
@@ -70,7 +64,7 @@ def lemmatize_with_postag(sentence):
     return " ".join(lemmatized_list)
 
 
-# In[4]:
+# In[17]:
 
 
 def clean_tweets(tweets):
@@ -110,7 +104,7 @@ def clean_tweets(tweets):
 
 # ## Sentiment Analysis
 
-# In[5]:
+# In[18]:
 
 
 def polarity_calc(text):
@@ -122,7 +116,7 @@ def polarity_calc(text):
         return None
 
 
-# In[6]:
+# In[19]:
 
 
 def subjectivity_calc(text):
@@ -134,7 +128,7 @@ def subjectivity_calc(text):
         return None
 
 
-# In[7]:
+# In[20]:
 
 
 def polarity_subjectivity(df):
@@ -146,7 +140,7 @@ def polarity_subjectivity(df):
     return df
 
 
-# In[8]:
+# In[21]:
 
 
 def plot_polarity(df, ax):
@@ -166,7 +160,7 @@ def plot_polarity(df, ax):
     ax.set_ylabel('Count of tweets')
 
 
-# In[9]:
+# In[22]:
 
 
 def plot_subjectivity(df, ax):
@@ -188,7 +182,7 @@ def plot_subjectivity(df, ax):
 
 # ## Word Cloud
 
-# In[10]:
+# In[23]:
 
 
 def plot_word_cloud(df):
@@ -228,7 +222,45 @@ def plot_word_cloud(df):
 
 # ## Topic Extraction
 
-# In[11]:
+# In[26]:
+
+
+def clean_tweets(tweets):
+    '''clean tweets'''
+    
+    nlp = English()
+    
+    # lower case
+    clean_tweets = tweets.apply(lambda tweet: tweet.lower())
+    
+    # remove stop words
+    clean_tweets = clean_tweets.apply(lambda text: " ".join(token.lemma_ for token in nlp(text) if not token.is_stop))
+
+    # remove tags and links
+    clean_tweets = clean_tweets.apply(lambda tweet: ' '.join(re.sub("(@[a-z0-9]+)|(\w+:\/\/\S+)", "", tweet).split()))
+    word_list = ['debate', 'http']
+    clean_tweets = clean_tweets.apply(lambda tweet: ' '.join([word for word in tweet.split() if not any(w in word for w in word_list)]))
+    
+    # combine similar words together
+    word_list = ['donald','trump', 'donaldtrump']
+    clean_tweets = clean_tweets.apply(lambda tweet: ' '.join(['donaldtrump' if any(w in word for w in word_list) else word 
+                                                              for word in tweet.split()]))
+    word_list = ['hillary','clinton', 'hillaryclinton']
+    clean_tweets = clean_tweets.apply(lambda tweet: ' '.join(['hillaryclinton' if any(w in word for w in word_list) else word 
+                                                              for word in tweet.split()]))
+    # remove retweet label
+    clean_tweets = clean_tweets.apply(lambda tweet: re.sub("rt ", "", tweet))
+    
+    # lemmatize tweets
+    clean_tweets = clean_tweets.apply(lambda tweet: lemmatize_with_postag(tweet))
+
+    # remove non-alphanumeric characters
+    clean_tweets = clean_tweets.apply(lambda tweet: ' '.join(re.sub("([^0-9a-z \t])", "", tweet).split()))
+
+    return clean_tweets
+
+
+# In[25]:
 
 
 def extract_topic_words(df):
@@ -236,12 +268,12 @@ def extract_topic_words(df):
     
     processed_docs = df['tweet_clean'].map(word_tokenize) # tokenize each tweet
     dictionary = gensim.corpora.Dictionary(processed_docs) # create dictionary with count of each word
-    dictionary.filter_extremes(no_below=15, no_above=0.5, keep_n=100000) # set criteria for tokens that are kept
+    dictionary.filter_extremes(no_below=100, no_above=0.5, keep_n=1000) # set criteria for tokens that are kept
     bow_corpus = [dictionary.doc2bow(doc) for doc in processed_docs] # create dictionary of word count for each tweet
 
     lda_model =  LdaMulticore(
         bow_corpus
-        ,num_topics = 30
+        ,num_topics = 3
         ,id2word = dictionary                            
         ,passes = 10
         ,workers = 2
@@ -251,12 +283,6 @@ def extract_topic_words(df):
         print('Topic: {} \nWords: {}'.format(idx, topic))
     
     return lda_model
-
-
-# In[12]:
-
-
-
 
 
 # In[ ]:
