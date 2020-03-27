@@ -1,0 +1,1002 @@
+user_location,State
+,NULL
+United States,NULL
+USA,NULL
+"California, USA",CA
+"Florida, USA",FL
+"Los Angeles, CA",CA
+"Texas, USA",TX
+"Washington, DC",DC
+"New York, NY",NY
+"New York, USA",NY
+"Chicago, IL",IL
+Texas,TX
+New York,NY
+"Pennsylvania, USA",PA
+"New Jersey, USA",NJ
+"Atlanta, GA",GA
+"Boston, MA",MA
+"Houston, TX",TX
+"North Carolina, USA",NC
+Los Angeles,CA
+Florida,FL
+"Brooklyn, NY",NY
+"Georgia, USA",GA
+California,CA
+NYC,NY
+"Ohio, USA",OH
+Canada,NULL
+"Michigan, USA",MI
+"Austin, TX",TX
+"San Francisco, CA",CA
+Earth,NULL
+"Seattle, WA",WA
+"Las Vegas, NV",NV
+"Dallas, TX",TX
+"Arizona, USA",AZ
+"Philadelphia, PA",PA
+"Tennessee, USA",TN
+New York City,NY
+"London, England",NULL
+Chicago,IL
+"Virginia, USA",VA
+"Illinois, USA",IL
+"San Diego, CA",CA
+"Massachusetts, USA",MA
+London,NULL
+"Phoenix, AZ",AZ
+"Portland, OR",OR
+"Miami, FL",FL
+"Alabama, USA",AL
+"Colorado, USA",CO
+"Maryland, USA",MD
+"Toronto, Ontario",NULL
+"Pittsburgh, PA",PA
+"Charlotte, NC",NC
+United States of America,NULL
+"Indiana, USA",IN
+"South Carolina, USA",SC
+"Kentucky, USA",KY
+"Washington, USA",WA
+Australia,NULL
+"Denver, CO",CO
+"Orlando, FL",FL
+Toronto,NULL
+"Missouri, USA",MO
+"Connecticut, USA",CT
+"Nashville, TN",TN
+"San Antonio, TX",TX
+New Jersey,NJ
+America,NULL
+"Oregon, USA",OR
+Michigan,MI
+"Tampa, FL",FL
+Ohio,OH
+México,NULL
+"Minneapolis, MN",MN
+"Wisconsin, USA",WI
+San Francisco,CA
+"Baltimore, MD",MD
+North Carolina,NC
+"Louisiana, USA",LA
+"Columbus, OH",OH
+United Kingdom,NULL
+Southern California,CA
+"Manhattan, NY",NY
+Planet Earth,NULL
+Everywhere,NULL
+"Washington, D.C.",DC
+Colorado,CO
+"Minnesota, USA",MN
+NY,NY
+UK,NULL
+"Indianapolis, IN",IN
+Arizona,AZ
+Virginia,VA
+"Oklahoma, USA",OK
+"Sacramento, CA",CA
+"Kansas City, MO",MO
+"Raleigh, NC",NC
+"Cleveland, OH",OH
+Seattle,WA
+"Iowa, USA",IA
+Washington DC,DC
+Boston,MA
+India,NULL
+"Lagos, Nigeria",NULL
+"Detroit, MI",MI
+"England, United Kingdom",NULL
+Tennessee,TN
+Atlanta,GA
+"Ontario, Canada",NULL
+"Arkansas, USA",AR
+Indiana,IN
+"St Louis, MO",MO
+Pennsylvania,PA
+"Mississippi, USA",MS
+Nigeria,NULL
+Georgia,GA
+Las Vegas,NV
+"Buffalo, NY",NY
+Massachusetts,MA
+"Cincinnati, OH",OH
+"New Orleans, LA",LA
+"Paris, France",NULL
+"Oakland, CA",CA
+U.S.A.,NULL
+"Richmond, VA",VA
+NC,NC
+"Kansas, USA",KS
+"Louisville, KY",KY
+Worldwide,NULL
+"New Hampshire, USA",NH
+"Tucson, AZ",AZ
+NJ,NJ
+Oklahoma,OK
+"Nevada, USA",NV
+Wisconsin,WI
+Philadelphia,PA
+Maryland,MD
+France,NULL
+"Maine, USA",MA
+Minnesota,MN
+she/her,NULL
+Missouri,MO
+Illinois,IL
+Alabama,AL
+"Memphis, TN",TN
+"Nairobi, Kenya",NULL
+South Carolina,SC
+Global,NULL
+San Diego,CA
+Louisiana,LA
+Germany,NULL
+"Fort Worth, TX",TX
+"London, UK",NULL
+"Knoxville, TN",TN
+CA,CA
+Singapore,NULL
+South Florida,FL
+Mexico,NULL
+"Salt Lake City, UT",UT
+SoCal,CA
+"Queens, NY",NY
+Oregon,OR
+"New York, New York",NY
+"Fort Lauderdale, FL",FL
+"Houston, Texas",TX
+US,NULL
+"Oklahoma City, OK",OK
+"Milwaukee, WI",WI
+"Austin, Texas",TX
+"Los Angeles, California",CA
+Ireland,NULL
+"Bronx, NY",NY
+PA,PA
+"Sydney, New South Wales",NULL
+"Dallas, Texas",TX
+"New Mexico, USA",NULL
+Kentucky,KY
+Brooklyn,NY
+Miami,FL
+Venezuela,NULL
+Northern California,CA
+"Charleston, SC",SC
+"Utah, USA",UT
+"Omaha, NE",NE
+"Long Beach, CA",CA
+"Long Island, NY",NY
+Connecticut,CT
+"West Virginia, USA",WV
+FL,FL
+Houston,TX
+"Tulsa, OK",OK
+"Madison, WI",WI
+"Vancouver, British Columbia",NULL
+"Montana, USA",MT
+"Ottawa, Ontario",NULL
+Midwest,NULL
+"San Jose, CA",CA
+"Virginia Beach, VA",VA
+"
+            
+        ",NULL
+Iowa,IA
+"Toronto, Canada",NULL
+TEXAS,TX
+TX,TX
+LA,CA
+New England,MA
+"Rochester, NY",NY
+"St. Louis, MO",MO
+San Francisco Bay Area,CA
+earth,NULL
+"Melbourne, Victoria",NULL
+"Idaho, USA",ID
+usa,NULL
+Washington State,WA
+"Alexandria, VA",VA
+"Albuquerque, NM",NM
+"El Paso, TX",TX
+"Scottsdale, AZ",AZ
+new york,NY
+"Birmingham, AL",AL
+East Coast,NULL
+"Montréal, Québec",NULL
+"Durham, NC",NC
+"Calgary, Alberta",NULL
+"Cambridge, MA",MA
+Minneapolis,MN
+"Portland, Oregon",OR
+Paris,NULL
+England,NULL
+Brasil,NULL
+"Arlington, VA",VA
+Kansas City,KS
+"Rhode Island, USA",RI
+Arkansas,AR
+Here,NULL
+"Abuja, Nigeria",NULL
+"Sydney, Australia",NULL
+"Orange County, CA",CA
+"Delaware, USA",DE
+nyc,NY
+"West Palm Beach, FL",FL
+DC,DC
+"Colorado Springs, CO",CO
+New Zealand,NULL
+"Chattanooga, TN",TN
+CT,CT
+"Staten Island, NY",NY
+Pittsburgh,PA
+Argentina,NULL
+"Syracuse, NY",NY
+"Baton Rouge, LA",CA
+World,NULL
+"Jacksonville, FL",FL
+"Melbourne, Australia",NULL
+Sydney,NULL
+"Columbus, Ohio",OH
+california,CA
+"Berlin, Germany",NULL
+"Reno, NV",NV
+DMV,NULL
+"Hawaii, USA",HI
+Italia,NULL
+"Ann Arbor, MI",MI
+Dallas,TX
+"Henderson, NV",NV
+Utah,UT
+"Buenos Aires, Argentina",NULL
+"Manchester, England",NULL
+Washington D.C.,DC
+"Boise, ID",ID
+Mississippi,MS
+"Nebraska, USA",NE
+Bay Area,CA
+New Hampshire,NH
+Maine,MA
+"Grand Rapids, MI",MI
+🇺🇸,NULL
+Hell,NULL
+New Orleans,LA
+SC,SC
+ohio,OH
+"Mumbai, India",NULL
+Puerto Rico,NULL
+Somewhere,NULL
+florida,FL
+Europe,NULL
+"St Petersburg, FL",FL
+South Africa,NULL
+Jamaica,NULL
+everywhere,NULL
+Vancouver,NULL
+"Tacoma, WA",WA
+Japan,NULL
+"Dublin City, Ireland",NULL
+Kenya,NULL
+Kansas,KS
+Sweden,NULL
+"Kampala, Uganda",NULL
+los angeles,CA
+"Greenville, SC",SC
+"Des Moines, IA",IA
+"Honolulu, HI",HI
+Berlin,NULL
+GA,GA
+"Tallahassee, FL",FL
+North America,NULL
+"New Delhi, India",NULL
+Pacific Northwest,NULL
+"Santiago, Chile",NULL
+"Boulder, CO",CO
+"Atlanta, Georgia",GA
+"San Antonio, Texas",TX
+"Little Rock, AR",AR
+"Berkeley, CA",CA
+Philly,PA
+St. Louis,MO
+"Las Vegas, Nevada",NV
+"Glasgow, Scotland",NULL
+Hogwarts,NULL
+ATL,GA
+"Providence, RI",RI
+Italy,NULL
+Montreal,NULL
+"Myrtle Beach, SC",SC
+"Gainesville, FL",FL
+Mexico City,NULL
+"Arlington, TX",TX
+Melbourne,NULL
+"Lexington, KY",KY
+chicago,IL
+Colombia,NULL
+Nairobi,NULL
+"Vermont, USA",VT
+AZ,AZ
+"Chicago, Illinois",IL
+Upstate NY,NY
+"Spokane, WA",WA
+Indianapolis,IN
+"Cape Coral, FL",FL
+The World,NULL
+"Columbia, SC",SC
+VA,VA
+The Netherlands,NULL
+Washington,WA
+Malaysia,NULL
+"Brooklyn, New York",NY
+"Mesa, AZ",AZ
+Mars,NULL
+Alaska,AK
+"Pensacola, FL",FL
+Scotland,NULL
+"Edmonton, Alberta",NULL
+"Clearwater, FL",FL
+Jersey,NJ
+Dublin,NULL
+SF Bay Area,CA
+Hong Kong,NULL
+"Athens, GA",GA
+"Hollywood, CA",CA
+"Dayton, OH",OH
+Cincinnati,OH
+"Asheville, NC",NC
+Chile,NULL
+"Chapel Hill, NC",NC
+"Miami, Florida",FL
+"Vancouver, WA",WA
+"Huntsville, AL",AL
+"São Paulo, Brasil",NULL
+Madrid,NULL
+"Auckland, New Zealand",NULL
+España,NULL
+Ciudad de México,NULL
+"Dublin, Ireland",NULL
+"Sarasota, FL",FL
+"Savannah, GA",GA
+West Virginia,WV
+Northern Virginia,VA
+"Naples, FL",FL
+Denver,CO
+"British Columbia, Canada",NULL
+"Alberta, Canada",NULL
+Long Island,NY
+Idaho,ID
+"Beverly Hills, CA",CA
+Detroit,MI
+Austin,TX
+"Bay Area, CA",CA
+"Wichita, KS",KS
+"Cincinnati, Ohio",OH
+"Cleveland, Ohio",OH
+TN,TN
+"St Paul, MN",MN
+"Greensboro, NC",NC
+"Scotland, United Kingdom",NULL
+Lagos,NULL
+"Toronto, ON",NULL
+"Lansing, MI",MI
+"Fresno, CA",CA
+"Mobile, AL",AL
+"Lincoln, NE",NE
+"Eugene, OR",OR
+"Monterrey, Nuevo León",NULL
+"Santa Monica, CA",CA
+"Boca Raton, FL",FL
+Israel,NULL
+"New Haven, CT",CT
+Ghana,NULL
+"Santa Barbara, CA",CA
+"Anchorage, AK",AK
+Rhode Island,RI
+Hawaii,HI
+"Accra, Ghana",NULL
+Baltimore,MD
+"Albany, NY",NY
+AMERICA,NULL
+U.S.,NULL
+"West Hollywood, CA",CA
+here,NULL
+Delaware,DE
+Deutschland,NULL
+EARTH,NULL
+"Miami Beach, FL",FL
+Norway,NULL
+"Corpus Christi, TX",TX
+"Denver, Colorado",CO
+Chicagoland,IL
+"Denton, TX",TX
+canada,NULL
+"Moscow, Russia",NULL
+texas,TX
+"Bakersfield, CA",CA
+Home,NULL
+Wakanda,NULL
+"Toledo, OH",OH
+"Tempe, AZ",AZ
+Portugal,NULL
+"Tuscaloosa, AL",AL
+"Fort Myers, FL",FL
+Mumbai,NULL
+"Bogotá, D.C., Colombia",DC
+"Johannesburg, South Africa",NULL
+Ottawa,NULL
+"Long Island, New York",NY
+"Dubai, United Arab Emirates",NULL
+UNITED STATES OF AMERICA,NULL
+"Wyoming, USA",WY
+Vermont,VT
+U.S.A,NULL
+Orlando,FL
+The United States of America,NULL
+Manhattan,NY
+Central Florida,FL
+"Lubbock, TX",TX
+worldwide,NULL
+CDMX,NULL
+New Mexico,NM
+"Dhaka, Bangladesh",NULL
+Parts Unknown,NULL
+Finland,NULL
+"Palm Springs, CA",CA
+So Cal,CA
+"San Diego, California",CA
+Phoenix,AZ
+"Caracas, Venezuela",NULL
+PNW,NULL
+"Riverside, CA",CA
+Indonesia,NULL
+"Lima, Peru",NULL
+"Charlottesville, VA",VA
+"Edinburgh, Scotland",NULL
+"Irvine, CA",CA
+"Berlin, Deutschland",NULL
+"District of Columbia, USA",DC
+Pakistan,NULL
+Guatemala,NULL
+"Puerto Rico, USA",NULL
+"Newark, NJ",NJ
+MN,MN
+"Seattle, Washington",WA
+MA,MA
+"Rio de Janeiro, Brasil",NULL
+Montana,NULL
+Estados Unidos,NULL
+"Salem, OR",OR
+"Hollywood, FL",FL
+united states,NULL
+Nederland,NULL
+"Madrid, Spain",NULL
+Nashville,TN
+"36. 1699° N, 115.13° W",NULL
+"Auburn, AL",AL
+Dominican Republic,NULL
+Brazil,NULL
+Switzerland,NULL
+"Cape Town, South Africa",NULL
+"Fort Wayne, IN",IN
+new jersey,NJ
+new york city,NY
+"Plano, TX",TX
+Nowhere,NULL
+Montréal,NULL
+OHIO,OH
+Cleveland,OH
+"Evansville, IN",IN
+"Alaska, USA",AK
+"Tampa, Florida",FL
+The South,NULL
+"Akron, OH",OH
+"Winnipeg, Manitoba",NULL
+"Silver Spring, MD",MD
+"Huntington Beach, CA",CA
+"Hollywood, Los Angeles",CA
+Bangkok,NULL
+Nebraska,NE
+"Sugar Land, TX",TX
+"Newport Beach, CA",CA
+SW Florida,FL
+"Portland, ME",ME
+"St. Louis, Missouri",MO
+"Spring Hill, FL",FL
+"Olympia, WA",WA
+"Overland Park, KS",KS
+Upstate New York,NY
+"Morgantown, WV",WV
+Reality,NULL
+"Frisco, TX",TX
+"Jersey City, NJ",NJ
+The Internet,NULL
+"Springfield, IL",IL
+WorldWide,NULL
+Belgium,NULL
+"Laguna Beach, CA",CA
+"Torrance, CA",CA
+"Barcelona, Spain",NULL
+Amsterdam,NULL
+"Daytona Beach, FL",FL
+Nevada,NV
+"Annapolis, MD",MD
+"Burbank, CA",CA
+MD,MD
+Tampa,FL
+Brooklyn NY,NY
+"Anaheim, CA",CA
+Costa Rica,NULL
+San Antonio,TX
+Left Coast,NULL
+"Halifax, Nova Scotia",NULL
+"Gilbert, AZ",AZ
+International,NULL
+West Coast,NULL
+"Stockholm, Sweden",NULL
+"Marietta, GA",GA
+hell,NULL
+"Vero Beach, FL",FL
+Portland,OR
+"Fayetteville, NC",NC
+"Hyderabad, India",NULL
+"Phoenix, Arizona",AZ
+"Baltimore, Maryland",MD
+Silicon Valley,CA
+"Bellingham, WA",WA
+NorCal,CA
+"Delray Beach, FL",FL
+"Perth, Western Australia",NULL
+"Brisbane, Queensland",NULL
+"Wilmington, NC",NC
+he/him,NULL
+"Winston-Salem, NC",NC
+Manchester,NULL
+"Erie, PA",PA
+Panama,NULL
+Wonderland,NULL
+Abuja,NULL
+"Harrisburg, PA",PA
+"South Bend, IN",IN
+"Guadalajara, Jalisco",NULL
+Nicaragua,NULL
+somewhere,NULL
+Barcelona,NULL
+"Dayton, Ohio",OH
+Trinidad and Tobago,NULL
+"Karachi, Pakistan",NULL
+Universe,NULL
+Calgary,NULL
+"Ottawa, Canada",NULL
+"Oceanside, CA",CA
+"Vancouver, Canada",NULL
+"Palm Beach, FL",FL
+Philippines,NULL
+FLORIDA,FL
+"College Station, TX",TX
+"Distrito Federal, México",NULL
+127.0.0.1,NULL
+"Toronto, Ontario, Canada",NULL
+"Norman, OK",OK
+"Fairfax, VA",VA
+"Pasadena, CA",CA
+North Texas,TX
+Republic of Texas,TX
+Tokyo,NULL
+"Norfolk, VA",VA
+"Toledo, Ohio",OH
+"Los Angeles, CA ",CA
+"Chandler, AZ",AZ
+"Detroit, Michigan",MI
+Glasgow,NULL
+"Kansas City, Missouri",MO
+"Jackson, MS",MS
+"New England, USA",MA
+Global Citizen,NULL
+Memphis,TN
+"South Dakota, USA",SD
+Chicago IL,IL
+World Wide,NULL
+"Chesapeake, VA",VA
+"Orlando, Florida",FL
+"Modesto, CA",CA
+they/them,NULL
+"Madrid, Comunidad de Madrid",NULL
+"Bloomington, IN",IN
+"North Dakota, USA",ND
+planet earth,NULL
+Pittsburgh PA,PA
+DFW,NULL
+"Adelaide, South Australia",NULL
+Oklahoma City,OK
+london,NULL
+Ecuador,NULL
+"Santa Rosa, CA",CA
+"Lakeland, FL",FL
+"Murfreesboro, TN",TN
+Florida USA,FL
+"Columbia, MO",MO
+RVA,NULL
+"Bangkok, Thailand",NULL
+"Topeka, KS",KS
+"Puebla, México",NULL
+"Islamabad, Pakistan",NULL
+Cali,CA
+South Jersey,NULL
+"Blackwood, NJ, USA",NJ
+STL,NULL
+The Universe,NULL
+Spain,NULL
+Thailand,NULL
+"Jacksonville Beach, FL",FL
+"Charleston, WV",WV
+"Brussels, Belgium",NULL
+"East Coast, USA",NULL
+PDX,NULL
+"Bengaluru, India",NULL
+"Shreveport, LA",CA
+New Delhi,NULL
+"Santa Fe, NM",NULL
+Panamá,NULL
+Hollywood,CA
+Buenos Aires,NULL
+United States of America 🇺🇸,NULL
+LA LA Land,NULL
+"Longmont, CO",CO
+AMERICA USA,NULL
+"London, United Kingdom",NULL
+"Springfield, MO",MO
+"Jacksonville, Florida",FL
+"Worcester, MA",MA
+"San Marcos, TX",TX
+"Quincy, MA",MA
+"Spring, TX",TX
+Living rent free in your head,NULL
+"Hamilton, Ontario",NULL
+"Lexington, SC",SC
+"Guayaquil, Ecuador",NULL
+"Montgomery, AL",AL
+Edinburgh,NULL
+"Newport News, VA",VA
+Neverland,NULL
+"Cary, NC",NC
+"Santa Cruz, CA",CA
+"TrumpTrain, USA",NULL
+"Roanoke, VA",VA
+Nationwide,NULL
+"Québec, Canada",NULL
+Dallas Texas,TX
+República Dominicana,NULL
+"Land O' Lakes, FL",FL
+"Allentown, PA",PA
+"The Woodlands, TX",TX
+"Midwest, USA",NULL
+"Queensland, Australia",NULL
+NEW YORK CITY,NY
+"Boston, Massachusetts",MA
+"Oslo, Norway",NULL
+"Lancaster, PA",PA
+"Augusta, GA",GA
+US of A,NULL
+"Franklin, TN",TN
+"Palo Alto, CA",CA
+Denmark,NULL
+Indy,NULL
+Uganda,NULL
+Roma,NULL
+"Provo, UT",UT
+Paradise,NULL
+Netherlands,NULL
+"Milano, Lombardia",NULL
+"Chicago, IL, USA",IL
+"Palm Beach Gardens, FL",FL
+"Boise, Idaho",NULL
+El Salvador,NULL
+"Amsterdam, The Netherlands",NULL
+"North West, England",NULL
+"Warrenton, VA",VA
+Stockholm,NULL
+"Lafayette, LA",LA
+"San Bernardino, CA",CA
+"Mountain View, CA",CA
+"Katy, TX",TX
+"Frederick, MD",MD
+"Waltham, MA",MA
+"Stockton, CA",CA
+"Boynton Beach, FL",FL
+Ontario,NULL
+"Bend, OR",OR
+"Birmingham, England",NULL
+Not Russia,NULL
+Portland Oregon,OR
+"Kalamazoo, MI",MI
+Houston Texas,TX
+"Cork, Ireland",NULL
+"Princeton, NJ",NJ
+"Edmond, OK",OK
+🌎,NULL
+"Green Bay, WI",WI
+"Richmond, KY",KY
+"McLean, VA",VA
+Central Texas,TX
+"Madrid, España",NULL
+"Bowling Green, KY",KY
+Vegas,NV
+Canberra,NULL
+Egypt,NULL
+United States Of America,NULL
+Ciudad Autónoma de Buenos Aire,NULL
+Edmonton,NULL
+"Metz, Lorraine",NULL
+home,NULL
+"Iowa City, IA",IA
+MI,MI
+The Upside Down United States,NULL
+D.C.,DC
+"Martinez, CA",CA
+"Montevideo, Uruguay",NULL
+"Scranton, PA",PA
+"Belfast, Northern Ireland",NULL
+"Washington State, USA",WA
+Right behind you,NULL
+"Burlington, VT",VT
+"Venice, FL",FL
+ATX,TX
+"Fort Collins, CO",CO
+"London, Ontario",NULL
+Africa,NULL
+Kekistan,NULL
+Rio de Janeiro,NULL
+"Olathe, KS",KS
+Syracuse,NY
+Narnia,NULL
+USA 🇺🇸,NULL
+Liverpool,NULL
+North Jersey,NULL
+"Destin, FL",FL
+"Port St Lucie, FL",FL
+Fort Lauderdale,NULL
+"Barrington, RI",RI
+"Cumming, GA",GA
+"Lyon, France",NULL
+"Everywhere, USA",NULL
+"Surprise, AZ",NULL
+Internet,NULL
+São Paulo,NULL
+"Wales, United Kingdom",NULL
+"CT, USA",NULL
+"Eugene, Oregon",OR
+"Decatur, GA",GA
+"Fayetteville, AR",AR
+"Lawrence, KS",KS
+"Leeds, England",NULL
+GA - #CATHOLIC #LymeDisease,NULL
+South Texas,TX
+Salt Lake City,UT
+"Joliet, IL",IL
+"Tucson, Arizona",AZ
+"Houston, Tx",TX
+USA!,NULL
+"Ithaca, NY",NY
+PA | INTJ | @HFA | Feminist,NULL
+WA,NULL
+The Sunshine State,NULL
+"DeWitt, MI",MI
+"Hell, MI",MI
+world,NULL
+South Dakota,SD
+Sacramento,CA
+htx,NULL
+Hamilton OH,OH
+"Stockholm, Sverige",NULL
+"Mississauga, Ontario",NULL
+United states,NULL
+HTX,NULL
+"Key West, FL",FL
+"East Lansing, MI",MI
+"York, PA",PA
+Heaven,NULL
+AMERICA FIRST,NULL
+"Oxford, England",NULL
+midwest,NULL
+louisiana,LA
+Southern CA,CA
+"Melbourne, FL",FL
+WV,NULL
+left of centerstage,NULL
+"Sioux Falls, SD",SD
+"Mooresville, NC",NC
+Nunya,NULL
+"Napa, CA",CA
+"State College, PA",PA
+"Cairo, Egypt",NULL
+"Brisbane, Australia",NULL
+Republic of the Philippines,NULL
+"Victoria, British Columbia",NULL
+"Pune, India",NULL
+"Ile-de-France, France",NULL
+"Salt Lake City, Utah",UT
+Los Angeles CA,CA
+🇨🇦,NULL
+DC Metro Area,DC
+"St. Paul, MN",MN
+"Louisville, Kentucky",KY
+", USA",NULL
+Valley of the Sun,NULL
+"Copenhagen, Denmark",NULL
+"NY, NY",NY
+The Real World,NULL
+Trump's America,NULL
+"Roma, Lazio",NULL
+"Liverpool, England",NULL
+"Nottingham, England",NULL
+KY,KY
+Maldives,NULL
+"Garland, TX",TX
+North of the Wall,NULL
+"Silicon Valley, CA",CA
+"Rocklin, CA",CA
+The Great State of Texas,TX
+"Miami, Fl",FL
+"Vacaville, CA",CA
+Lebanon,NULL
+"Fredericksburg, VA",VA
+Mother Earth,NULL
+"Montreal, Canada",NULL
+Citizen of the World,NULL
+"Thousand Oaks, CA",CA
+"Davie, FL",FL
+"Kennesaw, GA",GA
+IL,IL
+"Bellevue, WA",WA
+"South Florida, USA",FL
+NH,NH
+Santiago de Chile,NULL
+"Menlo Park, CA",CA
+Brisbane,NULL
+Somewhere over the rainbow,NULL
+U S A,NULL
+"NOT, Russia ",NULL
+"Hartford, CT",CT
+The Moon,NULL
+"Paris, TX, Fayetteville, NC",NC
+"Miramar, FL",FL
+'Murica,NULL
+Space,NULL
+"Wichita, Kansas",NULL
+المملكة العربية السعودية,NULL
+"Tokyo-to, Japan",NULL
+"Minneapolis, Minnesota",MN
+Arizona USA,AZ
+"Amarillo, TX",TX
+Land of the Free,NULL
+KCMO,NULL
+"Somerville, MA",MA
+"South East, England",NULL
+"Greenville, NC",NC
+"Muncie, IN",IN
+heaven,NULL
+"Carolina, Colorado, Worldwide.",NULL
+Jersey Shore,NULL
+"Bayside, NY",NY
+pittsburgh,PA
+"Carlsbad, CA",CA
+"Geneva, Switzerland",NULL
+"Bristol, England",NULL
+"Newport, RI",RI
+Southeast  usa,NULL
+"Lahore, Pakistan",NULL
+MAGANATION,NULL
+tx,NULL
+Paraguay,NULL
+Twitter,NULL
+"Flint, MI",MI
+"Fargo, ND",ND
+a Popeyes organization,NULL
+"Redmond, WA",WA
+"Mansfield, TX",TX
+WI,NULL
+"Nova Scotia, Canada",NULL
+"Jacksonville, Fl",FL
+Gotham City,NULL
+"Tokyo, Japan",NULL
+"Nashville, Tennessee",TN
+Nepal,NULL
+Cape Town,NULL
+"Omaha, Nebraska",NE
+"New Braunfels, TX",TX
+san francisco,CA
+"Collierville, TN",TN
+"Atlanta, Ga",GA
+"Bethlehem, PA",PA
+"San Francisco, California",CA
+p,NULL
+South Louisiana,LA
+Gotham,NULL
+"Sarasota, Florida",FL
+"Oak Ridge, TN",TN
+"Washington, DC ",DC
+"Cardiff, Wales",NULL
+"Biloxi, MS",MS
+Photic zone,NULL
+Themyscira,NULL
+"NJ, USA",NULL
+"Lisboa, Portugal",NULL
+"Costa Mesa, CA",CA
+Alabama U.S.,AL
+"Niagara Falls, NY",NY
+Kuwait,NULL
+"Redondo Beach, CA",CA
+"Shadowbanned, USA",NULL
+"Lima, Perú",NULL
+"Roseville, CA",CA
+"San Juan, Puerto Rico",NULL
+"Newark, DE",DE
+OH,OH
+Eastern Time Zone,NULL
+"Orange Park, FL",FL
+Long Island NY,NY
+Lagos Nigeria,NULL
+"Flagstaff, AZ",AZ
+"Warsaw, Poland",NULL
+Southwest,NULL
+Bangladesh,NULL
+bay area,CA
+"Chico, CA",CA
+SE USA,NULL
+ny,NY
+"Trump, USA",NULL
+mexico,NULL
+"Naperville, IL",IL
+"West Lafayette, IN",IN
+"Fullerton, CA",CA
+Milano,NULL
+Delhi,NULL
+"Hoboken, NJ",NJ
+"Irving, TX",TX
+"Punjab, Pakistan",NULL
+Tx,NULL
+"Hendersonville, TN",TN
+"Paris, Ile-de-France",NULL
+.,NULL
+"Manchester, NH",NH
+boston,MA
+"West Chester, PA",PA
+South,NULL
+Sverige,NULL
+"Hattiesburg, MS",MS
+"los angeles, ca",CA
+"Carmel, IN",IN
+"Johnson City, TN",TN
+Third Rock From The Sun,NULL
+"Toms River, NJ",NJ
+"Ocala, FL",FL
+toronto,NULL
+"Temecula, CA",CA
+Houston TX,TX
+"Cedar Rapids, IA",IA
+Dubai,NULL
+"Princeton, WV",WV
+Where Freedom Rings,NULL
+"Beaverton, OR",OR
+brooklyn,NY
+miami,FL
+"Quito, Ecuador",NULL
