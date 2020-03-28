@@ -1,0 +1,256 @@
+Date,State,preferred_candidate,polarity,subjectivity,Theme_1,Theme_2,Theme_3
+election_day,AK,Donald Trump,0.12352224,0.277349532,Racial Issues,Make America Great Again,Women
+election_day,AL,Donald Trump,0.11262877,0.281519872,Jobs,Make America Great Again,Racial Issues
+election_day,AR,Donald Trump,0.109449192,0.279525631,Make America Great Again,Racial Issues,Women
+election_day,AZ,Donald Trump,0.102002195,0.267876886,Racial Issues,Make America Great Again,
+election_day,CA,Donald Trump,0.099187909,0.272647019,Make America Great Again,Racial Issues,Women
+election_day,CO,Donald Trump,0.106790348,0.281337674,Make America Great Again,Racial Issues,Women
+election_day,CT,Donald Trump,0.113810215,0.27544146,Racial Issues,Women,Make America Great Again
+election_day,DC,Donald Trump,0.107699347,0.263624566,Racial Issues,Make America Great Again,Women
+election_day,DE,Donald Trump,0.122512141,0.281270849,Make America Great Again,Women,Jobs
+election_day,FL,Donald Trump,0.106046175,0.257503609,Make America Great Again,Women,
+election_day,GA,Donald Trump,0.1000676,0.269927372,Racial Issues,Women,
+election_day,HI,Donald Trump,0.095353841,0.252267887,Women,Make America Great Again,Racial Issues
+election_day,IA,Donald Trump,0.109989514,0.274368793,Racial Issues,Jobs,Women
+election_day,ID,Donald Trump,0.112396189,0.278633154,Make America Great Again,Jobs,
+election_day,IL,Donald Trump,0.099677161,0.272446504,Make America Great Again,Jobs,Racial Issues
+election_day,IN,Hillary Clinton,0.11933519,0.285202692,Make America Great Again,Racial Issues,Women
+election_day,KS,Donald Trump,0.108254343,0.274658428,Racial Issues,Women,Make America Great Again
+election_day,KY,Donald Trump,0.128571056,0.300680354,Racial Issues,Women,Make America Great Again
+election_day,LA,Hillary Clinton,0.077586075,0.25521457,Racial Issues,Jobs,Make America Great Again
+election_day,MA,Donald Trump,0.110213105,0.285971421,Racial Issues,Make America Great Again,Women
+election_day,MD,Hillary Clinton,0.095072764,0.271859208,Racial Issues,Make America Great Again,Women
+election_day,ME,Donald Trump,0.118850533,0.328071263,Make America Great Again,Jobs,
+election_day,MI,Donald Trump,0.09979592,0.27587296,Racial Issues,Women,Make America Great Again
+election_day,MN,Hillary Clinton,0.113152697,0.287485092,Make America Great Again,Racial Issues,Women
+election_day,MO,Donald Trump,0.107846014,0.280368985,Make America Great Again,Women,
+election_day,MS,Donald Trump,0.133997295,0.278906847,Racial Issues,Women,Make America Great Again
+election_day,MT,Donald Trump,0.085446411,0.288148115,Make America Great Again,Women,Obama
+election_day,NC,Donald Trump,0.110082805,0.264971953,Racial Issues,Make America Great Again,
+election_day,ND,Donald Trump,0.104893854,0.30031613,Women,Make America Great Again,Racial Issues
+election_day,NE,Donald Trump,0.102793736,0.277781767,Make America Great Again,Women,
+election_day,NH,Donald Trump,0.09751378,0.269812502,Racial Issues,Make America Great Again,Women
+election_day,NJ,Donald Trump,0.101092551,0.269336229,Racial Issues,Make America Great Again,Women
+election_day,NM,Hillary Clinton,0.101306444,0.295985918,Make America Great Again,Racial Issues,Women
+election_day,NV,Donald Trump,0.102293089,0.273584972,Make America Great Again,Women,Jobs
+election_day,NY,Hillary Clinton,0.103868529,0.273324394,Racial Issues,Women,Make America Great Again
+election_day,OH,Hillary Clinton,0.118965067,0.277833487,Make America Great Again,Women,
+election_day,OK,Hillary Clinton,0.113447256,0.280974833,Jobs,Racial Issues,Women
+election_day,OR,Donald Trump,0.104645418,0.28747756,Racial Issues,Women,
+election_day,PA,Donald Trump,0.109412228,0.287122101,Women,Racial Issues,Make America Great Again
+election_day,RI,Donald Trump,0.110091085,0.258730779,Racial Issues,Make America Great Again,Jobs
+election_day,SC,Donald Trump,0.108510275,0.265056317,Make America Great Again,Racial Issues,
+election_day,SD,Donald Trump,0.116128046,0.293411033,Make America Great Again,Jobs,
+election_day,TN,Donald Trump,0.120141927,0.279567842,Jobs,Racial Issues,Make America Great Again
+election_day,TX,Hillary Clinton,0.094906784,0.262783445,Make America Great Again,Jobs,Women
+election_day,UT,Donald Trump,0.098422173,0.284763136,Women,Jobs,
+election_day,VA,Donald Trump,0.108497252,0.26812597,Women,Make America Great Again,
+election_day,VT,Donald Trump,0.11827505,0.295933043,Make America Great Again,Racial Issues,
+election_day,WA,Donald Trump,0.104952811,0.292113785,Racial Issues,Make America Great Again,Women
+election_day,WI,Hillary Clinton,0.114794316,0.291446983,Racial Issues,Jobs,Make America Great Again
+election_day,WV,Donald Trump,0.096015586,0.277628784,Racial Issues,Make America Great Again,Women
+election_day,WY,Hillary Clinton,0.101070395,0.245833041,Jobs,Racial Issues,Make America Great Again
+first_debate,AK,Donald Trump,0.085593484,0.263466612,Tax,Obama,Benghazi
+first_debate,AL,Donald Trump,0.091382725,0.277695434,Benghazi,Jobs,Make America Great Again
+first_debate,AR,Donald Trump,0.093440644,0.299217989,Jobs,Benghazi,Make America Great Again
+first_debate,AZ,Donald Trump,0.078523711,0.278457828,Jobs,Racial Issues,Benghazi
+first_debate,CA,Donald Trump,0.080664529,0.277787473,Foreign Policy,Global Warming,Make America Great Again
+first_debate,CO,Donald Trump,0.077339822,0.286318862,Jobs,Racial Issues,Foreign Policy
+first_debate,CT,Hillary Clinton,0.086883722,0.281138747,Jobs,Racial Issues,Tax
+first_debate,DC,Hillary Clinton,0.076613622,0.260491644,Jobs,Make America Great Again,Tax
+first_debate,DE,Donald Trump,0.076063503,0.272147342,Jobs,Benghazi,Obama
+first_debate,FL,Donald Trump,0.082997614,0.269174036,Jobs,Make America Great Again,Tax
+first_debate,GA,Donald Trump,0.079088187,0.273260383,Benghazi,Jobs,Make America Great Again
+first_debate,HI,Donald Trump,0.095325199,0.271715679,Jobs,Make America Great Again,Women
+first_debate,IA,Donald Trump,0.077608872,0.269995524,Jobs,Tax,Benghazi
+first_debate,ID,Donald Trump,0.088391497,0.292724368,Jobs,Benghazi,Make America Great Again
+first_debate,IL,Hillary Clinton,0.081256189,0.285360921,Jobs,Foreign Policy,Tax
+first_debate,IN,Donald Trump,0.095117664,0.281631328,Jobs,Make America Great Again,Tax
+first_debate,KS,Donald Trump,0.090410556,0.271968122,Jobs,Make America Great Again,Foreign Policy
+first_debate,KY,Donald Trump,0.088191349,0.279378915,Jobs,Racial Issues,Women
+first_debate,LA,Donald Trump,0.097504331,0.278847377,Benghazi,Racial Issues,Make America Great Again
+first_debate,MA,Donald Trump,0.076877593,0.277542313,Jobs,Racial Issues,Benghazi
+first_debate,MD,Donald Trump,0.072658477,0.278874504,Jobs,Tax,Global Warming
+first_debate,ME,Donald Trump,0.063079291,0.279669306,Foreign Policy,Make America Great Again,Racial Issues
+first_debate,MI,Donald Trump,0.091922364,0.284452777,Jobs,Tax,Women
+first_debate,MN,Hillary Clinton,0.081673874,0.287311957,Jobs,Foreign Policy,Make America Great Again
+first_debate,MO,Donald Trump,0.085220921,0.287358552,Jobs,Benghazi,Tax
+first_debate,MS,Donald Trump,0.084663116,0.284639313,Jobs,Benghazi,Racial Issues
+first_debate,MT,Donald Trump,0.08341253,0.294176358,Women,Benghazi,Tax
+first_debate,NC,Donald Trump,0.080535286,0.274155756,Jobs,Benghazi,Make America Great Again
+first_debate,ND,Donald Trump,0.063895521,0.306535329,Foreign Policy,Make America Great Again,Benghazi
+first_debate,NE,Donald Trump,0.099009371,0.296178976,Jobs,Benghazi,Foreign Policy
+first_debate,NH,Donald Trump,0.073626458,0.263294596,Benghazi,Jobs,Make America Great Again
+first_debate,NJ,Donald Trump,0.09115185,0.287124059,Jobs,Make America Great Again,Foreign Policy
+first_debate,NM,Donald Trump,0.071203098,0.272998956,Jobs,Foreign Policy,Global Warming
+first_debate,NV,Donald Trump,0.077740817,0.278712394,Jobs,Tax,Obama
+first_debate,NY,Donald Trump,0.079698893,0.272969678,Jobs,Foreign Policy,Make America Great Again
+first_debate,OH,Donald Trump,0.087804651,0.279968214,Jobs,Make America Great Again,Tax
+first_debate,OK,Donald Trump,0.10817662,0.283826192,Jobs,Racial Issues,Benghazi
+first_debate,OR,Donald Trump,0.083327402,0.287141421,Jobs,Make America Great Again,Tax
+first_debate,PA,Donald Trump,0.087331788,0.284968058,Jobs,Benghazi,Make America Great Again
+first_debate,RI,Donald Trump,0.070386812,0.249945929,Jobs,Racial Issues,Make America Great Again
+first_debate,SC,Donald Trump,0.077987375,0.275699504,Jobs,Tax,Benghazi
+first_debate,SD,Donald Trump,0.078927012,0.286569281,Benghazi,Obama,Jobs
+first_debate,TN,Donald Trump,0.093032227,0.275547321,Benghazi,Make America Great Again,Women
+first_debate,TX,Donald Trump,0.083502417,0.276150193,Jobs,Foreign Policy,Benghazi
+first_debate,UT,Donald Trump,0.077550262,0.272750317,Foreign Policy,Jobs,Tax
+first_debate,VA,Donald Trump,0.089010544,0.280706812,Jobs,Benghazi,Make America Great Again
+first_debate,VT,Hillary Clinton,0.063412626,0.267088688,Jobs,Foreign Policy,Make America Great Again
+first_debate,WA,Donald Trump,0.080140286,0.274757404,Jobs,Racial Issues,Foreign Policy
+first_debate,WI,Donald Trump,0.072207327,0.285382735,Jobs,Racial Issues,Foreign Policy
+first_debate,WV,Donald Trump,0.09647687,0.280856059,Jobs,Benghazi,Obama
+first_debate,WY,Donald Trump,0.102578841,0.286970916,Tax,Racial Issues,Make America Great Again
+second_debate,AK,Donald Trump,0.061881718,0.297723938,Women,Make America Great Again,Obama
+second_debate,AL,Donald Trump,0.057236969,0.299401875,Obama,Tax,Women
+second_debate,AR,Hillary Clinton,0.0552773,0.314099501,Women,Make America Great Again,Racial Issues
+second_debate,AZ,Donald Trump,0.051805878,0.313539224,Women,Benghazi,Obama
+second_debate,CA,Hillary Clinton,0.042967895,0.315394223,Make America Great Again,Racial Issues,Tax
+second_debate,CO,Hillary Clinton,0.050680237,0.312603997,Women,Racial Issues,Make America Great Again
+second_debate,CT,Hillary Clinton,0.046944033,0.317348213,Women,Jobs,Racial Issues
+second_debate,DC,Hillary Clinton,0.035731777,0.27803018,Tax,Women,Make America Great Again
+second_debate,DE,Hillary Clinton,0.051425569,0.311981071,Make America Great Again,Women,Racial Issues
+second_debate,FL,Donald Trump,0.052360036,0.305977508,Women,Benghazi,Make America Great Again
+second_debate,GA,Donald Trump,0.046729777,0.303206531,Women,Racial Issues,Tax
+second_debate,HI,Donald Trump,0.043613349,0.306633128,Women,Benghazi,Make America Great Again
+second_debate,IA,Donald Trump,0.053921573,0.314935952,Women,Racial Issues,Tax
+second_debate,ID,Donald Trump,0.055803393,0.320258406,Women,Benghazi,Make America Great Again
+second_debate,IL,Donald Trump,0.042773161,0.311447559,Women,Make America Great Again,Racial Issues
+second_debate,IN,Donald Trump,0.053649892,0.311868088,Women,Make America Great Again,Jobs
+second_debate,KS,Donald Trump,0.056563341,0.308702975,Women,Make America Great Again,Racial Issues
+second_debate,KY,Donald Trump,0.053827054,0.308871879,Women,Make America Great Again,Jobs
+second_debate,LA,Donald Trump,0.063450998,0.309392013,Women,Benghazi,Make America Great Again
+second_debate,MA,Hillary Clinton,0.047577932,0.315307672,Women,Tax,Jobs
+second_debate,MD,Hillary Clinton,0.034384419,0.310960919,Racial Issues,Women,Make America Great Again
+second_debate,ME,Donald Trump,0.021215844,0.308712482,Women,Jobs,Tax
+second_debate,MI,Donald Trump,0.048511089,0.311116954,Women,Make America Great Again,Racial Issues
+second_debate,MN,Hillary Clinton,0.039457723,0.31738446,Jobs,Racial Issues,Tax
+second_debate,MO,Hillary Clinton,0.050261096,0.300188479,Women,Jobs,Make America Great Again
+second_debate,MS,Donald Trump,0.058925288,0.315261686,Women,Racial Issues,Tax
+second_debate,MT,Hillary Clinton,0.0339569,0.297486024,Women,Make America Great Again,Benghazi
+second_debate,NC,Donald Trump,0.04984803,0.312011318,Women,Benghazi,Make America Great Again
+second_debate,ND,Donald Trump,0.054024939,0.286338167,Women,Make America Great Again,Racial Issues
+second_debate,NE,Donald Trump,0.06357224,0.316511662,Racial Issues,Women,Make America Great Again
+second_debate,NH,Donald Trump,0.061821346,0.324756307,Women,Global Warming,Jobs
+second_debate,NJ,Donald Trump,0.047890493,0.306195611,Women,Make America Great Again,Racial Issues
+second_debate,NM,Hillary Clinton,0.032586241,0.322302839,Women,Racial Issues,Make America Great Again
+second_debate,NV,Donald Trump,0.04390536,0.323699058,Women,Make America Great Again,Jobs
+second_debate,NY,Hillary Clinton,0.042955429,0.310396031,Women,Make America Great Again,Racial Issues
+second_debate,OH,Donald Trump,0.052280769,0.312322278,Women,Racial Issues,Jobs
+second_debate,OK,Donald Trump,0.061725465,0.30951643,Women,Make America Great Again,Jobs
+second_debate,OR,Donald Trump,0.048507493,0.325994944,Women,Racial Issues,Tax
+second_debate,PA,Donald Trump,0.049912659,0.310523447,Women,Make America Great Again,Jobs
+second_debate,RI,Donald Trump,0.050497558,0.301368542,Women,Make America Great Again,Racial Issues
+second_debate,SC,Donald Trump,0.050016946,0.311512701,Women,Make America Great Again,Racial Issues
+second_debate,SD,Donald Trump,0.04941964,0.302813974,Women,Racial Issues,Jobs
+second_debate,TN,Donald Trump,0.055203167,0.303566424,Women,Make America Great Again,Obama
+second_debate,TX,Donald Trump,0.054040408,0.310362938,Women,Racial Issues,Make America Great Again
+second_debate,UT,Donald Trump,0.051911748,0.316631961,Make America Great Again,Jobs,Racial Issues
+second_debate,VA,Donald Trump,0.046785321,0.310712238,Women,Make America Great Again,Racial Issues
+second_debate,VT,Donald Trump,0.03493632,0.309590118,Racial Issues,Women,Make America Great Again
+second_debate,WA,Hillary Clinton,0.042679469,0.313355095,Jobs,Women,Benghazi
+second_debate,WI,Donald Trump,0.063998536,0.324089686,Women,Racial Issues,Tax
+second_debate,WV,Donald Trump,0.065041727,0.316252606,Women,Make America Great Again,Jobs
+second_debate,WY,Donald Trump,0.069659201,0.320615687,Obama,Women,Benghazi
+third_debate,AK,Donald Trump,0.061087259,0.322462648,Jobs,Benghazi,Foreign Policy
+third_debate,AL,Donald Trump,0.051907903,0.309712628,Benghazi,Obama,Women
+third_debate,AR,Donald Trump,0.030411352,0.310386122,Obama,Benghazi,Foreign Policy
+third_debate,AZ,Donald Trump,0.052479891,0.319444891,Jobs,Benghazi,Obama
+third_debate,CA,Hillary Clinton,0.047425351,0.340513872,Jobs,Abortion,Make America Great Again
+third_debate,CO,Donald Trump,0.045023174,0.340305248,Jobs,Women,Benghazi
+third_debate,CT,Hillary Clinton,0.058907948,0.31313921,Jobs,Women,Make America Great Again
+third_debate,DC,Hillary Clinton,0.05287774,0.322274216,Abortion,Make America Great Again,Jobs
+third_debate,DE,Donald Trump,0.036067554,0.313400411,Obama,Women,Benghazi
+third_debate,FL,Donald Trump,0.052294438,0.308107572,Benghazi,Jobs,Obama
+third_debate,GA,Donald Trump,0.047605427,0.321214907,Benghazi,Foreign Policy,Make America Great Again
+third_debate,HI,Donald Trump,0.023982893,0.334224489,Make America Great Again,Jobs,Obama
+third_debate,IA,Donald Trump,0.047323933,0.319247949,Benghazi,Women,Make America Great Again
+third_debate,ID,Hillary Clinton,0.070566124,0.327579877,Women,Foreign Policy,Obama
+third_debate,IL,Hillary Clinton,0.043185607,0.334025258,Jobs,Make America Great Again,Racial Issues
+third_debate,IN,Donald Trump,0.047200589,0.319590719,Benghazi,Make America Great Again,Tax
+third_debate,KS,Donald Trump,0.047355107,0.319463936,Obama,Abortion,Benghazi
+third_debate,KY,Donald Trump,0.072055353,0.31386867,Benghazi,Jobs,Obama
+third_debate,LA,Donald Trump,0.050198255,0.315594676,Jobs,Benghazi,Make America Great Again
+third_debate,MA,Hillary Clinton,0.041531036,0.328366298,Make America Great Again,Racial Issues,Tax
+third_debate,MD,Hillary Clinton,0.056972761,0.338446943,Abortion,Benghazi,Make America Great Again
+third_debate,ME,Donald Trump,0.054619825,0.309649879,Women,Make America Great Again,The Wall
+third_debate,MI,Donald Trump,0.059006214,0.326251836,Jobs,Benghazi,Make America Great Again
+third_debate,MN,Hillary Clinton,0.044445254,0.331189317,Benghazi,Make America Great Again,Jobs
+third_debate,MO,Donald Trump,0.057829418,0.315057688,Obama,Abortion,Benghazi
+third_debate,MS,Donald Trump,0.05562474,0.311203676,Jobs,Women,Benghazi
+third_debate,MT,Donald Trump,0.04975023,0.321555459,Benghazi,Make America Great Again,Obama
+third_debate,NC,Donald Trump,0.055966765,0.316801252,Jobs,Benghazi,Make America Great Again
+third_debate,ND,Donald Trump,0.090550688,0.289113745,Obama,Women,Abortion
+third_debate,NE,Donald Trump,0.047104883,0.325653847,Benghazi,Make America Great Again,Women
+third_debate,NH,Donald Trump,0.040026253,0.310183797,Jobs,The Wall,Foreign Policy
+third_debate,NJ,Donald Trump,0.058796444,0.324546124,Jobs,Make America Great Again,Obama
+third_debate,NM,Donald Trump,0.047639271,0.327459309,Jobs,Abortion,Make America Great Again
+third_debate,NV,Donald Trump,0.071552013,0.315857595,Jobs,Make America Great Again,The Wall
+third_debate,NY,Hillary Clinton,0.042408765,0.327378886,Make America Great Again,Jobs,Obama
+third_debate,OH,Donald Trump,0.053243161,0.320243485,Make America Great Again,Obama,Jobs
+third_debate,OK,Donald Trump,0.048291266,0.308083835,Obama,Foreign Policy,Tax
+third_debate,OR,Hillary Clinton,0.037397418,0.335428393,Benghazi,Jobs,Abortion
+third_debate,PA,Donald Trump,0.04685258,0.318031954,Jobs,Make America Great Again,Tax
+third_debate,RI,Donald Trump,0.068041965,0.332156745,Make America Great Again,Tax,Obama
+third_debate,SC,Donald Trump,0.051066147,0.303304763,Jobs,Obama,Foreign Policy
+third_debate,SD,Donald Trump,0.056227844,0.362792281,Jobs,Abortion,Make America Great Again
+third_debate,TN,Donald Trump,0.053740984,0.310587624,Obama,Benghazi,Tax
+third_debate,TX,Donald Trump,0.050034723,0.314692919,Jobs,Obama,Tax
+third_debate,UT,Hillary Clinton,0.058811288,0.351127124,Obama,Abortion,Tax
+third_debate,VA,Donald Trump,0.057484228,0.317310563,Obama,Tax,Racial Issues
+third_debate,VT,Hillary Clinton,0.036772452,0.313245763,Jobs,Benghazi,Obama
+third_debate,WA,Hillary Clinton,0.047414175,0.340974998,Abortion,Jobs,Women
+third_debate,WI,Donald Trump,0.047774395,0.334325046,Obama,Jobs,Make America Great Again
+third_debate,WV,Donald Trump,0.068762776,0.316293895,Jobs,Obama,Make America Great Again
+third_debate,WY,Donald Trump,0.089157022,0.349936628,Benghazi,Obama,Women
+vp_debate,AK,Donald Trump,0.096027333,0.297991565,Women,Make America Great Again,Jobs
+vp_debate,AL,Donald Trump,0.105015025,0.285633098,Jobs,Make America Great Again,Obama
+vp_debate,AR,Hillary Clinton,0.113540655,0.300202623,Jobs,Make America Great Again,Women
+vp_debate,AZ,Donald Trump,0.091627691,0.291081378,Make America Great Again,Jobs,Law
+vp_debate,CA,Donald Trump,0.078920009,0.286630846,Jobs,Make America Great Again,Tax
+vp_debate,CO,Donald Trump,0.079026255,0.287892095,Women,Obama,Make America Great Again
+vp_debate,CT,Donald Trump,0.086755425,0.295336325,Jobs,Make America Great Again,Tax
+vp_debate,DC,Donald Trump,0.068577248,0.259993744,Women,Make America Great Again,Obama
+vp_debate,DE,Hillary Clinton,0.087233532,0.302079694,Jobs,Women,Make America Great Again
+vp_debate,FL,Donald Trump,0.099060122,0.291319205,Obama,Women,Make America Great Again
+vp_debate,GA,Donald Trump,0.09275941,0.294433532,Jobs,Make America Great Again,Tax
+vp_debate,HI,Hillary Clinton,0.084943171,0.296459324,Women,Make America Great Again,Tax
+vp_debate,IA,Donald Trump,0.100069547,0.304145363,Jobs,Make America Great Again,Women
+vp_debate,ID,Donald Trump,0.09140097,0.29449979,Women,Make America Great Again,Jobs
+vp_debate,IL,Hillary Clinton,0.085733082,0.288082997,Make America Great Again,Jobs,Tax
+vp_debate,IN,Donald Trump,0.101170219,0.300375391,Jobs,Make America Great Again,Tax
+vp_debate,KS,Donald Trump,0.104722829,0.304633583,Jobs,Women,Make America Great Again
+vp_debate,KY,Donald Trump,0.105336077,0.298547758,Jobs,Make America Great Again,Women
+vp_debate,LA,Donald Trump,0.101959034,0.302888215,Obama,Tax,Women
+vp_debate,MA,Hillary Clinton,0.080487026,0.294585257,Jobs,Make America Great Again,Women
+vp_debate,MD,Hillary Clinton,0.077638921,0.291417331,Jobs,Make America Great Again,Women
+vp_debate,ME,Hillary Clinton,0.034650795,0.294872348,Obama,Women,
+vp_debate,MI,Donald Trump,0.094250103,0.301392644,Jobs,Make America Great Again,Tax
+vp_debate,MN,Hillary Clinton,0.07143094,0.280766298,Make America Great Again,Tax,Women
+vp_debate,MO,Donald Trump,0.08900007,0.292761492,Make America Great Again,Law,Tax
+vp_debate,MS,Donald Trump,0.113850848,0.299187696,Jobs,Make America Great Again,Women
+vp_debate,MT,Donald Trump,0.120691384,0.319074318,Women,Make America Great Again,Jobs
+vp_debate,NC,Hillary Clinton,0.08538354,0.289839084,Jobs,Make America Great Again,Tax
+vp_debate,ND,Hillary Clinton,0.054896288,0.292678085,Women,Make America Great Again,Law
+vp_debate,NE,Donald Trump,0.105983664,0.295140605,Tax,Women,Make America Great Again
+vp_debate,NH,Donald Trump,0.101947085,0.308019228,Women,Tax,Global Warming
+vp_debate,NJ,Donald Trump,0.093036878,0.296449237,Jobs,Make America Great Again,Tax
+vp_debate,NM,Hillary Clinton,0.07955774,0.310481515,Racial Issues,Make America Great Again,Jobs
+vp_debate,NV,Donald Trump,0.09028417,0.300059866,Jobs,Women,Make America Great Again
+vp_debate,NY,Hillary Clinton,0.079426556,0.283793228,Women,Jobs,Tax
+vp_debate,OH,Donald Trump,0.09416818,0.29298189,Jobs,Women,Make America Great Again
+vp_debate,OK,Donald Trump,0.116046594,0.299077364,Law,Obama,Women
+vp_debate,OR,Donald Trump,0.087430956,0.299504384,Women,Tax,Make America Great Again
+vp_debate,PA,Hillary Clinton,0.097833232,0.293798057,Women,Tax,Make America Great Again
+vp_debate,RI,Donald Trump,0.099420154,0.28577839,Jobs,Make America Great Again,Women
+vp_debate,SC,Donald Trump,0.106475869,0.306401305,Jobs,Women,Make America Great Again
+vp_debate,SD,Donald Trump,0.130416188,0.295043016,Women,Make America Great Again,Tax
+vp_debate,TN,Donald Trump,0.105038854,0.300896257,Make America Great Again,Law,Obama
+vp_debate,TX,Donald Trump,0.096685521,0.291803953,Jobs,Women,Tax
+vp_debate,UT,Donald Trump,0.088320248,0.28957909,Make America Great Again,Jobs,Women
+vp_debate,VA,Hillary Clinton,0.103197267,0.298249025,Jobs,Make America Great Again,Women
+vp_debate,VT,Donald Trump,0.068497753,0.277225236,Make America Great Again,Women,Jobs
+vp_debate,WA,Hillary Clinton,0.076451078,0.293612427,Make America Great Again,Women,Jobs
+vp_debate,WI,Donald Trump,0.113880741,0.309341228,Tax,Women,Jobs
+vp_debate,WV,Donald Trump,0.108587376,0.292278605,Jobs,Law,Tax
+vp_debate,WY,Hillary Clinton,0.112690808,0.303918625,Women,Jobs,Make America Great Again
