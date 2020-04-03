@@ -1,0 +1,24 @@
+text {
+    font: 14px sans-serif;
+  }
+  circle {
+      stroke: #565352;
+      stroke-width: 1;
+  }
+  .x.axis path {
+    display: none;
+  }
+
+  .bar rect {
+    shape-rendering: crispEdges;
+  }
+
+  .bar text {
+    fill: #999999;
+  }
+
+  .axis path, .axis line {
+    fill: none;
+    stroke: #000;
+    shape-rendering: crispEdges;
+  }		

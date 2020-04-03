@@ -1,0 +1,321 @@
+.btnDebate{
+    border: 2px solid steelblue;
+    background-color: white;
+    color: steelblue;
+    cursor: pointer;
+    outline: none;
+    width: 18px;
+    height: 18px;
+    padding:2px 15px 21px 8px;
+    border-radius: 50%;
+    display: inline-block;
+    font-size: 14px;
+}
+
+.btnDebateDash{
+    display: inline-block;
+    width: 5px;
+    height: 100px;
+    background-color: steelblue;
+}
+
+.Debatelabel {
+    display: inline-block;
+    width:40px;
+    vertical-align: middle;;
+    color: steelblue;
+    cursor: pointer;
+}
+
+.btnDebateBelow{
+    margin-top: -10px;
+}
+
+.btnSentiment {
+    border: 1px solid steelblue;
+    background-color: white;
+    color: steelblue;
+    padding: 8px;
+    font-size: 12px !important;
+    cursor: pointer;
+    outline: none;
+    width: 80px;
+    border-radius: 5px;
+}
+
+.btnDebateSelected, .btnDebate:hover, .btnSentimentSelected, .btnSentiment:hover{
+    background-color: steelblue;
+    color: white;
+
+}
+
+.btnDebateSelected{
+    box-shadow: 0px 0px 10px 0px steelblue !important;
+}
+
+.displayNumber{
+    color:steelblue;
+}
+.displayNumberNegtive{
+    color:red;
+}
+
+.CandidateImage, .seriesImage {
+    border-radius: 50%;
+}
+
+.LineChartImage{
+    border-radius: 50%;
+    cursor: pointer;
+    opacity: 0.3;
+}
+
+.LineChartImage:hover{
+    opacity: 1;
+}
+
+.lineCircleTrump:hover {
+    cursor: pointer;
+}
+
+.lineCircleHillary:hover {
+    cursor: pointer;
+}
+
+.lineTextTrump:hover {
+    cursor: pointer;
+}
+
+.lineTextHillary:hover{
+    cursor: pointer;
+}
+
+.LineChartImageSelectedHillary{
+    -webkit-box-shadow: 0px 0px 5px 5px orange;
+    -moz-box-shadow: 0px 0px 5px 5px orange;
+    box-shadow: 0px 0px 5px 5px orange;
+    opacity: 1;
+}
+
+.LineChartImageSelectedTrump{
+    -webkit-box-shadow: 0px 0px 5px 5px green;
+    -moz-box-shadow: 0px 0px 5px 5px green;
+    box-shadow: 0px 0px 5px 5px green;
+    opacity: 1;
+}
+.btnLineChartLabel{
+    color:grey;
+    width: 60px;
+    cursor: pointer;
+    font-size: 12px;
+    text-decoration: underline;
+}
+.btnLineChartLabelSelected{
+    color:steelblue;
+    width: 60px;
+    cursor: pointer;
+    font-size: 13px;
+    font-weight: bold;
+    text-decoration: none;
+}
+.btnLineChartLabel:hover{
+    color:steelblue;
+    font-size: 13px;
+    font-weight: bold;
+    cursor: pointer;
+}
+
+.tooltipPopup{
+        background-color: rgba(0, 0, 0, 0.7);
+        color: white;
+        padding: 10px;
+        border-radius: 5px;
+    }
+
+    .tooltipPopup .tooltipPopupInner::after {
+        content: " ";
+        position: absolute;
+        top: 100%;
+        left: 50%;
+        margin-left: -10px;
+        border-width: 10px;
+        border-style: solid;
+        border-color:  rgba(0, 0, 0, 0.7) transparent transparent transparent;
+    }
+
+.lineCircleBar:hover{
+    cursor: pointer;
+    opacity: 0.1 !important;
+}
+
+.StatesSelected{
+    background-color: rgba(70, 130, 180, 0.1);
+}
+
+.PolarityButtonClass:hover{
+    background-color: rgba(70, 130, 180, 0.1);
+    cursor: pointer;
+}
+
+.SubjectivityButtonClass:hover{
+    background-color: rgba(70, 130, 180, 0.1);
+    cursor: pointer;
+}
+
+.GreyOut{
+    color:grey !important;
+    border: grey !important;
+}
+.GreyOut:hover{
+    background-color:steelblue !important;
+    border: steelblue !important;
+    color: white !important;
+}
+
+
+.btnDebate,
+#divPolaritySubjectivity,
+#divThemesSwing,
+.PolarityCell,
+.SubjectivityCell,
+.LineChartImage,
+.btnDebateDash,
+#lbHillaryPolarity,
+#lbTrumpPolarity
+{
+    -webkit-transition: all 0.5s ease;
+    -moz-transition: all 0.5s ease;
+    -o-transition: all 0.5s ease;
+    transition: all 0.5s ease;
+}
+
+/* Customize the label (the container) */
+.container {
+display: block;
+position: relative;
+padding-left: 35px;
+margin-bottom: 12px;
+cursor: pointer;
+font-size: 18px;
+-webkit-user-select: none;
+-moz-user-select: none;
+-ms-user-select: none;
+user-select: none;
+}
+
+/* Hide the browser's default checkbox */
+.container input {
+position: absolute;
+opacity: 0;
+cursor: pointer;
+height: 0;
+width: 0;
+}
+
+/* Create a custom checkbox */
+.checkmark {
+position: absolute;
+top: 0;
+left: 0;
+height: 20px;
+width: 20px;
+background-color: #eee;
+}
+
+/* On mouse-over, add a grey background color */
+.container:hover input ~ .checkmark {
+background-color: #ccc;
+}
+
+/* When the checkbox is checked, add a blue background */
+.container input:checked ~ .checkmark {
+background-color: steelblue;
+}
+
+/* Create the checkmark/indicator (hidden when not checked) */
+.checkmark:after {
+content: "";
+position: absolute;
+display: none;
+}
+
+/* Show the checkmark when checked */
+.container input:checked ~ .checkmark:after {
+display: block;
+}
+
+/* Style the checkmark/indicator */
+.container .checkmark:after {
+left: 6px;
+top: 0px;
+width: 5px;
+height: 15px;
+border: solid white;
+border-width: 0 3px 3px 0;
+-webkit-transform: rotate(45deg);
+-ms-transform: rotate(45deg);
+transform: rotate(45deg);
+}
+
+
+
+* {box-sizing:border-box}
+
+/* Fading animation */
+.fade {
+-webkit-animation-name: fade;
+-webkit-animation-duration: 1.5s;
+animation-name: fade;
+animation-duration: 1.5s;
+}
+
+@-webkit-keyframes fade {
+from {opacity: .4}
+to {opacity: 1}
+}
+
+@keyframes fade {
+from {opacity: .4}
+to {opacity: 1}
+}
+
+
+.loader {
+border: 8px solid #f3f3f3;
+border-radius: 50%;
+border-top: 8px solid steelblue;
+border-bottom: 8px solid steelblue;
+width: 40px;
+height: 40px;
+-webkit-animation: spin 2s linear infinite; /* Safari */
+animation: spin 2s linear infinite;
+}
+
+/* Safari */
+@-webkit-keyframes spin {
+0% { -webkit-transform: rotate(0deg); }
+100% { -webkit-transform: rotate(360deg); }
+}
+
+@keyframes spin {
+0% { transform: rotate(0deg); }
+100% { transform: rotate(360deg); }
+}
+
+@media only screen and (max-width: 600px) {
+    #divLineChartGraph {
+        width: 600px !important;
+        margin-left: -100px !important;
+    }
+
+    #divNumberDisplay{
+        padding-left: 80px !important;
+    }
+
+    .btnLineChartLabel{
+        font-size: 10px !important;
+    }
+    .TopThemeName{
+        font-size: 10px !important;
+    }
+  }

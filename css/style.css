@@ -267,7 +267,7 @@ a:hover, a:active, a:focus {
 -----------------------------------------*/
 
 #home {
-    background: #535bd4 url('../images/home-bg.jpg') no-repeat;
+    /* background: #535bd4 url('../images/home-bg.jpg') no-repeat; */
     background-size: cover;
     background-position: center center;
     color: #ffffff;
@@ -436,7 +436,8 @@ a:hover, a:active, a:focus {
 -----------------------------------------*/
 
 #Graph2 {
-  background: #535bd4;
+  background-color: #ffffff;
+  color: #000000;
 }
 
 #Graph2 .Graph2-plan {
@@ -471,7 +472,6 @@ a:hover, a:active, a:focus {
 -----------------------------------------*/
 
 #Graph3 {
-    background: #535bd4 url('../images/Graph3-bg.jpg') no-repeat;
     background-size: cover;
     background-position: center center;
     color: #ffffff;
@@ -479,7 +479,6 @@ a:hover, a:active, a:focus {
 }
 
 #Graph3 .overlay {
-  background: #1dc9e3;
   opacity: 0.9;
   position: absolute;
   width: 100%;
@@ -537,6 +536,51 @@ a:hover, a:active, a:focus {
   color: #ffffff;
 }
 
+/*---------------------------------------
+    Graph4 section              
+-----------------------------------------*/
+#Graph4 {
+  background-size: cover;
+  background-position: center center;
+  color: #ffffff;
+  position: relative;
+  height: 800px;
+}
+
+#Graph4 .overlay {
+  background:  #ffffff;
+  opacity: 0.9;
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  top: 0;
+  left: 0;
+  right: 0;
+}
+
+
+/*---------------------------------------
+    Graph5 section              
+-----------------------------------------*/
+
+#Graph5 {
+  background-size: cover;
+  background-position: center center;
+  color: #ffffff;
+  position: relative;
+  height: 450px;
+}
+
+#Graph5 .overlay {
+  background: #1dc9e3;
+  opacity: 0.9;
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  top: 0;
+  left: 0;
+  right: 0;
+}
 
 /*---------------------------------------
    Footer section              
