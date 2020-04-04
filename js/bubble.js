@@ -1,4 +1,4 @@
-var widthBubble = 900,
+var widthBubble = 1000,
     heightBubble = 600,
     padding = 1.5, // separation between same-color nodes
     clusterPadding = 6, // separation between different-color nodes
@@ -59,7 +59,14 @@ d3.csv("data/words.csv",
 
         var node = svg.selectAll("circle")
                 .data(nodes)
-                .enter().append("g");;
+                .enter()
+                .append("g")
+                .call(
+                    d3.drag()
+                        .on("start", dragstarted)
+                        .on("drag", dragged)
+                        .on("end", dragended)
+                );
     
         node.append("circle")
             .style("fill", d => colorbubble(d.cluster))
@@ -71,12 +78,12 @@ d3.csv("data/words.csv",
                 .style("text-anchor", "middle")
                 .text(function(d) { return d.text.substring(0, d.radius / 3); });
 
-        node.call(
-                d3.drag()
-                    .on("start", dragstarted)
-                    .on("drag", dragged)
-                    .on("end", dragended)
-            );
+        // node.call(
+        //         d3.drag()
+        //             .on("start", dragstarted)
+        //             .on("drag", dragged)
+        //             .on("end", dragended)
+        //     );
 
         function dragstarted(d) {
             d3.event.sourceEvent.stopPropagation();
@@ -136,9 +143,28 @@ d3.csv("data/words.csv",
             //     return k;
             // })
 
-
+            // node.selectAll("circle").each(cluster(2.5));
+            // node.each(collide(.5))
+            // node.attr("transform", function (d) {
+            //     var k = "translate(" + d.x + "," + d.y + ")";
+            //     return k;
+            // })
+            node.selectAll("g").each(cluster(0.015))
+                .each(collide(.5))
+                .attr("transform", function (d) {
+                    var k = "translate(" + d.x + "," + d.y + ")";
+                    return k;
+            })
+            
             node.call(updateNode);
         }
+
+        // node.selectAll("g").each(cluster(2.5))
+        //     .each(collide(.5))
+        //     .attr("transform", function (d) {
+        //         var k = "translate(" + d.x + "," + d.y + ")";
+        //         return k;
+        //     })
 
         // Move d to be adjacent to the cluster node.
         function cluster(alpha) {
@@ -158,10 +184,12 @@ d3.csv("data/words.csv",
                 }
             };
         }
-
+      
         // Resolves collisions between d and all other circles.
         function collide(alpha) {
-            var quadtree = d3.quadtree(nodes);
+            var quadtree = d3.quadtree()
+            .extent([[-1, -1], [widthBubble + 1, heightBubble + 1]])
+            .addAll(nodes);
             return function (d) {
                 var r = d.radius + maxRadius + Math.max(padding, clusterPadding),
                     nx1 = d.x - r,

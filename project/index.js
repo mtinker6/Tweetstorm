@@ -1,4 +1,4 @@
-var width = 960,
+var width = 1200,
     height = 500,
     padding = 1.5, // separation between same-color nodes
     clusterPadding = 6, // separation between different-color nodes

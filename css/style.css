@@ -542,9 +542,10 @@ a:hover, a:active, a:focus {
 #Graph4 {
   background-size: cover;
   background-position: center center;
-  color: #ffffff;
+  color: #000000;
+  background:  #ffffff;
   position: relative;
-  height: 800px;
+  height: 900px;
 }
 
 #Graph4 .overlay {
@@ -572,6 +573,29 @@ a:hover, a:active, a:focus {
 }
 
 #Graph5 .overlay {
+  background: #1dc9e3;
+  opacity: 0.9;
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  top: 0;
+  left: 0;
+  right: 0;
+}
+
+/*---------------------------------------
+    Graph5 section              
+-----------------------------------------*/
+
+#Graph6 {
+  background-size: cover;
+  background-position: center center;
+  color: #ffffff;
+  position: relative;
+  height: 450px;
+}
+
+#Graph6 .overlay {
   background: #1dc9e3;
   opacity: 0.9;
   position: absolute;
