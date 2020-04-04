@@ -1,0 +1,80 @@
+.counties {
+	fill: none;
+	/* stroke: rgb(255, 255, 255); */
+	stroke-linejoin: round;
+}
+.states {
+fill: none;
+stroke-linejoin: round;
+}
+.dashboard1 {
+/* background-color: rgba(75, 110, 30, 0.781); */
+float: left;
+width: 48%;
+height: 70%;
+margin-top: 0.1%;
+margin-left: 0.1%;
+margin-bottom: 0.1%;
+margin-right: 0.1%;
+}
+.dashboard2 {
+/* background-color: rgba(47, 47, 235, 0.781); */
+float: right;
+width: 30%;
+height: 90%;
+margin-top: 0.1%;
+margin-left: 0.1%;
+margin-bottom: 0.1%;
+margin-right: 0.1%;
+}
+.dashboard3 {
+/* background-color: rgba(193, 193, 209, 0.932); */
+float: right;
+width: 21%;
+height: 90%;
+margin-top: 0.1%;
+margin-left: 0.1%;
+margin-bottom: 0.1%;
+margin-right: 0.1%;
+}
+.dashboard4 {
+/* background-color: rgba(193, 193, 209, 0.911); */
+float: left;
+width: 48%;
+height: 20%;
+margin-top: 0.1%;
+margin-left: 0.1%;
+margin-bottom: 0.1%;
+margin-right: 0.1%;
+}
+.background {
+pointer-events: all;
+fill: none;
+opacity: 1;
+stroke: aqua;
+stroke-width: 3;
+}
+.map-layer {
+stroke: rgb(204, 204, 204);
+}
+.polarity_dot {
+fill: red;
+}
+.subjectivity_dot {
+fill: red;
+}
+.polarity_rule {
+fill: red;
+}
+.subjectivity_rule {
+fill: red;
+}
+.opaque {
+opacity: 1;
+}
+.statehover {
+fill: cyan;
+letter-spacing: 0.2cm;
+font-size: 35px;
+font-weight: bold;
+}
