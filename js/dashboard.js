@@ -1,13 +1,10 @@
 var window_width = $(window).width();
-var width01 = 600, height01 = 400, width02 = 350, height02 = 600, 
-    width03 = 260, height03 = 600, width04 = 600, height04 = 200, centered, geojson, topo, counts, g2, g3, g4, k = 1;
+var width01 = 640, height01 = 400, width02 = 370, height02 = 600, 
+    width03 = 260, height03 = 600, width04 = 640, height04 = 200, centered, geojson, topo, counts, g2, g3, g4, k = 1;
 var svg01 = d3.select(".dashboard1").append("svg").attr("width", width01).attr("height", height01);
 var svg02 = d3.select(".dashboard2").append("svg").attr("width", width02).attr("height", height02);
 var svg03 = d3.select(".dashboard3").append("svg").attr("width", width03).attr("height", height03);
 var svg04 = d3.select(".dashboard4").append("svg").attr("width", width04).attr("height", height04);
-
-// Try setting svg dimensions dynamically
-// console.log(document.getElementById("dash").clientWidth);
 
 // Default event and state index
 var layers = ["Candidate Preference", "Polarity", "Subjectivity"];
@@ -22,9 +19,9 @@ svg04.append('rect').attr('class', 'background').attr('width', width04).attr('he
 // State name on hover
 svg02.append('text').attr('class','statehover').attr('x',10).attr('y',50).attr("fill", "#46b5d1");
 svg02.append('text').attr('class','statedetails preferreddetails').attr('x',10).attr('y',90).attr("fill", "white").style("font-weight",'bold');
-svg02.append('text').attr('class','statedetails actualdetails').attr('x',260).attr('y',90).attr("fill", "white").style("font-weight",'bold');
-svg02.append('svg:image').attr('class','statedetails statepreferred').attr('x',57).attr('y',105).attr('width',75).attr('height',75);
-svg02.append('svg:image').attr('class','statedetails elected').attr('x',255).attr('y',105).attr('width',75).attr('height',75);
+svg02.append('text').attr('class','statedetails actualdetails').attr('x',258).attr('y',90).attr("fill", "white").style("font-weight",'bold');
+svg02.append('svg:image').attr('class','statedetails statepreferred').attr('x',45).attr('y',105).attr('width',75).attr('height',75);
+svg02.append('svg:image').attr('class','statedetails elected').attr('x',245).attr('y',105).attr('width',75).attr('height',75);
 svg02.append('text').attr('class','statedetails statepolarity').attr("fill", "white").style("font-weight",'bold').style('font-size','22px').attr('x',10).attr('y',220);
 svg02.append('text').attr('class','statedetails statesubjectivity').attr("fill", "white").style("font-weight",'bold').style('font-size','22px').attr('x',10).attr('y',250);
 svg02.append('text').attr('class','statedetails top-themes').attr("fill", "white").style("font-weight",'bold').style('font-size','22px').attr('x',10).attr('y',300);
@@ -32,11 +29,11 @@ svg02.append('text').attr('class','statedetails theme1').attr('x',10).attr('y',3
 svg02.append('text').attr('class','statedetails theme2').attr('x',10).attr('y',349).attr("fill", "white");
 svg02.append('text').attr('class','statedetails theme3').attr('x',10).attr('y',370).attr("fill", "white");
 // Titles
-svg03.append('text').attr('x',22).attr('y',40).attr('fill','white').attr("font-weight",'bold').text('Subjectivity');
-svg03.append('text').attr('x',158).attr('y',40).attr('fill','white').attr("font-weight",'bold').text('Polarity');
-svg04.append('text').attr('x',53).attr('y',20).attr('fill','white').attr("font-weight",'bold').text('Candidate');
-svg04.append('text').attr('x',25).attr('y',40).attr('fill','white').attr("font-weight",'bold').text('Preference Score');
-svg04.append('text').attr('x',25).attr('y',100).attr('fill','white').attr("font-weight",'bold').attr('font-size','26px').text('Select map layer');
+svg03.append('text').attr('x',33).attr('y',40).attr('fill','white').style("font-weight",'bold').text('Subjectivity');
+svg03.append('text').attr('x',166).attr('y',40).attr('fill','white').style("font-weight",'bold').text('Polarity');
+svg04.append('text').attr('x',53).attr('y',20).attr('fill','white').style("font-weight",'bold').text('Candidate');
+svg04.append('text').attr('x',29).attr('y',40).attr('fill','white').style("font-weight",'bold').text('Preference Score');
+svg04.append('text').attr('x',25).attr('y',100).attr('fill','white').style("font-weight",'bold').style('font-size','26px').text('Select map layer');
 
 // Legends, scales, axes
 var thickness = 20; var legendlength = 400;
@@ -92,7 +89,7 @@ buttonsLayer.selectAll('text').data(layers).enter().append('text')
           .attr('x', 25)
           .attr('y', function(d,i) {return 130 + i*26})
           .text(function(d) {return d;})
-          .attr('font-size','18px')
+          .style('font-size','18px')
           .style('fill', function(d,i) {return i==0 ? 'cyan' : 'white';})
           .on('click', click_button)
           .on('mouseover', function() {d3.select(this).style('cursor', 'pointer');});
@@ -100,8 +97,8 @@ slideLayer.call(sliderStep)
           .attr('transform', 'translate(290,100)')
           .style("fill", "white")
           .append('text').text('Selected Event:')
-          .attr('font-size','24px')
-          .attr("font-weight", "bold")
+          .style('font-size','24px')
+          .style("font-weight", "bold")
           .style("fill", "white")
           .attr('transform', 'translate(-10,50)')
 slideLayer.append('text').text(debates[debate]) // Display selected event
@@ -249,8 +246,8 @@ function draw_map(array) {
         .attr('y', 476)
         .attr('fill', 'white')
         .text('');
-    g3.append('text').attr('fill','white').attr('x',185).attr('y',501).text('0') // Min polarity
-    g3.append('text').attr('fill','white').attr('x',169).attr('y',72).text('0.140') // Max polarity
+    g3.append('text').attr('fill','white').attr('x',186).attr('y',501).text('0') // Min polarity
+    g3.append('text').attr('fill','white').attr('x',172).attr('y',72).text('0.140') // Max polarity
 
     g4.selectAll('.points').data(geojson.features).enter().append('circle').attr('class', 'points') // State subjectivity points
         .attr('cx', 45)
@@ -273,8 +270,8 @@ function draw_map(array) {
         .attr('y', 476)
         .attr('fill', 'white')
         .text('');
-    g4.append('text').attr('fill','white').attr('x',47).attr('y',501).text('0.240') // Min subjectivity
-    g4.append('text').attr('fill','white').attr('x',47).attr('y',72).text('0.380') // Max subjectivity
+    g4.append('text').attr('fill','white').attr('x',50).attr('y',501).text('0.240') // Min subjectivity
+    g4.append('text').attr('fill','white').attr('x',50).attr('y',72).text('0.380') // Max subjectivity
 
     // Preferred candidate
     svg04.append("path")

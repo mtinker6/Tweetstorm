@@ -382,10 +382,11 @@ a:hover, a:active, a:focus {
     Graph1 section              
 -----------------------------------------*/
 
-#Graph1 .col-md-3 {
+#Graph1 {
   display: block;
   width: 100%;
   padding-bottom: 1rem;
+  background-color: #151965;
 }
 
 #Graph1 img {
