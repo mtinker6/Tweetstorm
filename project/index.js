@@ -1,13 +1,30 @@
+var getUrlParameter = function getUrlParameter(sParam) {
+    var sPageURL = window.location.search.substring(1),
+        sURLVariables = sPageURL.split('&'),
+        sParameterName,
+        i;
+
+    for (i = 0; i < sURLVariables.length; i++) {
+        sParameterName = sURLVariables[i].split('=');
+
+        if (sParameterName[0] === sParam) {
+            return sParameterName[1] === undefined ? true : decodeURIComponent(sParameterName[1]);
+        }
+    }
+};
+
 var width = 1200,
     height = 500,
     padding = 1.5, // separation between same-color nodes
     clusterPadding = 6, // separation between different-color nodes
     maxRadius = 12;
 
+
+width = getUrlParameter('width');
+
+
 var color = d3.scale.ordinal()
       .range(["#7A99AC", "#E4002B"]);
-
-
 
 d3.text("words.csv", function(error, text) {
   if (error) throw error;

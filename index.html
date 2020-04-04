@@ -55,7 +55,7 @@ http://www.templatemo.com/tm-492-app-starter
 		}		
 
 		</style>
-
+         
 </head>
 <body data-spy="scroll" data-target=".navbar-collapse" data-offset="50">
 
@@ -410,7 +410,7 @@ Twitter, “a popular microblogging service where users create status messages (
                          <h1><span  style="color: black !important;">Graph 4</span></h1>
                     </div>
                     <!-- <div id="bubbleChart" style="width: 900px;"></div> -->
-                    <iframe src="/project/index.html" style="width: 1290px;height: 530px;" frameBorder="0"></iframe>
+                    <iframe id="bubbleChartIFrame" src="/project/index.html?width=1200" style="width: 1290px;height: 530px;" frameBorder="0"></iframe>
                </div>
           </div>
      </div>
@@ -496,6 +496,28 @@ Twitter, “a popular microblogging service where users create status messages (
 
 <link rel="stylesheet" href="css/TimelineSentiment.css">
 <link rel="stylesheet" href="css/bubble.css">
+
+<script>
+     $(function(){
+          function IsMobileDeviceIFrame(){
+               return WindowScreen() < 650
+          }
+
+          function WindowScreenIFrame(){
+               return $(window).width();
+          }
+
+          
+          if(IsMobileDeviceIFrame()) {
+               widthIframe =  WindowScreenIFrame() * 0.9;
+
+               $('#bubbleChartIFrame').attr('src', '/project/index.html?width=' + widthIframe);
+          }
+
+     })
+
+</script>
+
 
 </body>
 </html>
