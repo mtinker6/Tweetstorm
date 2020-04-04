@@ -298,7 +298,7 @@ function GenerateLineGraph(dataSet, firstLoad = false) {
                         .append('path')
                         .attr('class', 'linePathTrump')
                         .attr('d', numberRange(dataTrump))
-                        .attr('transform', `translate(${marginLine.left + totalWidthLine * 0.01}, 0)`)
+                        .attr('transform', `translate(${marginLine.left - totalWidthLine * 0.03}, 0)`)
                         .style('fill', 'none')
                         .style('stroke', 'none')
                         .transition(tFast)
@@ -308,7 +308,7 @@ function GenerateLineGraph(dataSet, firstLoad = false) {
                 update => {
                     update
                         .transition(t)
-                        .attr('transform', `translate(${marginLine.left + totalWidthLine * 0.01}, 0)`)
+                        .attr('transform', `translate(${marginLine.left - totalWidthLine * 0.03}, 0)`)
                         .attr('d', numberRange(dataTrump))
                 },
 
@@ -319,35 +319,6 @@ function GenerateLineGraph(dataSet, firstLoad = false) {
                 }
             );
 
-    // lineTextsHillary
-    // 	.selectAll('.lineTextHillary')
-    // 	.data(dataHillary, d => d.event)
-    // 	.join(
-    // 		enter => {
-    // 			enter
-    // 				.append("text")
-    // 				.attr('class', 'lineTextHillary lineTextSelected')
-    // 				.attr("x", d => xScaleLine(d.event) + xScaleLine.bandwidth()/2 + 10)
-    // 				.attr("y", d => yScaleLine(d.score) - 5)
-    // 				.text("Hillary")
-    // 				.attr("stroke", "white")
-    // 				.style("opacity", (d, i) => getLinChartData(d, i, dataTrump).TextOpacity)
-    // 				.transition(tFast)
-    // 				.attr('stroke',  'orange')
-    // 		},
-
-    // 		update => {
-    // 			update
-    // 				.transition(t)
-    // 				.attr("y", d => yScaleLine(d.score) - 5)
-    // 		},
-
-    // 		exit => {
-    // 			exit
-    // 				.transition(t)
-    // 				.remove()
-    // 		}
-    // 	);
     lineTextsTrump
         .selectAll('.lineTextTrump')
         .data(dataTrump, d => d.event)
@@ -454,7 +425,7 @@ function GenerateLineGraph(dataSet, firstLoad = false) {
                     .append('path')
                     .attr('class', 'linePathHillary')
                     .attr('d', numberRange(dataHillary))
-                    .attr('transform', `translate(${marginLine.left + totalWidthLine * 0.01}, 0)`)
+                    .attr('transform', `translate(${marginLine.left - totalWidthLine * 0.03}, 0)`)
                     .style('fill', 'none')
                     .style('stroke', 'none')
                     .transition(tFast)
@@ -465,7 +436,7 @@ function GenerateLineGraph(dataSet, firstLoad = false) {
                 update
                     .transition(t)
                     .attr('d', numberRange(dataHillary))
-                    .attr('transform', `translate(${marginLine.left + totalWidthLine * 0.01}, 0)`)
+                    .attr('transform', `translate(${marginLine.left - totalWidthLine * 0.03}, 0)`)
             },
 
             exit => {
@@ -1350,9 +1321,9 @@ function lineChartNodeClick(d, resolve = null){
     }
 
     var lineGraphPromise = () => {
-            return new Promise((resolve, reject) => {
-                RefreshLineGraph();
-                resolve();
+        return new Promise((resolve, reject) => {
+            RefreshLineGraph();
+            resolve();
         })
     }
 
@@ -1360,10 +1331,17 @@ function lineChartNodeClick(d, resolve = null){
         return new Promise((resolve, reject) => {
             BuildFDGraph(cachedFDGraph);
             resolve();
-    })
-}
+        })
+    }
 
-    Promise.all([graphPromise(), lineGraphPromise(), FDGraphPromise()]).then(() => {
+    var EmojiAnalysisPromise = () => {
+        return new Promise((resolve, reject) => {
+            CreateEmojiAnalysisDist(d);
+            resolve();
+        })
+    }
+
+    Promise.all([graphPromise(), lineGraphPromise(), FDGraphPromise(), EmojiAnalysisPromise()]).then(() => {
         if(resolve != null){
             resolve();
         }
@@ -1539,6 +1517,7 @@ async function btnClick (){
     }
 
     var eventFinished = false;
+    var count = 0;
     do {
         if(eventQueue.findIndex((element) => element == key) == 0 && eventQueueProcessing != key)
         {
@@ -1551,8 +1530,9 @@ async function btnClick (){
                 eventQueue.shift();
             });
         }
+        count = count + 1;
         await sleep(50);
-    } while (eventFinished == false);
+    } while (eventFinished == false && count < 100);
 }
 
 var WireUpEvents = () => {
@@ -1654,6 +1634,11 @@ function processTopThemesDictFurter(topic, dict) {
     }
 }
 
+var getSortedArray =
+    dict => Object.keys(dict)
+                .map(key => [key.charAt(0).toUpperCase() + key.substr(1).toLowerCase(), dict[key]])
+                .sort((a, b) => (a[1] < b[1]) ? 1 : -1);
+
 LoadAllGraphs();
 function LoadAllGraphs(){
     var timelinekey = d3.csv('data/timelinekeynew.csv',
@@ -1684,11 +1669,7 @@ function LoadAllGraphs(){
     //     })
     // );
 
-    var getSortedArray =
-        dict => Object.keys(dict)
-                        .map(key => [key.charAt(0).toUpperCase() + key.substr(1).toLowerCase(), dict[key]])
-                        .sort((a, b) => (a[1] < b[1]) ? 1 : -1);
-
+   
     Promise.all([timelinekey])
         .then(([timelinekeyData]) => {
             cachedData = timelinekeyData;
@@ -1955,6 +1936,246 @@ function BuildFDGraph(data){
         }
     };
 
+}
+
+function CreateEmojiAnalysisDist(event) {
+    if(event == "First_debate"){
+        CreateEmojiAnalysis('emoji_1st.csv')
+    }
+    else if(event == "VP_debate"){
+        CreateEmojiAnalysis('emoji_vp.csv')
+    }
+    else if(event == "Second_debate"){
+        CreateEmojiAnalysis('emoji_2nd.csv')
+    }
+    else if(event == "Third_debate"){
+        CreateEmojiAnalysis('emoji_3rd.csv')
+    }
+    else if(event == "Before_Election"){
+        CreateEmojiAnalysis('emoji_e.csv')
+    }
+}
+
+
+SADNESS_EMOJI = [
+    '😔','😥','😩','😫','🤕','😦','😧','😓','😭','😒','😯','☹️','🙁','😢','😟','🤥','😞','😨','😰','🤒','😷','😿','😪','😌','👎'
+]
+
+SUPRISE_EMOJI = [
+    '🤯','😂','😆','😛','😜','😝','🤓','😹','😅','😲','😮','🙀','😱','👻','👽','🤖','🤡','😈','😼'
+]
+
+JOY_EMOJI = [
+    '😀','😁','😃','😄','😄','😉','😊','😎','😋','😙','😚','☺️','🙂','🤗','🤩','😘','🥰','😻','😍','😇','😸','😺','😄','😽','🥳','🤠','🤤','🤭','🤑','🙏','👍'
+]
+
+DISGUST_EMOJI = [
+    '🥵','🥶','🤬','🤢','🤮','🤧','😤','😡','😖','😣','😠','😾','👿','💀','👹','👺','💩','🖕'
+]
+
+UNCERTAIN_EMOJI = [
+    '😕','🤔','🤨','😐','😑','😶','🙄','😬','🤪','😵','😗','😏','🧐','🥴','😅','🙃','🥺','😳','😴','🤐','🤫','🤞'
+]
+
+
+
+CreateEmojiAnalysis('emoji_1st.csv')
+
+function CreateEmojiAnalysis(fileName) {
+    d3.csv('data/' + fileName,
+    rawrow => {
+        emoji = GetEmojiFromName(rawrow['name']);
+        return ({
+            name : emoji,
+            category : rawrow['category'],
+            value : rawrow['count']
+        })
+    }
+    ).then(
+        rawData => {
+            var processedData = ProcessEmojiData(rawData);
+            BuildEmojiChart(processedData);
+        }
+    )
+}
+
+function GetEmojiFromName(name){
+    var number = name.split("_")[1];
+    if(name.startsWith("suprise") && SUPRISE_EMOJI.length > number) {
+         return SUPRISE_EMOJI[number];
+    }
+    else if (name.startsWith("uncertain") && UNCERTAIN_EMOJI.length > number) {
+        return UNCERTAIN_EMOJI[number];
+    }
+    else if (name.startsWith("joy") && JOY_EMOJI.length > number) {
+        return JOY_EMOJI[number];
+    }
+    else if (name.startsWith("sadness") && SADNESS_EMOJI.length > number) {
+        return SADNESS_EMOJI[number];
+    }
+    else if (name.startsWith("disgust") && DISGUST_EMOJI.length > number) {
+        return DISGUST_EMOJI[number];
+    }
+    else {
+        return "N/A"
+    }
+}
+
+var JSGroupBy = function(xs, key) {
+    return xs.reduce(function(rv, x) {
+      (rv[x[key]] = rv[x[key]] || []).push(x);
+      return rv;
+    }, {});
+  };
+
+  var getArray =
+    dict => Object.keys(dict)
+                    .map(key => [key, dict[key]]);
+
+function ProcessEmojiData (rawData){
+    var groupby = JSGroupBy(rawData, 'category');
+    
+
+    var converted = getArray(groupby);
+
+    var mapped = []
+
+    for (i = 0; i < converted.length; i++) {
+        mapped.push({'name': converted[i][0], 'children': converted[i][1]});
+    }
+    var processed = {
+        name: "emoji",
+        children: mapped
+    }
+    return processed;
+}
+
+function BuildEmojiChart(data){
+    $('#TEmoji').html('');
+    $('#TEmoji').append(chartEmoji(data));
+}
+
+//#reference below is from https://observablehq.com/@d3/zoomable-sunburst
+
+chartEmoji = data => {
+    partition = data => {
+        const root = d3.hierarchy(data)
+            .sum(d => d.value)
+            .sort((a, b) => b.value - a.value);
+        return d3.partition()
+            .size([2 * Math.PI, root.height + 1])
+          (root);
+      }
+    
+    color = d3.scaleOrdinal(d3.quantize(d3.interpolateRainbow, data.children.length + 1))
+    
+    format = d3.format(",d")
+    
+    widthEmoji = 500
+    
+    radius = widthEmoji / 6
+    
+    arc = d3.arc()
+        .startAngle(d => d.x0)
+        .endAngle(d => d.x1)
+        .padAngle(d => Math.min((d.x1 - d.x0) / 2, 0.005))
+        .padRadius(radius * 1.5)
+        .innerRadius(d => d.y0 * radius)
+        .outerRadius(d => Math.max(d.y0 * radius, d.y1 * radius - 1))
+
+    const root = partition(data);
+  
+    root.each(d => d.current = d);
+  
+    const svg = d3.create("svg")
+        .attr("viewBox", [0, 0, widthEmoji, widthEmoji])
+        .style("font", "10px sans-serif");
+  
+    const g = svg.append("g")
+        .attr("transform", `translate(${widthEmoji / 2},${widthEmoji / 2})`);
+  
+    const path = g.append("g")
+      .selectAll("path")
+      .data(root.descendants().slice(1))
+      .join("path")
+        .attr("fill", d => { while (d.depth > 1) d = d.parent; return color(d.data.name); })
+        .attr("fill-opacity", d => arcVisible(d.current) ? (d.children ? 0.6 : 0.4) : 0)
+        .attr("d", d => arc(d.current));
+  
+    path.filter(d => d.children)
+        .style("cursor", "pointer")
+        .on("click", clicked);
+  
+    path.append("title")
+        .text(d => `${d.ancestors().map(d => d.data.name).reverse().join("/")}\n${format(d.value)}`);
+  
+    const label = g.append("g")
+        .attr("pointer-events", "none")
+        .attr("text-anchor", "middle")
+        .style("user-select", "none")
+      .selectAll("text")
+      .data(root.descendants().slice(1))
+      .join("text")
+        .attr("dy", "0.35em")
+        .attr("fill-opacity", d => +labelVisible(d.current))
+        .attr("transform", d => labelTransform(d.current))
+        .text(d => d.data.name);
+  
+    const parent = g.append("circle")
+        .datum(root)
+        .attr("r", radius)
+        .attr("fill", "none")
+        .attr("pointer-events", "all")
+        .on("click", clicked);
+  
+    function clicked(p) {
+      parent.datum(p.parent || root);
+  
+      root.each(d => d.target = {
+        x0: Math.max(0, Math.min(1, (d.x0 - p.x0) / (p.x1 - p.x0))) * 2 * Math.PI,
+        x1: Math.max(0, Math.min(1, (d.x1 - p.x0) / (p.x1 - p.x0))) * 2 * Math.PI,
+        y0: Math.max(0, d.y0 - p.depth),
+        y1: Math.max(0, d.y1 - p.depth)
+      });
+  
+      const t = g.transition().duration(750);
+  
+      // Transition the data on all arcs, even the ones that aren’t visible,
+      // so that if this transition is interrupted, entering arcs will start
+      // the next transition from the desired position.
+      path.transition(t)
+          .tween("data", d => {
+            const i = d3.interpolate(d.current, d.target);
+            return t => d.current = i(t);
+          })
+        .filter(function(d) {
+          return +this.getAttribute("fill-opacity") || arcVisible(d.target);
+        })
+          .attr("fill-opacity", d => arcVisible(d.target) ? (d.children ? 0.6 : 0.4) : 0)
+          .attrTween("d", d => () => arc(d.current));
+  
+      label.filter(function(d) {
+          return +this.getAttribute("fill-opacity") || labelVisible(d.target);
+        }).transition(t)
+          .attr("fill-opacity", d => +labelVisible(d.target))
+          .attrTween("transform", d => () => labelTransform(d.current));
+    }
+    
+    function arcVisible(d) {
+      return d.y1 <= 3 && d.y0 >= 1 && d.x1 > d.x0;
+    }
+  
+    function labelVisible(d) {
+      return d.y1 <= 3 && d.y0 >= 1 && (d.y1 - d.y0) * (d.x1 - d.x0) > 0.03;
+    }
+  
+    function labelTransform(d) {
+      const x = (d.x0 + d.x1) / 2 * 180 / Math.PI;
+      const y = (d.y0 + d.y1) / 2 * radius;
+      return `rotate(${x - 90}) translate(${y},0) rotate(${x < 180 ? 0 : 180})`;
+    }
+  
+    return svg.node();
 }
 
 /*!

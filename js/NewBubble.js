@@ -14,7 +14,7 @@ var getUrlParameter = function getUrlParameter(sParam) {
 };
 
 var width = 1200,
-    height = 600,
+    height = 700,
     padding = 1.5, // separation between same-color nodes
     clusterPadding = 6, // separation between different-color nodes
     maxRadius = 12;
