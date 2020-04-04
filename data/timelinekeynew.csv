@@ -1,0 +1,11 @@
+event,candidate,overall_polarity,overall_subjectivity,top_theme_1,top_theme_2,top_theme_3,top_theme_4,top_theme_5,swing_state_1,swing_state_2,swing_state_3
+First debate,Trump,0.076243572,0.277054432,Jobs,Racial Issues,Make America Great Again,N/A,N/A,Hillary,Hillary,Trump
+VP debate,Trump,0.064545444,0.291867685,Jobs,Tax,Make America Great Again,N/A,N/A,Hillary,Hillary,Trump
+Second debate,Trump,0.045112611,0.298946948,Women,Benghazi,Racial Issues,N/A,N/A,Trump,Trump,Trump
+Third debate,Trump,0.041131877,0.330759629,Jobs,Benghazi,Make America Great Again,N/A,N/A,Trump,Hillary,Hillary
+Before Election,Trump,0.146534729,0.273898503,Make America Great Again,Women,Racial Issues,N/A,N/A,Trump,Trump,Trump
+First debate,Hillary,0.071661242,0.333709021,Jobs,Racial Issues,Make America Great Again,N/A,N/A,Hillary,Hillary,Trump
+VP debate,Hillary,0.05400128,0.305185837,Jobs,Tax,Make America Great Again,N/A,N/A,Hillary,Hillary,Trump
+Second debate,Hillary,0.071603643,0.381448678,Women,Benghazi,Racial Issues,N/A,N/A,Trump,Trump,Trump
+Third debate,Hillary,0.033619163,0.336457203,Jobs,Benghazi,Make America Great Again,N/A,N/A,Trump,Hillary,Hillary
+Before Election,Hillary,0.133271042,0.259338929,Make America Great Again,Women,Racial Issues,N/A,N/A,Trump,Trump,Trump

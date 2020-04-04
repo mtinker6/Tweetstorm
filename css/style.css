@@ -475,6 +475,7 @@ a:hover, a:active, a:focus {
     background-size: cover;
     background-position: center center;
     color: #ffffff;
+    background-color: lightgray;
     position: relative;
 }
 
@@ -568,12 +569,13 @@ a:hover, a:active, a:focus {
   background-size: cover;
   background-position: center center;
   color: #ffffff;
+  background: #e8f4f8;
   position: relative;
-  height: 450px;
+  height: 950px;
 }
 
 #Graph5 .overlay {
-  background: #1dc9e3;
+  background: #e8f4f8;
   opacity: 0.9;
   position: absolute;
   width: 100%;
@@ -591,12 +593,13 @@ a:hover, a:active, a:focus {
   background-size: cover;
   background-position: center center;
   color: #ffffff;
+  background: #ffffff;
   position: relative;
-  height: 450px;
+  height: 900px;
 }
 
 #Graph6 .overlay {
-  background: #1dc9e3;
+  background: #ffffff;
   opacity: 0.9;
   position: absolute;
   width: 100%;

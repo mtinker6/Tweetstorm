@@ -9,6 +9,7 @@ function IsMobileDevice(){
 
 var cachedData;
 var cachedtopthemes;
+var cachedFDGraph;
 
 //GenerateLineGraph - start
 
@@ -67,7 +68,7 @@ InitLineGraphFrame();
 InitLineGraph();
 
 function UpdateLineChart() {
-    marginLine = { top: 60, right: totalWidthLine * 0.06, bottom: totalWidthLine * 0.045, left: totalWidthLine * 0.06 };
+    marginLine = { top: 60, right: totalWidthLine * 0.06, bottom: totalWidthLine * 0.045, left: totalWidthLine * 0.1 };
     widthLine = totalWidthLine - marginLine.right - marginLine.left;
     heightLine = totalHeightLine - marginLine.top - marginLine.bottom;
 
@@ -102,7 +103,7 @@ function UpdateLineChart() {
 }
 
 function InitLineGraphFrame(){
-    marginLine = { top: 60, right: totalWidthLine * 0.06, bottom: totalWidthLine * 0.045, left: totalWidthLine * 0.06 };
+    marginLine = { top: 60, right: totalWidthLine * 0.06, bottom: totalWidthLine * 0.045, left: totalWidthLine * 0.1 };
     widthLine = totalWidthLine - marginLine.right - marginLine.left;
     heightLine = totalHeightLine - marginLine.top - marginLine.bottom;
 
@@ -570,7 +571,7 @@ if(IsMobileDevice()) {
 }
 
 var totalHeight = totalWidth * 0.5;
-var margin = { top: 40, right: 10, bottom: 10, left: 80 };
+var margin = { top: 40, right: 10, bottom: 10, left: 120 };
 var width = totalWidth - margin.right - margin.left - 100;
 var height = totalHeight - margin.top - margin.bottom;
 
@@ -622,7 +623,7 @@ function GenerateTopThemeGraphChart(dataSet, chartResolve){
     var data;
     if(selectBtns.length == 1){
         var eventName = selectBtns.attr('event');
-        data = dataSet[eventName].slice(0, 5)
+        data = dataSet[eventName].slice(0, 3)
     }
     else{
         var firstRecord = true
@@ -701,7 +702,7 @@ function GenerateTopThemeGraphChart(dataSet, chartResolve){
         )
 
     // Update Axes.
-    xAxisDraw.transition(t).call(xAxis.scale(xScale));
+    //xAxisDraw.transition(t).call(xAxis.scale(xScale));
     yAxisDraw.transition(t).call(yAxis.scale(yScale)).selectAll("text").attr("class", 'TopThemeName');
 
 }
@@ -1355,7 +1356,14 @@ function lineChartNodeClick(d, resolve = null){
         })
     }
 
-    Promise.all([graphPromise(), lineGraphPromise()]).then(() => {
+    var FDGraphPromise = () => {
+        return new Promise((resolve, reject) => {
+            BuildFDGraph(cachedFDGraph);
+            resolve();
+    })
+}
+
+    Promise.all([graphPromise(), lineGraphPromise(), FDGraphPromise()]).then(() => {
         if(resolve != null){
             resolve();
         }
@@ -1364,7 +1372,7 @@ function lineChartNodeClick(d, resolve = null){
 
 function mouseoverLineCircle(d) {
     d3.select(this).attr('r', 10);
-    tip.show(d, this);
+    //tip.show(d, this);
 }
 
 function mouseoutLineCircle(d) {
@@ -1583,21 +1591,21 @@ var WireUpEvents = () => {
 
 function ProcessTopThemes(data) {
     var firstDebateData = data.filter(d => d.event == 'First debate');
+    var VPDebateData = data.filter(d => d.event == 'VP debate');
     var secondDebateData = data.filter(d => d.event == 'Second debate');
     var thirdDebateData = data.filter(d => d.event == 'Third debate');
-    var fourthDebateData = data.filter(d => d.event == 'Fourth debate');
     var lastDebateData = data.filter(d => d.event == 'Before Election');
 
     var dictFirst = {};
+    var dictVP = {};
     var dictSecond = {};
     var dictThird = {};
-    var dictFourth = {};
     var dictFinal = {};
 
     processTopThemesDict(firstDebateData, dictFirst);
+    processTopThemesDict(VPDebateData, dictVP);
     processTopThemesDict(secondDebateData, dictSecond);
     processTopThemesDict(thirdDebateData, dictThird);
-    processTopThemesDict(fourthDebateData, dictFourth);
     processTopThemesDict(lastDebateData, dictFinal);
 
     var getSortedArray =
@@ -1606,22 +1614,23 @@ function ProcessTopThemes(data) {
                         .sort((a, b) => (a[1] < b[1]) ? 1 : -1);
 
     var arrayFirst = getSortedArray(dictFirst);
+    var arrayVP = getSortedArray(dictVP);
     var arraySecond = getSortedArray(dictSecond);
     var arrayThird = getSortedArray(dictThird);
-    var arrayFourth = getSortedArray(dictFourth);
     var arrayFinal = getSortedArray(dictFinal);
 
     var retval = {};
     retval['First_debate'] = arrayFirst;
+    retval['VP_debate'] = arrayVP;
     retval['Second_debate'] = arraySecond;
     retval['Third_debate'] = arrayThird;
-    retval['Fourth_debate'] = arrayFourth;
     retval['Before_Election'] = arrayFinal;
 
     return retval;
 }
 
 function processTopThemesDict(data, dict){
+    
     for (i = 0; i < data.length; i++){
         var top_theme_1 = data[i].top_theme_1;
         var top_theme_2 = data[i].top_theme_2;
@@ -1647,7 +1656,7 @@ function processTopThemesDictFurter(topic, dict) {
 
 LoadAllGraphs();
 function LoadAllGraphs(){
-    var timelinekey = d3.csv('data/timelinekey.csv',
+    var timelinekey = d3.csv('data/timelinekeynew.csv',
         rawrow => ({
             event : rawrow['event'],
             candidate: rawrow['candidate'],
@@ -1663,25 +1672,90 @@ function LoadAllGraphs(){
             swing_state_3: rawrow['swing_state_3']
         })
     );
-    var timelinetopThemes = d3.csv('data/timelinetopthemes.csv',
-        rawrow => ({
-            event : rawrow['date'],
-            state: rawrow['state'],
-            top_theme_1: rawrow['top_theme_1'],
-            top_theme_2: rawrow['top_theme_2'],
-            top_theme_3: rawrow['top_theme_3'],
-            top_theme_4: rawrow['top_theme_4'],
-            top_theme_5: rawrow['top_theme_5'],
-        })
-    );
-    Promise.all([timelinekey, timelinetopThemes])
-        .then(([timelinekeyData, timelinetopThemesData]) => {
+    // var timelinetopThemes = d3.csv('data/timelinetopthemes.csv',
+    //     rawrow => ({
+    //         event : rawrow['date'],
+    //         state: rawrow['state'],
+    //         top_theme_1: rawrow['top_theme_1'],
+    //         top_theme_2: rawrow['top_theme_2'],
+    //         top_theme_3: rawrow['top_theme_3'],
+    //         top_theme_4: rawrow['top_theme_4'],
+    //         top_theme_5: rawrow['top_theme_5'],
+    //     })
+    // );
+
+    var getSortedArray =
+        dict => Object.keys(dict)
+                        .map(key => [key.charAt(0).toUpperCase() + key.substr(1).toLowerCase(), dict[key]])
+                        .sort((a, b) => (a[1] < b[1]) ? 1 : -1);
+
+    Promise.all([timelinekey])
+        .then(([timelinekeyData]) => {
             cachedData = timelinekeyData;
             GenerateLineGraph(timelinekeyData, true);
             GenerateNumberchanges(timelinekeyData);
             GenerateSwingState(timelinekeyData);
 
-            var processedRows = ProcessTopThemes(timelinetopThemesData);
+            var filterTrump = timelinekeyData.filter(t => t.candidate == "Trump");
+
+            var processedRows = {};
+
+            var topTheme1 = filterTrump.filter(t => t.event == "First debate")[0]["top_theme_1"];
+            var topTheme2 = filterTrump.filter(t => t.event == "First debate")[0]["top_theme_2"];
+            var topTheme3 = filterTrump.filter(t => t.event == "First debate")[0]["top_theme_3"];
+            var firstDict = {}
+            firstDict[topTheme1] = 40;
+            firstDict[topTheme2] = 30;
+            firstDict[topTheme3] = 20;
+            processedRows['First_debate'] = getSortedArray(firstDict);
+
+            topTheme1 = filterTrump.filter(t => t.event == "VP debate")[0]["top_theme_1"];
+            topTheme2 = filterTrump.filter(t => t.event == "VP debate")[0]["top_theme_2"];
+            topTheme3 = filterTrump.filter(t => t.event == "VP debate")[0]["top_theme_3"];
+
+            var vpDict = {}
+            vpDict[topTheme1] = 40;
+            vpDict[topTheme2] = 30;
+            vpDict[topTheme3] = 20;
+
+            processedRows['VP_debate'] = getSortedArray(vpDict);
+            
+            topTheme1 = filterTrump.filter(t => t.event == "Second debate")[0]["top_theme_1"];
+            topTheme2 = filterTrump.filter(t => t.event == "Second debate")[0]["top_theme_2"];
+            topTheme3 = filterTrump.filter(t => t.event == "Second debate")[0]["top_theme_3"];
+
+            var secondDict = {}
+            secondDict[topTheme1] = 40;
+            secondDict[topTheme2] = 30;
+            secondDict[topTheme3] = 20;
+
+            processedRows['Second_debate'] = getSortedArray (secondDict);
+
+            topTheme1 = filterTrump.filter(t => t.event == "Third debate")[0]["top_theme_1"];
+            topTheme2 = filterTrump.filter(t => t.event == "Third debate")[0]["top_theme_2"];
+            topTheme3 = filterTrump.filter(t => t.event == "Third debate")[0]["top_theme_3"];
+
+            var thirdDict = {}
+            thirdDict[topTheme1] = 40;
+            thirdDict[topTheme2] = 30;
+            thirdDict[topTheme3] = 20;
+
+            processedRows['Third_debate'] = getSortedArray (thirdDict);
+
+            topTheme1 = filterTrump.filter(t => t.event == "Before Election")[0]["top_theme_1"];
+            topTheme2 = filterTrump.filter(t => t.event == "Before Election")[0]["top_theme_2"];
+            topTheme3 = filterTrump.filter(t => t.event == "Before Election")[0]["top_theme_3"];
+
+            var BEDict = {}
+            BEDict[topTheme1] = 40;
+            BEDict[topTheme2] = 30;
+            BEDict[topTheme3] = 20;
+
+            processedRows['Before_Election'] = getSortedArray (BEDict);
+
+            // var processedRows = ProcessTopThemes(timelinetopThemesData);
+            //var processedRows =
+
             cachedtopthemes = processedRows;
             GenerateTopThemeGraphChart(processedRows);
         })
@@ -1693,6 +1767,194 @@ function LoadAllGraphs(){
                     Populate();
                 }
             );
+}
+
+CreateFDGraph();
+
+//#Reference: Code below is based on Gatech CSE6242 2020 Spring Homework 2 Question 2 
+
+function CreateFDGraph(){
+
+    d3.csv("data/debateGraph.csv",
+    rawrow => ({
+        source : rawrow['source'],
+        target : rawrow['target'],
+        Date : rawrow['Date'],
+        value : +rawrow['value']
+    })
+
+    ).then(
+    data => {
+        cachedFDGraph = data;
+        BuildFDGraph(data);
+    })
+}
+
+function BuildFDGraph(data){
+    var currentData = JSON.parse(JSON.stringify(data));
+    var eventName = 'election_day';
+    var nodeCountFilter = 0;
+    var selectBtns = $('.btnDebateSelected');
+    if(selectBtns.length == 1){
+        eventName = selectBtns.attr('event').replace('_', ' ');
+
+        if(eventName == "Second debate" || eventName == "Third debate"){
+            nodeCountFilter = 60;
+        }
+
+        if(eventName == "First debate" || eventName == "VP debate"){
+            nodeCountFilter = 30;
+        }
+    }
+
+    var links = currentData.filter(d => d.Date == eventName && d.source != d.target && d.value > nodeCountFilter);
+
+    d3.select("#forceDirectedGraph").selectAll('svg').remove();
+
+    var nodes = {};
+    
+    // compute the distinct nodes from the links.
+    links.forEach(function(link) {
+        ////asign class depends on value
+        link.type = link.value < 300 ? "LightLink" : "HeavyLink";
+
+        link.source = nodes[link.source] ||
+            (nodes[link.source] = {name: link.source});
+        link.target = nodes[link.target] ||
+            (nodes[link.target] = {name: link.target});
+    });
+    
+    //*calculate degree
+    var maxDegree = 0;
+    var nodeValues = d3.values(nodes);
+    nodeValues.forEach(
+        node => {
+            node.degree = links.filter(l => l.target.name == node.name || l.source.name == node.name).length;
+            if(node.degree > maxDegree) {
+                maxDegree = node.degree;
+            }
+        }
+    );
+
+    var width = 1400,
+        height = 800;
+
+    if(IsMobileDevice()) {
+        width =  WindowScreen() * 0.90;
+    }
+   
+    var svgFDGraph = d3.select("#forceDirectedGraph").append("svg")
+                .attr("width", width)
+                .attr("height", height);
+    
+    var force = d3.forceSimulation()
+        .nodes(d3.values(nodes))
+        .force("link", d3.forceLink(links).distance(100))
+        .force('center', d3.forceCenter(width / 2, height / 2))
+        .force("x", d3.forceX())
+        .force("y", d3.forceY())
+        .force("charge", d3.forceManyBody().strength(-250))
+        .alphaTarget(1)
+        .on("tick", tick);
+    
+    // add the links and the arrows
+    var path = svgFDGraph.append("g")
+        .selectAll("path")
+        .data(links)
+        .enter()
+        .append("path")
+        .attr("class", function(d) { return "link " + d.type; });
+    
+    // define the nodes
+    var node = svgFDGraph.selectAll(".node")
+        .data(force.nodes())
+        .enter().append("g")
+        .attr("class", "node")
+        .call(d3.drag()
+            .on("start", dragstarted)
+            .on("drag", dragged)
+            .on("end", dragended));
+    
+    // add the nodes
+    var rScale = d3.scaleLinear()
+    .domain([0, maxDegree])
+    .range([1, 20]);
+
+    //*set up color scaler
+    var fillScale = d3.scaleLinear()
+        .domain([0, maxDegree])
+        .range(['#fde0dd','#c51b8a']);
+
+    node.append("circle")
+        .attr("r", (d, i) => rScale(d.degree))
+        .attr("fill", (d, i) => fillScale(d.degree))
+        .on("dblclick", dblclick); //*wire up double click events
+    
+    //*append node names
+    node.append("text")
+        .text(n => n.name)
+        .attr("class", "NodeText")
+        .attr("dy", n => 10);
+
+    // add the curvy lines
+    function tick() {
+        path.attr("d", function(d) {
+            var dx = d.target.x - d.source.x,
+                dy = d.target.y - d.source.y,
+                dr = Math.sqrt(dx * dx + dy * dy);
+            return "M" +
+                d.source.x + "," +
+                d.source.y + "A" +
+                dr + "," + dr + " 0 0,1 " +
+                d.target.x + "," +
+                d.target.y;
+        });
+    
+        node
+            .attr("transform", function(d) {
+            return "translate(" + d.x + "," + d.y + ")"; })
+    };
+
+    //*handle double click
+    function dblclick(d) {
+        var currentCircle = d3.select(this);
+        if(d.fixed == true){
+            currentCircle.classed("fixed", false);
+            d.fixed = false;
+            d.fx = null;
+            d.fy = null;
+        }
+        else {
+            currentCircle.classed("fixed", true);
+            d.fixed = true;
+            d.fx = d.x;
+            d.fy = d.y;
+        }
+    }
+    
+    function dragstarted(d) {
+        if (!d3.event.active) force.alphaTarget(0.3).restart();
+        d.fx = d.x;
+        d.fy = d.y;
+    };
+    
+    function dragged(d) {
+        d.fx = d3.event.x;
+        d.fy = d3.event.y;
+    };
+    
+    function dragended(d) {
+        if (!d3.event.active) force.alphaTarget(0);
+        if (d.fixed == true) {
+            d.fx = d.x;
+            d.fy = d.y;
+        }
+        else {
+            d.fx = null;
+            d.fy = null;
+        }
+    };
+
 }
 
 /*!
