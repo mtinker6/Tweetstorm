@@ -1,0 +1,37 @@
+path.link {
+    fill: none;
+    stroke: #666;
+    stroke-width: 1.5px;
+  }
+  
+circle {
+    stroke: #fff;
+    stroke: black;
+    stroke-width: 1px;
+}
+
+text {
+    fill: #000;
+    font: 10px sans-serif;
+    pointer-events: none;
+}
+
+.LightLink {
+    stroke: blue !important;
+    stroke-dasharray: 3, 3 !important;
+    stroke-width: 0.5px !important;
+}
+
+.HeavyLink {
+    stroke: black !important;
+    stroke-width: 2px !important;
+}
+
+.NodeText {
+    font-weight: bold !important;
+}
+
+.node >.fixed {
+    fill: #f00;
+    stroke-width: 2px;
+}

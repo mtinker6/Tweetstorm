@@ -283,52 +283,6 @@ Twitter, “a popular microblogging service where users create status messages (
 <section id="Graph2">
      <div class="container">
           <div class="row">
-                <div class="col-md-12 col-sm-12">
-                    
-                    <div class="wow bounceIn section-title">
-                         <h1><span  style="color: black !important;">Top Themes</span> </h1>
-                    </div>
-                    <div style="width:100%;height: 50px;padding: 10px 0px 10px 0px;z-index: 100">
-                         <div style="margin: auto;">
-                         <span style="color: steelblue;font-size: 18px;font-weight: bold;display: inline;">Debates</span>&nbsp;&nbsp;
-                         <button id=btnFirstDebate class="btnDebate btnDebateSelected" event="First_debate" eventid="0">1</button>&nbsp;&nbsp;
-                         <button id=btnSecondDebate class="btnDebate btnDebateBelow" event="Second_debate" eventid="1">2</button>&nbsp;&nbsp;		
-                         <button id=btnThirdDebate class="btnDebate btnDebateBelow" event="Third_debate" eventid="2">3</button id=btnSecondDebate>&nbsp;&nbsp;
-                         <button id=btnFourthDebate class="btnDebate btnDebateBelow" event="Fourth_debate" eventid="3">4</button id=btnThirdDebate>&nbsp;&nbsp;
-                         <button id=btnLastDebate class="btnDebate btnDebateBelow" event="Before_Election" eventid="4">5</button>
-                         </div>
-                    </div>
-                    <div style="width:100%;" class="wow fadeInUp">
-                         <div style="display: inline-block;height:300px;vertical-align: top;position: relative;">
-                              <div id="TopThemeGraph" style="margin:10px auto;width:100%;">
-                                   <div style="position:absolute;top:50%;left: 50%;width: 100%; height: 100%;" class="loaderContainer">
-                                        <div class="loader"></div>
-                                   </div>
-                              </div>
-                         </div>
-                         <div style="display: none;height:300px;">
-                              <div style="margin:30px auto 0px auto; width: 200px;">
-                                   <div>Swing State 1</div>
-                                   <svg id="svgSwingStateGraph1" width="200" height="60" style="min-height: 60px;"></svg>
-                                   <div>Swing State 2</div>
-                                   <svg id="svgSwingStateGraph2" width="200" height="60" style="min-height: 60px;"></svg>
-                                   <div>Swing State 3</div>
-                                   <svg id="svgSwingStateGraph3" width="200" height="60" style="min-height: 60px;"></svg>
-                              </div>
-                         </div>
-                    </div>
-               </div>
-          </div>
-     </div>
-</section>
-
-
-<!-- Graph3 Section -->
-
-<section id="Graph3">
-     <div class="overlay"></div>
-     <div class="container">
-          <div class="row">
                <div class="col-md-12 col-sm-12">
                     <div class="wow bounceIn section-title">
                          <h1>Overall Polarity And Subjectivity</h1>
@@ -400,19 +354,56 @@ Twitter, “a popular microblogging service where users create status messages (
      </div>
 </section>
 
+
+<!-- Graph3 Section -->
+
+<section id="Graph3">
+     <div class="overlay"></div>
+     <div class="container">
+          <div class="row">
+               <div class="col-md-12 col-sm-12">
+                    <div class="wow bounceIn section-title" style="padding-bottom: 30px !important;">
+                         <h1><span  style="color: black !important;">Top Themes</span> </h1>
+                    </div>
+                    
+                    <div style="width:100%;" class="wow fadeInUp">
+                         <div style="display: inline-block;height:300px;vertical-align: top;position: relative;">
+                              <div id="TopThemeGraph" style="margin:10px auto;width:100%;">
+                                   <div style="position:absolute;top:50%;left: 50%;width: 100%; height: 100%;" class="loaderContainer">
+                                        <div class="loader"></div>
+                                   </div>
+                              </div>
+                         </div>
+                         <div style="display: none;height:300px;">
+                              <div style="margin:30px auto 0px auto; width: 200px;">
+                                   <div>Swing State 1</div>
+                                   <svg id="svgSwingStateGraph1" width="200" height="60" style="min-height: 60px;"></svg>
+                                   <div>Swing State 2</div>
+                                   <svg id="svgSwingStateGraph2" width="200" height="60" style="min-height: 60px;"></svg>
+                                   <div>Swing State 3</div>
+                                   <svg id="svgSwingStateGraph3" width="200" height="60" style="min-height: 60px;"></svg>
+                              </div>
+                         </div>
+                    </div>
+                    
+               </div>
+          </div>
+     </div>
+</section>
+
 <!-- Graph4 Section -->
 
 <section id="Graph4">
      <div class="overlay"></div>
      <div class="container">
           <div class="row">
-
                <div class="col-md-12 col-sm-12">
                     <div class="wow bounceIn section-title" style="padding-top:100px;">
-                         <h1><span  style="color: black !important;">Graph 4</span></h1>
+                         <h1><span  style="color: black !important;">Word Cloud</span></h1>
                     </div>
-                    <!-- <div id="bubbleChart" style="width: 900px;"></div> -->
-                    <iframe id="bubbleChartIFrame" src="/project/index.html?width=1200" style="width: 1290px;height: 530px;" frameBorder="0"></iframe>
+                    <div class="wow fadeInUp">
+                         <iframe id="bubbleChartIFrame" src="BubbleChart.html?width=1200" style="width: 1290px;height: 730px;" frameBorder="0"></iframe>
+                    </div>
                </div>
           </div>
      </div>
@@ -424,10 +415,12 @@ Twitter, “a popular microblogging service where users create status messages (
      <div class="overlay"></div>
      <div class="container">
           <div class="row">
-               <div class="col-md-offset-2 col-md-8 col-sm-12">
+               <div class="col-md-12 col-sm-12">
                     <div class="wow bounceIn section-title">
-                         <h1>Graph 5</h1>
-                       
+                         <div class="wow bounceIn section-title" style="padding-top:100px;">
+                              <h1><span  style="color: steelblue !important;">Graph 5</span></h1>
+                         </div>
+                         <div id="forceDirectedGraph"  style="width: 1400px;height: 800px;" class="wow fadeInUp"></div>
                     </div>
                </div>
           </div>
@@ -440,10 +433,24 @@ Twitter, “a popular microblogging service where users create status messages (
      <div class="overlay"></div>
      <div class="container">
           <div class="row">
-               <div class="col-md-offset-2 col-md-8 col-sm-12">
+               <div class="col-md-12 col-sm-12">
+                  
                     <div class="wow bounceIn section-title">
-                         <h1>Graph 6</h1>
+                         <div style="width:100%;padding: 10px 0px 60px 0px;z-index: 100;position: sticky;">
+                              <div style="margin: auto;">
+                              <span style="color: steelblue;font-size: 18px;font-weight: bold;display: inline;">Debates</span>&nbsp;&nbsp;
+                              <button id=btnFirstDebate class="btnDebate btnDebateSelected" event="First_debate" eventid="0">1</button>&nbsp;&nbsp;
+                              <button id=btnVPDebate class="btnDebate btnDebateBelow" event="VP_debate" eventid="1">2</button>&nbsp;&nbsp;		
+                              <button id=btnSecondDebate class="btnDebate btnDebateBelow" event="Second_debate" eventid="2">3</button>&nbsp;&nbsp;
+                              <button id=btnThirdDebate class="btnDebate btnDebateBelow" event="Third_debate" eventid="3">4</button>&nbsp;&nbsp;
+                              <button id=btnLastDebate class="btnDebate btnDebateBelow" event="Before_Election" eventid="4">5</button>
+                              </div>
+                         </div>
+                         <div class="wow bounceIn section-title" style="padding-top:50px;"></div>
+                              <h1><span  style="color: black !important;">Emoji Analysis</span></h1>
+                         </div>
                         
+                         <div id='TEmoji' style="height: 1600px;width: 1100px;"></div>
                     </div>
                </div>
           </div>
@@ -498,16 +505,36 @@ Twitter, “a popular microblogging service where users create status messages (
 <script src="./js/dashboard.js"></script>
 <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/d3/5.15.0/d3.min.js"></script>
 <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/d3-tip/0.9.1/d3-tip.min.js"></script>
-
+<script type="text/javascript" src="js/d3-scale-chromatic.v1.min.js"></script>
 
 <script src="js/TimelineSentiment.js"></script>
-<!-- <script src="js/bubble.js"></script> -->
+<!-- <script src="js/ForceDirectedGraph.js"></script> -->
+<script src="https://twemoji.maxcdn.com/v/latest/twemoji.min.js" crossorigin="anonymous"></script>
 
+<link rel="stylesheet" href="css/ForceDirectGraph.css">
 <link rel="stylesheet" href="css/TimelineSentiment.css">
-<link rel="stylesheet" href="css/bubble.css">
+
 
 <script>
      $(function(){
+          // var div = document.createElement('div');
+          // div.textContent = 'I \u2764\uFE0F emoji!';
+          // $('#TEmoji').append(div);
+
+          // twemoji.parse(document.body);
+
+          // var img = div.querySelector('img');
+
+          // // note the div is preserved
+          // img.parentNode === div; // true
+
+          // img.src;        // https://twemoji.maxcdn.com/v/latest/72x72/2764.png
+          // img.alt;        // \u2764\uFE0F
+          // img.className;  // emoji
+          // img.draggable;  // false
+
+          
+
           function IsMobileDeviceIFrame(){
                return WindowScreen() < 650
           }
@@ -520,7 +547,11 @@ Twitter, “a popular microblogging service where users create status messages (
           if(IsMobileDeviceIFrame()) {
                widthIframe =  WindowScreenIFrame() * 0.9;
 
-               $('#bubbleChartIFrame').attr('src', '/project/index.html?width=' + widthIframe);
+               $('#bubbleChartIFrame').attr('src', 'BubbleChart.html?width=' + widthIframe);
+
+               FDGWidth = WindowScreenIFrame() * 0.90;
+               FDGHeight = FDGWidth * 0.5
+               $('#forceDirectedGraph').css('width', FDGWidth + 'px');
           }
 
      })
