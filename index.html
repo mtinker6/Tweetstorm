@@ -514,50 +514,5 @@ Twitter, “a popular microblogging service where users create status messages (
 <link rel="stylesheet" href="css/ForceDirectGraph.css">
 <link rel="stylesheet" href="css/TimelineSentiment.css">
 
-
-<script>
-     $(function(){
-          // var div = document.createElement('div');
-          // div.textContent = 'I \u2764\uFE0F emoji!';
-          // $('#TEmoji').append(div);
-
-          // twemoji.parse(document.body);
-
-          // var img = div.querySelector('img');
-
-          // // note the div is preserved
-          // img.parentNode === div; // true
-
-          // img.src;        // https://twemoji.maxcdn.com/v/latest/72x72/2764.png
-          // img.alt;        // \u2764\uFE0F
-          // img.className;  // emoji
-          // img.draggable;  // false
-
-          
-
-          function IsMobileDeviceIFrame(){
-               return WindowScreen() < 650
-          }
-
-          function WindowScreenIFrame(){
-               return $(window).width();
-          }
-
-          
-          if(IsMobileDeviceIFrame()) {
-               widthIframe =  WindowScreenIFrame() * 0.9;
-
-               $('#bubbleChartIFrame').attr('src', 'BubbleChart.html?width=' + widthIframe);
-
-               FDGWidth = WindowScreenIFrame() * 0.90;
-               FDGHeight = FDGWidth * 0.5
-               $('#forceDirectedGraph').css('width', FDGWidth + 'px');
-          }
-
-     })
-
-</script>
-
-
 </body>
 </html>

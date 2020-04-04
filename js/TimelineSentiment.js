@@ -4,8 +4,24 @@ function WindowScreen(){
 }
 
 function IsMobileDevice(){
-    return WindowScreen() < 650
+    return WindowScreen() < 1200
 }
+
+
+$(function(){
+
+    if(IsMobileDevice()) {
+         widthIframe =  WindowScreen() * 0.9;
+
+         $('#bubbleChartIFrame').attr('src', 'BubbleChart.html?width=' + widthIframe);
+
+         shrunkWidth = WindowScreen() * 0.90;
+
+         $('#forceDirectedGraph').css('width', shrunkWidth + 'px');
+
+         $('#TEmoji').css('width', shrunkWidth + 'px')
+    }
+})
 
 var cachedData;
 var cachedtopthemes;
