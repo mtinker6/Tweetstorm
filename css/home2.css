@@ -10,10 +10,10 @@ stroke-linejoin: round;
 .dashboard1 {
 /* background-color: rgba(75, 110, 30, 0.781); */
 float: left;
-width: 48%;
+width: 45%;
 height: 70%;
 margin-top: 0.1%;
-margin-left: 0.1%;
+margin-left: 3%;
 margin-bottom: 0.1%;
 margin-right: 0.1%;
 }
@@ -30,7 +30,7 @@ margin-right: 0.1%;
 .dashboard3 {
 /* background-color: rgba(193, 193, 209, 0.932); */
 float: right;
-width: 21%;
+width: 20%;
 height: 90%;
 margin-top: 0.1%;
 margin-left: 0.1%;
@@ -40,10 +40,10 @@ margin-right: 0.1%;
 .dashboard4 {
 /* background-color: rgba(193, 193, 209, 0.911); */
 float: left;
-width: 48%;
+width: 45%;
 height: 20%;
 margin-top: 0.1%;
-margin-left: 0.1%;
+margin-left: 3%;
 margin-bottom: 0.1%;
 margin-right: 0.1%;
 }

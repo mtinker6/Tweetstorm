@@ -1,6 +1,6 @@
 var window_width = $(window).width();
-var width01 = 660, height01 = 400, width02 = 400, height02 = 600, 
-    width03 = 260, height03 = 600, width04 = 660, height04 = 200, centered, geojson, topo, counts, g2, g3, g4, k = 1;
+var width01 = 600, height01 = 400, width02 = 350, height02 = 600, 
+    width03 = 260, height03 = 600, width04 = 600, height04 = 200, centered, geojson, topo, counts, g2, g3, g4, k = 1;
 var svg01 = d3.select(".dashboard1").append("svg").attr("width", width01).attr("height", height01);
 var svg02 = d3.select(".dashboard2").append("svg").attr("width", width02).attr("height", height02);
 var svg03 = d3.select(".dashboard3").append("svg").attr("width", width03).attr("height", height03);
