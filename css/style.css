@@ -440,7 +440,7 @@ a:hover, a:active, a:focus {
   background-size: cover;
   background-position: center center;
   color: #ffffff;
-  background-color: lightgray;
+  background-color: skyblue;
   position: relative;
 }
 
@@ -507,7 +507,7 @@ color: #ffffff;
 -----------------------------------------*/
 
 #Graph3 {
-  background-color: #ffffff;
+  background-color: lightgray;
   color: #000000;
 }
 
@@ -597,7 +597,7 @@ color: #ffffff;
   color: #ffffff;
   background: #ffffff;
   position: relative;
-  height: 1500px;
+  height: 2200px;
 }
 
 #Graph6 .overlay {

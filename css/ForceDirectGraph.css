@@ -10,12 +10,6 @@ circle {
     stroke-width: 1px;
 }
 
-text {
-    fill: #000;
-    font: 10px sans-serif;
-    pointer-events: none;
-}
-
 .LightLink {
     stroke: blue !important;
     stroke-dasharray: 3, 3 !important;
