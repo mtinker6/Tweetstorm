@@ -244,35 +244,40 @@ Twitter, “a popular microblogging service where users create status messages (
 <section id="divider">
      <div class="container">
           <div class="row">
-
                <div class="col-md-offset-2 col-md-8 col-sm-12">
                     <h1 class="wow fadeInUp" data-wow-delay="0.4s">Our Approach</h1>
-
                </div>
-
-
-
-		
-
-
           </div>
      </div>
 </section>
 
-
+<div style="width:100%;z-index: 100;"  id="fixedElement" class="fixedElement">
+     <div style="margin: auto;width: 96%;padding: 20px 0px 20px 0px;">
+          <button id=btnFirstDebate class="btnDebate btnDebateSelected" event="First_debate" eventid="0">1st Debate</button>&nbsp;&nbsp;
+          <button id=btnVPDebate class="btnDebate btnDebateBelow" event="VP_debate" eventid="1">VP Debate</button>&nbsp;&nbsp;		
+          <button id=btnSecondDebate class="btnDebate btnDebateBelow" event="Second_debate" eventid="2">2nd Debate</button>&nbsp;&nbsp;
+          <button id=btnThirdDebate class="btnDebate btnDebateBelow" event="Third_debate" eventid="3">3rd Debate</button>&nbsp;&nbsp;
+          <button id=btnLastDebate class="btnDebate btnDebateBelow" event="Before_Election" eventid="4">Election</button>
+     </div>
+</div>
 <!-- Graph1 Section -->
 
 <section id="Graph1">
      <div class="row">
           <div class="col-md-12 col-sm-12">
                <div class="section-title">
-                    <h1>Graph 1</h1>
-                    <p class="wow fadeInUp" data-wow-delay="0.8s"></p>
+                    <div class="wow bounceIn section-title"><h1>Graph 1</h1></div>
                </div>
-               <div class="dashboard1" id='dashboard1'></div>
-               <div class="dashboard2" id='dashboard2'></div>
-               <div class="dashboard3" id='dashboard3'></div>
-               <div class="dashboard4" id='dashboard4'></div>
+               <div class="wow fadeInUp Graph1Shrink" style="width:1450px;margin: auto;">
+                    <div style="display: inline-block;height: 600px;width:700px;" class=" Graph1Shrink">
+                         <div class="dashboard1 Graph1Shrink" id='dashboard1' style="width:640px;height: 400px;"></div>
+                         <div class="dashboard4 Graph1Shrink" id='dashboard4' style="width:640px;height: 400px;"></div>
+                    </div>
+                    <div style="display: inline-block;height: 600px;width:700px" class=" Graph1Shrink">
+                         <div class="dashboard3" id='dashboard3' style="width:260px;height: 600px;display: inline-block;"></div>
+                         <div class="dashboard2" id='dashboard2' style="width:370px;height: 600px;display: inline-block;"></div>
+                    </div>
+               </div>
           </div>
      </div>
 </section>
@@ -434,18 +439,7 @@ Twitter, “a popular microblogging service where users create status messages (
      <div class="container">
           <div class="row">
                <div class="col-md-12 col-sm-12">
-                  
                     <div class="wow bounceIn section-title">
-                         <div style="width:100%;padding: 10px 0px 60px 0px;z-index: 100;position: sticky;">
-                              <div style="margin: auto;">
-                              <span style="color: steelblue;font-size: 18px;font-weight: bold;display: inline;">Debates</span>&nbsp;&nbsp;
-                              <button id=btnFirstDebate class="btnDebate btnDebateSelected" event="First_debate" eventid="0">1</button>&nbsp;&nbsp;
-                              <button id=btnVPDebate class="btnDebate btnDebateBelow" event="VP_debate" eventid="1">2</button>&nbsp;&nbsp;		
-                              <button id=btnSecondDebate class="btnDebate btnDebateBelow" event="Second_debate" eventid="2">3</button>&nbsp;&nbsp;
-                              <button id=btnThirdDebate class="btnDebate btnDebateBelow" event="Third_debate" eventid="3">4</button>&nbsp;&nbsp;
-                              <button id=btnLastDebate class="btnDebate btnDebateBelow" event="Before_Election" eventid="4">5</button>
-                              </div>
-                         </div>
                          <div class="wow bounceIn section-title" style="padding-top:50px;"></div>
                               <h1><span  style="color: black !important;">Emoji Analysis</span></h1>
                          </div>
@@ -462,7 +456,6 @@ Twitter, “a popular microblogging service where users create status messages (
 <footer>
 	<div class="container">
 		<div class="row">
-
                <div class="col-md-8 col-sm-6">
                     <div class="wow fadeInUp footer-copyright" data-wow-delay="0.4s">
                          <p>Copyright &copy; 2020 Tweetstorm
@@ -470,9 +463,6 @@ Twitter, “a popular microblogging service where users create status messages (
                          Team 26</a></p>
                     </div>
                </div>
-
-
-			
 		</div>
 	</div>
 </footer>

@@ -1,6 +1,13 @@
 var window_width = $(window).width();
 var width01 = 640, height01 = 400, width02 = 370, height02 = 600, 
     width03 = 260, height03 = 600, width04 = 640, height04 = 200, centered, geojson, topo, counts, g2, g3, g4, k = 1;
+
+if(window_width < 640){
+  width04 = width01 = window_width *0.9
+  width02 = window_width *0.9 * 1 / 2
+  width02 = window_width *0.9 * 1 / 2
+}
+
 var svg01 = d3.select(".dashboard1").append("svg").attr("width", width01).attr("height", height01);
 var svg02 = d3.select(".dashboard2").append("svg").attr("width", width02).attr("height", height02);
 var svg03 = d3.select(".dashboard3").append("svg").attr("width", width03).attr("height", height03);
@@ -19,9 +26,9 @@ svg04.append('rect').attr('class', 'background').attr('width', width04).attr('he
 // State name on hover
 svg02.append('text').attr('class','statehover').attr('x',10).attr('y',50).attr("fill", "#46b5d1");
 svg02.append('text').attr('class','statedetails preferreddetails').attr('x',10).attr('y',90).attr("fill", "white").style("font-weight",'bold');
-svg02.append('text').attr('class','statedetails actualdetails').attr('x',258).attr('y',90).attr("fill", "white").style("font-weight",'bold');
+svg02.append('text').attr('class','statedetails actualdetails').attr('x',168).attr('y',90).attr("fill", "white").style("font-weight",'bold');
 svg02.append('svg:image').attr('class','statedetails statepreferred').attr('x',45).attr('y',105).attr('width',75).attr('height',75);
-svg02.append('svg:image').attr('class','statedetails elected').attr('x',245).attr('y',105).attr('width',75).attr('height',75);
+svg02.append('svg:image').attr('class','statedetails elected').attr('x',168).attr('y',105).attr('width',75).attr('height',75);
 svg02.append('text').attr('class','statedetails statepolarity').attr("fill", "white").style("font-weight",'bold').style('font-size','22px').attr('x',10).attr('y',220);
 svg02.append('text').attr('class','statedetails statesubjectivity').attr("fill", "white").style("font-weight",'bold').style('font-size','22px').attr('x',10).attr('y',250);
 svg02.append('text').attr('class','statedetails top-themes').attr("fill", "white").style("font-weight",'bold').style('font-size','22px').attr('x',10).attr('y',300);
@@ -71,7 +78,7 @@ var path01 = d3.geoPath().projection(d3.geoAlbersUsa().translate([width01/2, hei
 
 var g = svg01.append('g');
 var mapLayer = g.append('g').classed('map-layer', true);
-var slideLayer = svg04.append('g');
+var slideLayer = svg04.append('g').attr('id', 'sliderToggle');
 var buttonsLayer = svg04.append('g');
 
 // Load data
@@ -470,3 +477,5 @@ function click_button(d,i) {
   buttonsLayer.selectAll('text').style("fill", "white");
   d3.select(this).style("fill", "cyan");
 }
+
+$('#sliderToggle').find('.slider').hide();

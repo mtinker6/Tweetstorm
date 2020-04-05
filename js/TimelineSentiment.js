@@ -20,8 +20,47 @@ $(function(){
          $('#forceDirectedGraph').css('width', shrunkWidth + 'px');
 
          $('#TEmoji').css('width', shrunkWidth + 'px')
+         $('#Graph6').css('height', '1500px')
     }
 })
+
+
+
+var startProductBarPos=-1;
+     window.onscroll=function(){
+          var bar = document.getElementById('fixedElement');
+          if(startProductBarPos<0) startProductBarPos=findPosY(bar);
+
+          if(pageYOffset>startProductBarPos){
+               bar.style.position='fixed';
+               if($(window).width() < 800){
+                    $('#fixedElement').css({top: 60});
+               }
+               else{
+                    $('#fixedElement').css({top: 90});
+               }
+          }
+          else{
+               bar.style.position='relative';
+               $('#fixedElement').css({top: 0});
+          }
+
+     };
+
+     function findPosY(obj) {
+          var curtop = 0;
+          if (typeof (obj.offsetParent) != 'undefined' && obj.offsetParent) {
+               while (obj.offsetParent) {
+                    curtop += obj.offsetTop;
+                    obj = obj.offsetParent;
+               }
+               curtop += obj.offsetTop;
+          }
+          else if (obj.y)
+               curtop += obj.y;
+
+          return curtop;
+     }
 
 var cachedData;
 var cachedtopthemes;
@@ -91,7 +130,8 @@ function UpdateLineChart() {
     lineGraphFrame
         .transition().duration(1000)
         .attr('width', widthLine + marginLine.right + marginLine.left)
-        .attr('height', heightLine + marginLine.top + marginLine.bottom);
+        .attr('height', heightLine + marginLine.top + marginLine.bottom)
+        .attr('transform', `translate(${marginLine.left - 150}, 0)`);
 
     lineGraph
         .transition().duration(1000) 
@@ -127,7 +167,8 @@ function InitLineGraphFrame(){
         .select('#divLineChartGraph')
         .append('svg')
         .attr('width', widthLine + marginLine.right + marginLine.left)
-        .attr('height', heightLine + marginLine.top + marginLine.bottom);
+        .attr('height', heightLine + marginLine.top + marginLine.bottom)
+        .attr('transform', `translate(${marginLine.left - 150}, 0)`);;
 
     lineGraph = lineGraphFrame.append('g')
         .attr('transform', `translate(${marginLine.left}, ${marginLine.top})`);
@@ -1532,6 +1573,10 @@ async function btnClick (){
         eventQueue.push(key);
     }
 
+    //to update the map
+    window.debate =  parseInt($(this).attr('eventid'));
+    window.update_map();            
+
     var eventFinished = false;
     var count = 0;
     do {
@@ -2097,7 +2142,7 @@ function BuildRadarChart(data){
     var w = 600,
     h = 600;
 
-    var scaler = d3.scaleLinear().domain([0.00, 40000]).range([0.50, 1.00]); 
+    var scaler = d3.scaleLinear().domain([0.00, 42000]).range([0.50, 1.00]); 
     var colorscaleRader = d3.scaleSequential(
         (d) => d3.interpolateBlues(scaler(d))
     )   
@@ -2106,7 +2151,7 @@ function BuildRadarChart(data){
     var mycfg = {
         w: w,
         h: h,
-        maxValue: 40000,
+        maxValue: 42000,
         levels: 6,
         ExtraWidthX: 0,
         ExtraWidthY: 0,
@@ -2155,7 +2200,6 @@ GetRadarChart = (d, options) => {
               
       var g = svg.append("g")
             .attr("transform", "translate(" + cfg.TranslateX + "," + cfg.TranslateY + ")");
-        ;
   
       var tooltip;
       
