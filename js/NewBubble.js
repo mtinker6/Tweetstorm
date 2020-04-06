@@ -74,18 +74,19 @@ var node = svg.selectAll("circle")
 
 node.append("circle")
     .style("fill", function (d) {
-    return color(d.cluster);
+        return color(d.cluster);
     })
     .attr("r", function(d){return d.radius})
+    .append("svg:title")
+    .text(d => d.radius);
+   
     
-
 node.append("text")
-      .attr("dy", ".3em")
-      .style("text-anchor", "middle")
-      .text(function(d) { return d.text.substring(0, d.radius / 3); });
-
-
-
+    .attr("dy", ".3em")
+    .style("text-anchor", "middle")
+    .text(function(d) { return d.text.substring(0, d.radius / 3); })
+    .append("svg:title")
+    .text(d => d.radius);
 
 function create_nodes(data,node_counter) {
   var i = cs.indexOf(data[node_counter].group),
