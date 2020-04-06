@@ -1,3 +1,5 @@
+
+
 var getUrlParameter = function getUrlParameter(sParam) {
     var sPageURL = window.location.search.substring(1),
         sURLVariables = sPageURL.split('&'),
@@ -13,15 +15,14 @@ var getUrlParameter = function getUrlParameter(sParam) {
     }
 };
 
-var width = 1200,
-    height = 700,
+var width = 1400,
+    height = 600,
     padding = 1.5, // separation between same-color nodes
     clusterPadding = 6, // separation between different-color nodes
     maxRadius = 12;
 
 
 width = getUrlParameter('width');
-
 
 var color = d3.scale.ordinal()
       .range(["#7A99AC", "#E4002B"]);
@@ -36,13 +37,33 @@ d3.text("data/words.csv", function(error, text) {
   });
 
 
+var tableCount = 0;
+
+var tablePos = [];
+var originalTablePosX = [];
+var originalTablePosY = [];
+
 //unique cluster/group id's
 var cs = [];
 data.forEach(function(d){
-        if(!cs.contains(d.group)) {
-            cs.push(d.group);
-        }
+    if(!cs.contains(d.group)) {
+        cs.push(d.group);
+    }
+  
+    tableCount += 1;
 });
+
+var totalWidthTable = width;
+if (totalWidthTable > 1200){
+    totalWidthTable = 1200;
+}
+
+
+var icPortion = totalWidthTable/tableCount
+var iC;
+for (iC = 0; iC < tableCount; iC++) {
+    tablePos.push(icPortion * (iC + 1) * 2)
+}
 
 var n = data.length, // total number of nodes
     m = cs.length; // number of distinct clusters
@@ -63,37 +84,112 @@ var force = d3.layout.force()
     .start();
 
 var svg = d3.select("#bubble").append("svg")
+    .attr("id", "svgBubble")
     .attr("width", width)
     .attr("height", height);
 
-
 var node = svg.selectAll("circle")
     .data(nodes)
-    .enter().append("g").call(force.drag);
+    .enter().append("g")
+    .attr('id', d => 'g_'+ d.text)
+    .attr('class', 'MovingNode')
+    .attr('index', d => nodes.indexOf(d))
+    .attr('cluster', d => d.cluster)
+    .call(force.drag);
 
+var formatDecimal2 = d3.format(".0f");
 
 node.append("circle")
+    
     .style("fill", function (d) {
         return color(d.cluster);
     })
     .attr("r", function(d){return d.radius})
     .append("svg:title")
-    .text(d => d.radius);
+    .text(d => formatDecimal2(d.radius));
    
     
 node.append("text")
     .attr("dy", ".3em")
     .style("text-anchor", "middle")
-    .text(function(d) { return d.text.substring(0, d.radius / 3); })
+    .text(function(d) { return d.text })
     .append("svg:title")
-    .text(d => d.radius);
+    .text(d => formatDecimal2(d.radius));
+
+
+node.append("text")
+    .attr("dy", "10em")
+    .attr("class", "BubbleTableValue")
+    .style("text-anchor", "middle")
+    .text(d => formatDecimal2(d.radius))
+    .attr("opacity", 0)
+    .attr("fill", "#4682b4")
+
+$(function(){
+    
+    if(width < 1400){
+        $('#divArrayViewBubble').hide();
+    }
+
+    $("#cbToggleBubble").change(function() {
+        var g = d3.selectAll('.MovingNode');
+
+        if ($(this).is(':checked'))
+        {
+            force.on("tick", null);
+            g.each(
+                function(d,i) { 
+                    gElement = d3.select(this);
+                    var string = gElement.attr("transform");
+                    translate = string.substring(string.indexOf("(")+1, string.indexOf(")")).split(",");
+                    originalTablePosX[i] = translate[0];
+                    originalTablePosY[i] = translate[1];
+                    var XP = tablePos[i];
+                    var YP = height/4
+                    if(gElement.attr('cluster') == '1')
+                    {
+                        XP = XP - width/7 * 6;
+                        YP = height/4 * 3;
+                    }
+                    gElement
+                        .transition().duration(1000)
+                        .attr('transform', `translate(${XP}, ${YP})`);
+                }
+            );
+
+            d3.selectAll('.BubbleTableValue').transition().duration(500).attr('opacity', 1)
+        }
+        else
+        {
+            g.each(
+                function(d,i) { 
+                    d3.select(this)
+                        .transition().duration(1000)
+                        .attr('transform', `translate(${originalTablePosX[i]},${originalTablePosY[i]})`);
+                }
+            );
+            
+            setTimeout(function(){ 
+                force.on("tick", tick);
+            }, 2000);
+
+            d3.selectAll('.BubbleTableValue').transition().duration(500).attr('opacity', 0)
+        }
+    });
+})
 
 function create_nodes(data,node_counter) {
+    var sizeFactor = 1.0;
+
+    if(width < 800){
+        sizeFactor = 0.8;
+    }
+ 
   var i = cs.indexOf(data[node_counter].group),
       r = Math.sqrt((i + 1) / m * -Math.log(Math.random())) * maxRadius,
       d = {
         cluster: i,
-        radius: data[node_counter].size*1.5,
+        radius: data[node_counter].size* sizeFactor,
         text: data[node_counter].text,
         x: Math.cos(i / m * 2 * Math.PI) * 200 + width / 2 + Math.random(),
         y: Math.sin(i / m * 2 * Math.PI) * 200 + height / 2 + Math.random()
@@ -168,3 +264,5 @@ Array.prototype.contains = function(v) {
     }
     return false;
 };
+
+

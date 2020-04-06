@@ -316,6 +316,16 @@ animation: spin 2s linear infinite;
     .btnDebate{
         width: 18%;
     }
+    .DivEmojiChart{
+        width:90% !important;
+        display: block !important; 
+    }
+    #Graph6{
+        height: 1300px !important;
+    }
+    #forceDirectedGraph{
+        width: 90% !important;
+    }
 }
 
 @media only screen and (max-width: 600px) {

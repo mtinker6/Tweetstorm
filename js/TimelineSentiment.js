@@ -12,19 +12,9 @@ $(function(){
 
     if(IsMobileDevice()) {
          widthIframe =  WindowScreen() * 0.9;
-
          $('#bubbleChartIFrame').attr('src', 'BubbleChart.html?width=' + widthIframe);
-
-         shrunkWidth = WindowScreen() * 0.90;
-
-         $('#forceDirectedGraph').css('width', shrunkWidth + 'px');
-
-         $('#TEmoji').css('width', shrunkWidth + 'px')
-         $('#Graph6').css('height', '1500px')
     }
 })
-
-
 
 var startProductBarPos=-1;
      window.onscroll=function(){
@@ -2174,7 +2164,7 @@ GetRadarChart = (d, options) => {
        opacityArea: 0.4,
        ToRight: 5,
        TranslateX: 50,
-       TranslateY: 30,
+       TranslateY: 130,
        ExtraWidthX: 0,
        ExtraWidthY: 0,
        color: options.color
