@@ -224,7 +224,7 @@ $(function(){
             );
             
             setTimeout(function(){ 
-                force.on("tick", tick);
+                force.on("tick", tick).start();
             }, 1600);
 
             d3.selectAll('.BubbleTableValue').transition().duration(500).attr('opacity', 0)

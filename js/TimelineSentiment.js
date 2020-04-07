@@ -1893,6 +1893,8 @@ function BuildFDGraph(data, rebuild = true){
     nodeValues.forEach(
         node => {
             node.degree = links.filter(l => l.target.name == node.name || l.source.name == node.name).length;
+            node.inDegree = links.filter(l => l.target.name == node.name).length;
+            node.outDegree = links.filter(l => l.source.name == node.name).length;
             if(node.degree > maxDegree) {
                 maxDegree = node.degree;
             }
@@ -1948,16 +1950,25 @@ function BuildFDGraph(data, rebuild = true){
         .domain([0, maxDegree])
         .range(['#fde0dd','#c51b8a']);
 
-    node.append("circle")
+    var nodeCircle = node.append("circle")
         .attr("r", (d, i) => rScale(d.degree))
-        .attr("fill", (d, i) => fillScale(d.degree))
-        .on("dblclick", dblclick); //*wire up double click events
+        .attr("fill", (d, i) => fillScale(d.degree));
+
+    nodeCircle.append("svg:title")
+        .text(d => `${d.name}\nIn Degree: ${d.inDegree}\nOut Degree ${d.outDegree}`);
+
+    nodeCircle.on("dblclick", dblclick); //*wire up double click events
+     
     
     //*append node names
-    node.append("text")
+    var nodeText = node.append("text")
         .text(n => n.name)
-        .attr("class", "NodeText")
-        .attr("dy", n => 10);
+        .attr("class", "NodeText");
+
+    nodeText.append("svg:title")
+        .text(d => `${d.name}\nIn Degree: ${d.inDegree}\nOut Degree ${d.outDegree}`);
+
+    nodeText.attr("dy", n => 10);
 
     // add the curvy lines
     function tick() {
@@ -2077,6 +2088,7 @@ function CreateEmojiAnalysis(fileName) {
         rawData => {
             var processedData = ProcessEmojiData(rawData);
             BuildEmojiChart(processedData);
+            BuildTreeChart(processedData);
 
             var processedTotalData = ProcessEmojiTotalData(rawData);
             BuildRadarChart(processedTotalData);
@@ -2155,6 +2167,272 @@ function BuildEmojiChart(data){
     $('#TEmoji').append(chartEmoji(data));
 }
 
+function BuildTreeChart(data){
+    $('#TreeChart').html('');
+    $('#TreeChart').append(TreeChart(data));
+}
+
+//#reference below is from https://observablehq.com/@d3/collapsible-tree
+
+TreeChart = data => {
+    dx = 20;
+    var TreeWidth = 600;
+    dy = TreeWidth / 2.8;
+    margin = ({top: 10, right: 120, bottom: 10, left: 40});
+
+    diagonal = d3.linkHorizontal().x(d => d.y).y(d => d.x);
+    tree = d3.tree().nodeSize([dx, dy]);
+
+    const root = d3.hierarchy(data);
+
+    root.x0 = dy / 2;
+    root.y0 = 0;
+    root.descendants().forEach((d, i) => {
+        d.id = i;
+        d._children = d.children;
+        if (d.depth && d.data.name.length !== 7) d.children = null;
+    });
+
+    const svg = d3.create("svg")
+        .attr("viewBox", [-margin.left, -margin.top, TreeWidth, dx])
+        .style("font", "10px sans-serif")
+        .style("user-select", "none");
+
+    const gLink = svg.append("g")
+        .attr("fill", "none")
+        .attr("stroke", "#555")
+        .attr("stroke-opacity", 0.4)
+        .attr("stroke-width", 1.5);
+
+    const gNode = svg.append("g")
+        .attr("cursor", "pointer")
+        .attr("pointer-events", "all");
+
+    function update(source) {
+        const duration = d3.event && d3.event.altKey ? 2500 : 250;
+        const nodes = root.descendants().reverse();
+        const links = root.links();
+
+        // Compute the new tree layout.
+        tree(root);
+
+        let left = root;
+        let right = root;
+        root.eachBefore(node => {
+        if (node.x < left.x) left = node;
+        if (node.x > right.x) right = node;
+        });
+
+        const height = right.x - left.x + margin.top + margin.bottom;
+
+        const transition = svg.transition()
+            .duration(duration)
+            .attr("viewBox", [-margin.left, left.x - margin.top, TreeWidth, height])
+            .tween("resize", window.ResizeObserver ? null : () => () => svg.dispatch("toggle"));
+
+        // Update the nodes…
+        const node = gNode.selectAll("g")
+        .data(nodes, d => d.id);
+
+        // Enter any new nodes at the parent's previous position.
+        const nodeEnter = node.enter().append("g")
+            .attr("transform", d=> `translate(${source.y0},${source.x0})`)
+            .attr("fill-opacity", 0)
+            .attr("stroke-opacity", 0)
+            .on("click", d => {
+            d.children = d.children ? null : d._children;
+            update(d);
+            });
+
+        nodeEnter.append("circle")
+            .attr("r", 2.5)
+            .attr("fill", d => d._children ? "#555" : "#999")
+            .attr("stroke-width", 10);
+
+        nodeEnter.append("text")
+            .attr("dy", "0.31em")
+            .attr("x", d => d._children ? -6 : 6)
+            .attr("text-anchor", d => d._children ? "end" : "start")
+            .text(d => d.data.value == undefined? d.data.name :  d.data.name + ' ' + d.data.value)
+        .clone(true).lower()
+            .attr("stroke-linejoin", "round")
+            .attr("stroke-width", 3)
+            .attr("stroke", "white");
+
+        // Transition nodes to their new position.
+        const nodeUpdate = node.merge(nodeEnter).transition(transition)
+            .attr("transform", d => `translate(${d.y},${d.x})`)
+            .attr("fill-opacity", 1)
+            .attr("stroke-opacity", 1);
+
+        // Transition exiting nodes to the parent's new position.
+        const nodeExit = node.exit().transition(transition).remove()
+            .attr("transform", d => `translate(${source.y},${source.x})`)
+            .attr("fill-opacity", 0)
+            .attr("stroke-opacity", 0);
+
+        // Update the links…
+        const link = gLink.selectAll("path")
+        .data(links, d => d.target.id);
+
+        // Enter any new links at the parent's previous position.
+        const linkEnter = link.enter().append("path")
+            .attr("d", d => {
+            const o = {x: source.x0, y: source.y0};
+            return diagonal({source: o, target: o});
+            });
+
+        // Transition links to their new position.
+        link.merge(linkEnter).transition(transition)
+            .attr("d", diagonal);
+
+        // Transition exiting nodes to the parent's new position.
+        link.exit().transition(transition).remove()
+            .attr("d", d => {
+            const o = {x: source.x, y: source.y};
+            return diagonal({source: o, target: o});
+            });
+
+        // Stash the old positions for transition.
+        root.eachBefore(d => {
+        d.x0 = d.x;
+        d.y0 = d.y;
+        });
+    }
+
+    update(root);
+
+    return svg.node();
+}
+
+
+//#reference below is from https://observablehq.com/@d3/zoomable-sunburst
+
+
+chartEmoji = data => {
+
+    partition = data => {
+        const root = d3.hierarchy(data)
+            .sum(d => d.value)
+            .sort((a, b) => b.value - a.value);
+        return d3.partition()
+            .size([2 * Math.PI, root.height + 1])
+          (root);
+      }
+    
+    color = d3.scaleOrdinal(d3.quantize(d3.interpolateRainbow, data.children.length + 1))
+    
+    format = d3.format(",d")
+    
+    var widthEmoji = 500
+    
+    radius = widthEmoji / 6
+    
+    arc = d3.arc()
+        .startAngle(d => d.x0)
+        .endAngle(d => d.x1)
+        .padAngle(d => Math.min((d.x1 - d.x0) / 2, 0.005))
+        .padRadius(radius * 1.5)
+        .innerRadius(d => d.y0 * radius)
+        .outerRadius(d => Math.max(d.y0 * radius, d.y1 * radius - 1))
+
+    const root = partition(data);
+  
+    root.each(d => d.current = d);
+  
+    const svg = d3.create("svg")
+        .attr("viewBox", [0, 0, widthEmoji, widthEmoji])
+        .style("font", "10px sans-serif");
+  
+    const g = svg.append("g")
+        .attr("transform", `translate(${widthEmoji / 2},${widthEmoji / 2})`);
+  
+    const path = g.append("g")
+      .selectAll("path")
+      .data(root.descendants().slice(1))
+      .join("path")
+        .attr("fill", d => { while (d.depth > 1) d = d.parent; return color(d.data.name); })
+        .attr("fill-opacity", d => arcVisible(d.current) ? (d.children ? 0.6 : 0.4) : 0)
+        .attr("d", d => arc(d.current));
+  
+    path.filter(d => d.children)
+        .style("cursor", "pointer")
+        .on("click", clicked);
+  
+    path.append("title")
+        .text(d => `${d.ancestors().map(d => d.data.name).reverse().join("/")}\n${format(d.value)}`);
+  
+    const label = g.append("g")
+        .attr("pointer-events", "none")
+        .attr("text-anchor", "middle")
+        .style("user-select", "none")
+      .selectAll("text")
+      .data(root.descendants().slice(1))
+      .join("text")
+        .attr("dy", "0.35em")
+        .attr("fill-opacity", d => +labelVisible(d.current))
+        .attr("transform", d => labelTransform(d.current))
+        .text(d => d.data.name);
+  
+    const parent = g.append("circle")
+        .datum(root)
+        .attr("r", radius)
+        .attr("fill", "none")
+        .attr("pointer-events", "all")
+        .on("click", clicked)
+        //.on('mouseover', mouseOverEmoji)
+        ;
+
+    function clicked(p) {
+      parent.datum(p.parent || root);
+  
+      root.each(d => d.target = {
+        x0: Math.max(0, Math.min(1, (d.x0 - p.x0) / (p.x1 - p.x0))) * 2 * Math.PI,
+        x1: Math.max(0, Math.min(1, (d.x1 - p.x0) / (p.x1 - p.x0))) * 2 * Math.PI,
+        y0: Math.max(0, d.y0 - p.depth),
+        y1: Math.max(0, d.y1 - p.depth)
+      });
+  
+      const t = g.transition().duration(750);
+  
+      // Transition the data on all arcs, even the ones that aren’t visible,
+      // so that if this transition is interrupted, entering arcs will start
+      // the next transition from the desired position.
+      path.transition(t)
+          .tween("data", d => {
+            const i = d3.interpolate(d.current, d.target);
+            return t => d.current = i(t);
+          })
+        .filter(function(d) {
+          return +this.getAttribute("fill-opacity") || arcVisible(d.target);
+        })
+          .attr("fill-opacity", d => arcVisible(d.target) ? (d.children ? 0.6 : 0.4) : 0)
+          .attrTween("d", d => () => arc(d.current));
+  
+      label.filter(function(d) {
+            var text = d3.select(this).text();
+            return +this.getAttribute("fill-opacity") || labelVisible(d.target);
+        }).transition(t)
+          .attr("fill-opacity", d => +labelVisible(d.target))
+          .attrTween("transform", d => () => labelTransform(d.current));
+    }
+    
+    function arcVisible(d) {
+      return d.y1 <= 3 && d.y0 >= 1 && d.x1 > d.x0;
+    }
+  
+    function labelVisible(d) {
+      return d.y1 <= 3 && d.y0 >= 1 && (d.y1 - d.y0) * (d.x1 - d.x0) > 0.03;
+    }
+  
+    function labelTransform(d) {
+      const x = (d.x0 + d.x1) / 2 * 180 / Math.PI;
+      const y = (d.y0 + d.y1) / 2 * radius;
+      return `rotate(${x - 90}) translate(${y},0) rotate(${x < 180 ? 0 : 180})`;
+    }
+  
+    return svg.node();
+}
 
 //#reference below is based on example from http://bl.ocks.org/nbremer/6506614
 
@@ -2419,128 +2697,6 @@ GetRadarChart = (d, options) => {
     return svg.node();
   };
 
-//#reference below is from https://observablehq.com/@d3/zoomable-sunburst
-
-chartEmoji = data => {
-    partition = data => {
-        const root = d3.hierarchy(data)
-            .sum(d => d.value)
-            .sort((a, b) => b.value - a.value);
-        return d3.partition()
-            .size([2 * Math.PI, root.height + 1])
-          (root);
-      }
-    
-    color = d3.scaleOrdinal(d3.quantize(d3.interpolateRainbow, data.children.length + 1))
-    
-    format = d3.format(",d")
-    
-    widthEmoji = 500
-    
-    radius = widthEmoji / 6
-    
-    arc = d3.arc()
-        .startAngle(d => d.x0)
-        .endAngle(d => d.x1)
-        .padAngle(d => Math.min((d.x1 - d.x0) / 2, 0.005))
-        .padRadius(radius * 1.5)
-        .innerRadius(d => d.y0 * radius)
-        .outerRadius(d => Math.max(d.y0 * radius, d.y1 * radius - 1))
-
-    const root = partition(data);
-  
-    root.each(d => d.current = d);
-  
-    const svg = d3.create("svg")
-        .attr("viewBox", [0, 0, widthEmoji, widthEmoji])
-        .style("font", "10px sans-serif");
-  
-    const g = svg.append("g")
-        .attr("transform", `translate(${widthEmoji / 2},${widthEmoji / 2})`);
-  
-    const path = g.append("g")
-      .selectAll("path")
-      .data(root.descendants().slice(1))
-      .join("path")
-        .attr("fill", d => { while (d.depth > 1) d = d.parent; return color(d.data.name); })
-        .attr("fill-opacity", d => arcVisible(d.current) ? (d.children ? 0.6 : 0.4) : 0)
-        .attr("d", d => arc(d.current));
-  
-    path.filter(d => d.children)
-        .style("cursor", "pointer")
-        .on("click", clicked);
-  
-    path.append("title")
-        .text(d => `${d.ancestors().map(d => d.data.name).reverse().join("/")}\n${format(d.value)}`);
-  
-    const label = g.append("g")
-        .attr("pointer-events", "none")
-        .attr("text-anchor", "middle")
-        .style("user-select", "none")
-      .selectAll("text")
-      .data(root.descendants().slice(1))
-      .join("text")
-        .attr("dy", "0.35em")
-        .attr("fill-opacity", d => +labelVisible(d.current))
-        .attr("transform", d => labelTransform(d.current))
-        .text(d => d.data.name);
-  
-    const parent = g.append("circle")
-        .datum(root)
-        .attr("r", radius)
-        .attr("fill", "none")
-        .attr("pointer-events", "all")
-        .on("click", clicked);
-  
-    function clicked(p) {
-      parent.datum(p.parent || root);
-  
-      root.each(d => d.target = {
-        x0: Math.max(0, Math.min(1, (d.x0 - p.x0) / (p.x1 - p.x0))) * 2 * Math.PI,
-        x1: Math.max(0, Math.min(1, (d.x1 - p.x0) / (p.x1 - p.x0))) * 2 * Math.PI,
-        y0: Math.max(0, d.y0 - p.depth),
-        y1: Math.max(0, d.y1 - p.depth)
-      });
-  
-      const t = g.transition().duration(750);
-  
-      // Transition the data on all arcs, even the ones that aren’t visible,
-      // so that if this transition is interrupted, entering arcs will start
-      // the next transition from the desired position.
-      path.transition(t)
-          .tween("data", d => {
-            const i = d3.interpolate(d.current, d.target);
-            return t => d.current = i(t);
-          })
-        .filter(function(d) {
-          return +this.getAttribute("fill-opacity") || arcVisible(d.target);
-        })
-          .attr("fill-opacity", d => arcVisible(d.target) ? (d.children ? 0.6 : 0.4) : 0)
-          .attrTween("d", d => () => arc(d.current));
-  
-      label.filter(function(d) {
-          return +this.getAttribute("fill-opacity") || labelVisible(d.target);
-        }).transition(t)
-          .attr("fill-opacity", d => +labelVisible(d.target))
-          .attrTween("transform", d => () => labelTransform(d.current));
-    }
-    
-    function arcVisible(d) {
-      return d.y1 <= 3 && d.y0 >= 1 && d.x1 > d.x0;
-    }
-  
-    function labelVisible(d) {
-      return d.y1 <= 3 && d.y0 >= 1 && (d.y1 - d.y0) * (d.x1 - d.x0) > 0.03;
-    }
-  
-    function labelTransform(d) {
-      const x = (d.x0 + d.x1) / 2 * 180 / Math.PI;
-      const y = (d.y0 + d.y1) / 2 * radius;
-      return `rotate(${x - 90}) translate(${y},0) rotate(${x < 180 ? 0 : 180})`;
-    }
-  
-    return svg.node();
-}
 
 /*!
 * @license Open source under BSD 2-clause (http://choosealicense.com/licenses/bsd-2-clause/)

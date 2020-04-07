@@ -320,9 +320,6 @@ animation: spin 2s linear infinite;
         width:90% !important;
         display: block !important; 
     }
-    #Graph6{
-        height: 1300px !important;
-    }
     #forceDirectedGraph{
         width: 90% !important;
     }

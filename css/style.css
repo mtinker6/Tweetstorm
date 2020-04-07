@@ -597,7 +597,6 @@ color: #ffffff;
   color: #ffffff;
   background: #ffffff;
   position: relative;
-  height: 1000px;
 }
 
 #Graph6 .overlay {
@@ -772,4 +771,11 @@ footer p {
     font-size: 16px;
   }
 
+}
+
+@media only screen and (max-width: 1000px){
+  
+  #Graph6{
+      height: 1500px !important;
+  }
 }
