@@ -225,44 +225,6 @@ def plot_word_cloud(df):
 # In[26]:
 
 
-def clean_tweets(tweets):
-    '''clean tweets'''
-    
-    nlp = English()
-    
-    # lower case
-    clean_tweets = tweets.apply(lambda tweet: tweet.lower())
-    
-    # remove stop words
-    clean_tweets = clean_tweets.apply(lambda text: " ".join(token.lemma_ for token in nlp(text) if not token.is_stop))
-
-    # remove tags and links
-    clean_tweets = clean_tweets.apply(lambda tweet: ' '.join(re.sub("(@[a-z0-9]+)|(\w+:\/\/\S+)", "", tweet).split()))
-    word_list = ['debate', 'http']
-    clean_tweets = clean_tweets.apply(lambda tweet: ' '.join([word for word in tweet.split() if not any(w in word for w in word_list)]))
-    
-    # combine similar words together
-    word_list = ['donald','trump', 'donaldtrump']
-    clean_tweets = clean_tweets.apply(lambda tweet: ' '.join(['donaldtrump' if any(w in word for w in word_list) else word 
-                                                              for word in tweet.split()]))
-    word_list = ['hillary','clinton', 'hillaryclinton']
-    clean_tweets = clean_tweets.apply(lambda tweet: ' '.join(['hillaryclinton' if any(w in word for w in word_list) else word 
-                                                              for word in tweet.split()]))
-    # remove retweet label
-    clean_tweets = clean_tweets.apply(lambda tweet: re.sub("rt ", "", tweet))
-    
-    # lemmatize tweets
-    clean_tweets = clean_tweets.apply(lambda tweet: lemmatize_with_postag(tweet))
-
-    # remove non-alphanumeric characters
-    clean_tweets = clean_tweets.apply(lambda tweet: ' '.join(re.sub("([^0-9a-z \t])", "", tweet).split()))
-
-    return clean_tweets
-
-
-# In[25]:
-
-
 def extract_topic_words(df):
     '''extract topic words'''
     
