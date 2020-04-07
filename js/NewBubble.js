@@ -210,7 +210,7 @@ $(function(){
                 d3.selectAll('.BubbleText').transition().duration(500).attr('dy', '8em');
             }
             else{
-                d3.selectAll('.BubbleTableValue').transition().duration(500).attr('opacity', 1).attr('dy', '6.5em');
+                d3.selectAll('.BubbleTableValue').transition().duration(500).attr('opacity', 1).attr('dy', (d, i) => ( i%2 == 0 ? '6.5em': '-2.5em'));
                 d3.selectAll('.BubbleText').transition().duration(500).attr('dy', (d, i) => (i%2 == 0 ?'4em': '-4em'));
             }
         }
