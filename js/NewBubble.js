@@ -16,7 +16,7 @@ var getUrlParameter = function getUrlParameter(sParam) {
 };
 
 var width = 1400,
-    height = 600,
+    height = 900,
     padding = 1.5, // separation between same-color nodes
     clusterPadding = 6, // separation between different-color nodes
     maxRadius = 12;
@@ -75,6 +75,8 @@ for (var i = 0; i<n; i++){
     nodes.push(create_nodes(data,i));
 }
 
+var formatDecimal2 = d3.format(".0f");
+
 var force = d3.layout.force()
     .nodes(nodes)
     .size([width, height])
@@ -91,13 +93,13 @@ var svg = d3.select("#bubble").append("svg")
 var node = svg.selectAll("circle")
     .data(nodes)
     .enter().append("g")
-    .attr('id', d => 'g_'+ d.text)
+    .attr('id', d => 'g_'+ d.text.replace(' ', '_'))
     .attr('class', 'MovingNode')
+    .attr('radius', d => formatDecimal2(d.radius))
+    .attr('text', d => d.text)
     .attr('index', d => nodes.indexOf(d))
     .attr('cluster', d => d.cluster)
     .call(force.drag);
-
-var formatDecimal2 = d3.format(".0f");
 
 node.append("circle")
     
@@ -106,15 +108,16 @@ node.append("circle")
     })
     .attr("r", function(d){return d.radius})
     .append("svg:title")
-    .text(d => formatDecimal2(d.radius));
+    .text(d => d.text + ': ' + formatDecimal2(d.radius));
    
     
 node.append("text")
+    .attr("class", "BubbleText")
     .attr("dy", ".3em")
     .style("text-anchor", "middle")
     .text(function(d) { return d.text })
     .append("svg:title")
-    .text(d => formatDecimal2(d.radius));
+    .text(d => d.text + ': ' + formatDecimal2(d.radius));
 
 
 node.append("text")
@@ -127,11 +130,15 @@ node.append("text")
 
 $(function(){
     
-    if(width < 1400){
-        $('#divArrayViewBubble').hide();
-    }
+    // if(width < 1400){
+    //     $('#divArrayViewBubble').hide();
+    // }
 
     $("#cbToggleBubble").change(function() {
+        $("#cbToggleBubble").attr("disabled", true);
+        $("#lbToggleBubble").attr("for", "");
+        $("#lbToggleBubble").css("opacity", "0.3");
+
         var g = d3.selectAll('.MovingNode');
 
         if ($(this).is(':checked'))
@@ -144,20 +151,67 @@ $(function(){
                     translate = string.substring(string.indexOf("(")+1, string.indexOf(")")).split(",");
                     originalTablePosX[i] = translate[0];
                     originalTablePosY[i] = translate[1];
-                    var XP = tablePos[i];
-                    var YP = height/4
-                    if(gElement.attr('cluster') == '1')
+                    var XP = tablePos[i];         
+                    var YP = height/6
+
+                    if (totalWidthTable < 1200)
                     {
-                        XP = XP - width/7 * 6;
-                        YP = height/4 * 3;
+                        var XSection = Math.floor(g[0].length/4)
+                        var radius = parseInt(gElement.attr("radius"));
+                        
+                        if(gElement.attr('cluster') == '1')
+                        {
+                            if(i > XSection * 3)
+                            {
+                                XP = XP + radius + i * 15  - width * 2.0;
+                                YP = YP * 5;
+                            }
+                            else{
+                                XP = XP + radius + i * 15 - width * 1.3;
+                                YP = YP * 3.5;
+                            }
+                        }
+                        else{
+                            var preRadius = 0;
+                            if (i > 0 ) {
+                                let pi = i - 1;
+                                preRadius = parseInt(d3.select('#' + g[0][pi].id).attr("radius"));
+                            }
+
+                            if(i > XSection)
+                            {
+                                XP = XP + preRadius + i * 20  - width * 0.6;
+                                YP = YP * 2;
+                            }
+                            else{
+                                XP = XP + preRadius + i * 25  //- width * 1;
+                                YP = YP * 0.5;
+                            }
+                        }
                     }
+                    else{
+                        if(gElement.attr('cluster') == '1')
+                        {
+                            XP = XP - width/7 * 6;
+                            YP = YP * 3;
+                        }
+                    }
+
+
                     gElement
                         .transition().duration(1000)
                         .attr('transform', `translate(${XP}, ${YP})`);
                 }
             );
 
-            d3.selectAll('.BubbleTableValue').transition().duration(500).attr('opacity', 1)
+            if (totalWidthTable >= 1200)
+            {
+                d3.selectAll('.BubbleTableValue').transition().duration(500).attr('opacity', 1).attr('dy', '10em');
+                d3.selectAll('.BubbleText').transition().duration(500).attr('dy', '8em');
+            }
+            else{
+                d3.selectAll('.BubbleTableValue').transition().duration(500).attr('opacity', 1).attr('dy', '6.5em');
+            }
         }
         else
         {
@@ -171,10 +225,17 @@ $(function(){
             
             setTimeout(function(){ 
                 force.on("tick", tick);
-            }, 2000);
+            }, 1600);
 
             d3.selectAll('.BubbleTableValue').transition().duration(500).attr('opacity', 0)
+            d3.selectAll('.BubbleText').transition().duration(500).attr('dy', '.3em');
         }
+
+        setTimeout(function(){ 
+            $("#cbToggleBubble").removeAttr("disabled");
+            $("#lbToggleBubble").attr("for", "cbToggleBubble");
+            $("#lbToggleBubble").css("opacity", "1");
+        }, 1600);
     });
 })
 

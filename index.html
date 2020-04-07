@@ -407,7 +407,7 @@ Twitter, “a popular microblogging service where users create status messages (
                          <h1><span  style="color: black !important;">Word Cloud</span></h1>
                     </div>
                     <div class="wow fadeInUp" style="width: 1450px;">
-                         <iframe id="bubbleChartIFrame" src="BubbleChart.html?width=1400" style="width: 1450px;height: 730px;" frameBorder="0"></iframe>
+                         <iframe id="bubbleChartIFrame" src="BubbleChart.html?width=1400" style="width: 1450px;height: 1050px;" frameBorder="0"></iframe>
                     </div>
                </div>
           </div>
@@ -422,10 +422,16 @@ Twitter, “a popular microblogging service where users create status messages (
           <div class="row">
                <div class="col-md-12 col-sm-12">
                     <div class="wow bounceIn section-title">
-                         <div class="wow bounceIn section-title" style="padding-top:100px;">
+                         <div class="wow bounceIn section-title">
                               <h1><span  style="color: steelblue !important;">Graph 5</span></h1>
                          </div>
-                         <div id="forceDirectedGraph"  style="width: 1400px;height: 800px;" class="wow fadeInUp"></div>
+                         <div class="wow bounceIn section-title" style="color: steelblue;font-size:30px;">
+                              <label >Filter: Count More Than </label>&nbsp;&nbsp;&nbsp;
+                              <a class="Minus" style="font-size: 35px;font-weight: bold;">-</a>&nbsp;&nbsp;
+                              <label id="lbNodeFilter"></label>&nbsp;&nbsp;
+                              <a class="Plus" style="font-size: 35px;font-weight: bold;">+</a>
+                         </div>
+                         <div id="forceDirectedGraph"  style="width: 1400px;height: 1000px;" class="wow fadeInUp"></div>
                     </div>
                </div>
           </div>

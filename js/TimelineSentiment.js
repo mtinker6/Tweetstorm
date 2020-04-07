@@ -1,4 +1,3 @@
-	
 function WindowScreen(){
     return $(window).width();
 }
@@ -7,12 +6,11 @@ function IsMobileDevice(){
     return WindowScreen() < 1200
 }
 
-
-$(function(){
-
+$(function() {
     if(IsMobileDevice()) {
          widthIframe =  WindowScreen() * 0.9;
          $('#bubbleChartIFrame').attr('src', 'BubbleChart.html?width=' + widthIframe);
+         $('#TEmoji').css('width', widthIframe);
     }
 })
 
@@ -1613,11 +1611,32 @@ var WireUpEvents = () => {
                 lineNumbersTrump.transition().duration(200).attr('opacity', 0);
             }
         }
-    );		
+    );
+    
+    $('.Minus').on('click', MinusClick);
+    $('.Plus').on('click', PlusClick);
 
     $(window).click(function(e) {
         $('.tooltipPopup').fadeOut();
     });
+}
+
+function MinusClick(){
+    nodeCountFilter = nodeCountFilter - 5;
+    if(nodeCountFilter < 0){
+        nodeCountFilter = 0;
+        
+    }
+    BuildFDGraph(cachedFDGraph, false);
+}
+
+function PlusClick(){
+    nodeCountFilter = nodeCountFilter + 5;
+    if(nodeCountFilter < 0){
+        nodeCountFilter = 0;
+        
+    }
+    BuildFDGraph(cachedFDGraph, false);
 }
 
 function ProcessTopThemes(data) {
@@ -1822,22 +1841,34 @@ function CreateFDGraph(){
     })
 }
 
-function BuildFDGraph(data){
+var nodeCountFilter = 0;
+function BuildFDGraph(data, rebuild = true){
     var currentData = JSON.parse(JSON.stringify(data));
     var eventName = 'election_day';
-    var nodeCountFilter = 0;
+    
     var selectBtns = $('.btnDebateSelected');
+
+    
     if(selectBtns.length == 1){
         eventName = selectBtns.attr('event').replace('_', ' ');
 
-        if(eventName == "Second debate" || eventName == "Third debate"){
-            nodeCountFilter = 60;
-        }
+        if(rebuild)
+        {
+            if(eventName == "Second debate" || eventName == "Third debate"){
+                nodeCountFilter = 60;
+            }
 
-        if(eventName == "First debate" || eventName == "VP debate"){
-            nodeCountFilter = 30;
+            if(eventName == "First debate" || eventName == "VP debate"){
+                nodeCountFilter = 30;
+            }
+
+            if(eventName == "Before Election"){
+                nodeCountFilter = 0;
+            }
         }
     }
+
+    $('#lbNodeFilter').text(nodeCountFilter);
 
     var links = currentData.filter(d => d.Date == eventName && d.source != d.target && d.value > nodeCountFilter);
 
