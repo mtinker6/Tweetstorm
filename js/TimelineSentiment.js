@@ -157,7 +157,7 @@ function InitLineGraphFrame(){
         .append('svg')
         .attr('width', widthLine + marginLine.right + marginLine.left)
         .attr('height', heightLine + marginLine.top + marginLine.bottom)
-        .attr('transform', `translate(${marginLine.left - 150}, 0)`);;
+        .attr('transform', `translate(${marginLine.left - 150}, 10)`);;
 
     lineGraph = lineGraphFrame.append('g')
         .attr('transform', `translate(${marginLine.left}, ${marginLine.top})`);

@@ -261,8 +261,8 @@ display: block;
 
 /* Style the checkmark/indicator */
 .container .checkmark:after {
-left: 6px;
-top: 0px;
+left: 8px;
+top: 2px;
 width: 5px;
 height: 15px;
 border: solid white;
