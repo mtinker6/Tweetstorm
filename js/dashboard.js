@@ -40,7 +40,7 @@ svg03.append('text').attr('x',33).attr('y',40).attr('fill','white').style("font-
 svg03.append('text').attr('x',166).attr('y',40).attr('fill','white').style("font-weight",'bold').text('Polarity');
 svg04.append('text').attr('x',53).attr('y',20).attr('fill','white').style("font-weight",'bold').text('Candidate');
 svg04.append('text').attr('x',29).attr('y',40).attr('fill','white').style("font-weight",'bold').text('Preference Score');
-svg04.append('text').attr('x',5).attr('y',110).attr('fill','white').style("font-weight",'bold').style('font-size','24px').text('Select map layer:');
+svg04.append('text').attr('x',5).attr('y',110).attr('fill','white').style("font-weight",'bold').style('font-size','24px').text('Select map layer:').attr('class', 'Selectmaplayer');
 
 // Legends, scales, axes
 var thickness = 20; var legendlength = 400;
@@ -100,26 +100,35 @@ var sliderStep = d3.sliderBottom().min(1).max(5).width(300).tickFormat(tickForma
 //           .style('fill', function(d,i) {return i==0 ? 'cyan' : 'white';})
 //           .on('click', click_button)
 //           .on('mouseover', function() {d3.select(this).style('cursor', 'pointer');});
+var layer1 = 440;
+var layer2 = 530;
+if(window_width < 1000){
+  layer1 = 400;
+  layer2 = 470;
+}
 buttonsLayer.append('text')
           .attr('x', 220)
           .attr('y', 110)
           .text(layers[0])
+          .attr('class', 'layeroption')
           .style('font-size','20px')
           .style('fill', 'cyan')
           .on('click', click_button)
           .on('mouseover', function() {d3.select(this).style('cursor', 'pointer');});
 buttonsLayer.append('text')
-          .attr('x', 440)
+          .attr('x', layer1)
           .attr('y', 110)
           .text(layers[1])
+          .attr('class', 'layeroption')
           .style('font-size','20px')
           .style('fill', 'white')
           .on('click', click_button2)
           .on('mouseover', function() {d3.select(this).style('cursor', 'pointer');});
 buttonsLayer.append('text')
-          .attr('x', 530)
+          .attr('x', layer2)
           .attr('y', 110)
           .text(layers[2])
+          .attr('class', 'layeroption')
           .style('font-size','20px')
           .style('fill', 'white')
           .on('click', click_button3)
