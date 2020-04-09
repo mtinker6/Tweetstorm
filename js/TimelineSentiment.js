@@ -53,6 +53,7 @@ var startProductBarPos=-1;
 var cachedData;
 var cachedtopthemes;
 var cachedFDGraph;
+var cachedthemes;
 
 //GenerateLineGraph - start
 
@@ -587,7 +588,7 @@ if(IsMobileDevice()) {
 }
 
 var totalHeight = totalWidth * 0.5;
-var margin = { top: 40, right: 10, bottom: 10, left: 120 };
+var margin = { top: 40, right: 10, bottom: 10, left: 200 };
 var width = totalWidth - margin.right - margin.left - 100;
 var height = totalHeight - margin.top - margin.bottom;
 
@@ -724,6 +725,223 @@ function GenerateTopThemeGraphChart(dataSet, chartResolve){
 }
 
 //top themes - end
+
+IntializeThemesChart();
+
+function ProcessedThemes(data){
+    //return data;
+    return data.map(
+        function (d) {
+
+            var stateValue = d.state.split(" ").join("_")
+            var t1_1 = d.theme_1_1.split(" ").join("_");
+            var t2_1 = d.theme_2_1.split(" ").join("_");
+            var t3_1 = d.theme_3_1.split(" ").join("_");
+            var t1_2 = d.theme_1_2.split(" ").join("_");
+            var t2_2 = d.theme_2_2.split(" ").join("_");
+            var t3_2 = d.theme_3_2.split(" ").join("_");
+            var t1_3 = d.theme_1_3.split(" ").join("_");
+            var t2_3 = d.theme_2_3.split(" ").join("_");
+            var t3_3 = d.theme_3_3.split(" ").join("_");
+            var t1_4 = d.theme_1_4.split(" ").join("_");
+            var t2_4 = d.theme_2_4.split(" ").join("_");
+            var t3_4 = d.theme_3_4.split(" ").join("_");
+            var t1_5 = d.theme_1_5.split(" ").join("_");
+            var t2_5 = d.theme_2_5.split(" ").join("_");
+            var t3_5 = d.theme_3_5.split(" ").join("_");
+
+            var firstDict = {};
+            var vpDict = {};
+            var secondDict = {};
+            var thirdDict = {};
+            var electionDict = {};
+
+            firstDict[t1_1] = 1;
+            firstDict[t2_1] = 1;
+            firstDict[t3_1] = 1;
+            vpDict[t1_2] = 1;
+            vpDict[t2_2] = 1;
+            vpDict[t3_2] = 1;
+            secondDict[t1_3] = 1;
+            secondDict[t2_3] = 1;
+            secondDict[t3_3] = 1;
+            thirdDict[t1_4] = 1;
+            thirdDict[t2_4] = 1;
+            thirdDict[t3_4] = 1;
+            electionDict[t1_5] = 1;
+            electionDict[t2_5] = 1;
+            electionDict[t3_5] = 1;
+
+            return{
+                state:stateValue,
+                First_debate: firstDict,
+                VP_debate: vpDict,
+                Second_debate:secondDict,
+                Third_debate: thirdDict,
+                Before_Election : electionDict
+            }
+        }
+    );
+}
+
+function IntializeThemesChart(){
+    d3.csv("data/tweettopthemes.csv",
+    rawrow => ({
+        state : rawrow['state'],
+        theme_1_1 : rawrow['top_theme_1_1'],
+        theme_2_1 : rawrow['top_theme_2_1'],
+        theme_3_1 : rawrow['top_theme_3_1'],
+        theme_1_2 : rawrow['top_theme_1_2'],
+        theme_2_2 : rawrow['top_theme_2_2'],
+        theme_3_2 : rawrow['top_theme_3_2'],
+        theme_1_3 : rawrow['top_theme_1_3'],
+        theme_2_3 : rawrow['top_theme_2_3'],
+        theme_3_3 : rawrow['top_theme_3_3'],
+        theme_1_4 : rawrow['top_theme_1_4'],
+        theme_2_4 : rawrow['top_theme_2_4'],
+        theme_3_4 : rawrow['top_theme_3_4'],
+        theme_1_5 : rawrow['top_theme_1_5'],
+        theme_2_5 : rawrow['top_theme_2_5'],
+        theme_3_5 : rawrow['top_theme_3_5'],
+    })
+
+    ).then(
+    data => {
+        var processedThemesdata = ProcessedThemes(data)
+        cachedthemes = processedThemesdata;
+        CreateThemesChart(cachedthemes);
+    })
+}
+
+function CreateThemesChart(data) {
+
+    d3.select("#ThemesChart").html("");
+    TOPICS = ['Abortion', 'Benghazi', 'Bernie Sanders', 'Foreign Policy', 'Global Warming', 'Jobs', 'Law', 'Make America Great Again', 'Obama', 
+        'Racial Issues','Tax', 'The Wall', 'Women'
+    ]
+
+    var themesWidth = 1200;
+    var themesHeight = 1400;
+
+    var tThemes = d3.transition().duration(500);
+
+    if(IsMobileDevice()) {
+        themesWidth =  WindowScreen() * 0.98
+    }
+
+    var ThemesChart = d3
+        .select('#ThemesChart')
+        .append('svg')
+        .attr('width', themesWidth)
+        .attr('height', themesHeight)
+        .append('g')
+
+    var header = ThemesChart
+        .append('g')
+        .attr('class', 'topicheader');
+
+    var Sider = ThemesChart
+        .append('g')
+        .attr('class', 'topicSider');
+
+    var Content = ThemesChart
+        .append('g')
+        .attr('class', 'topicContent');
+
+    var headrGapFactor = 70;
+    var headrAngleFactor = 20;
+    if(IsMobileDevice()){
+        headrGapFactor = 32;
+        headrAngleFactor = 40;
+    }
+    var TopicHeaderText = header.selectAll('text')
+        .data(TOPICS)
+        .join(
+            enter => {
+                enter
+                .append('g')
+                .attr('id', (d, i) => d.split(" ").join("_") )
+                .attr('transform', (d, i) => `translate(${120 + i *headrGapFactor}, 100)`)
+                .append('text')
+                .attr('class', 'TopicHeaderText')
+                .transition(tThemes)
+                .text((d, i) => d)
+                .attr('text-anchor', 'start')
+                .attr('font-weight','bold')
+                .style('fill', 'black')
+                .attr("transform", `rotate(-${headrAngleFactor})`)
+            },
+
+            update => {
+                
+            },
+
+            exit => {
+                
+            }
+        )
+   
+    var TopicSiderText = Sider.selectAll('text')
+        .data(data)
+        .join(
+            enter => {
+                enter
+                .append('g')
+                .attr('id', (d, i) => d.state.split(" ").join("_") )
+                .attr('transform', (d, i) => `translate(0, ${140 + i *20})`)
+                .append('text')
+                .attr('class', 'TopicSiderText')
+                .transition(tThemes)
+                .text((d, i) => d.state)
+                .attr('text-anchor', 'start')
+                .attr('font-weight','bold')
+                .style('fill', 'black')
+            },
+
+            update => {
+                
+            },
+
+            exit => {
+                
+            }
+        )
+
+    var selectBtns = $('.btnDebateSelected');
+    var eventName = selectBtns.attr('event');
+    var i;
+    for (i = 0; i < data.length; i++) {
+        var row = data[i];
+        var state = row.state;
+       
+        var CY = GetTranslate(state)[1];
+        var eventData = row[eventName];
+        var Themes = Object.keys(eventData);
+        var j;
+        for (j = 0; j < Themes.length; j++) {
+            var themeName = Themes[j];
+            var CX = GetTranslate(themeName)[0];
+           
+            Content
+                .append('g')
+                .attr('id', state + '_' + themeName)
+                .attr('transform', (d, i) => `translate(${CX}, ${CY})`)
+                .append("rect")
+                .attr("width", 30)
+                .attr("height", 10)
+                .attr('y', -10)
+                .attr("fill", 'dodgerblue');
+        }
+
+    }
+}
+
+function GetTranslate(idString){
+    var transform = d3.select('#' + idString).attr("transform");
+    var translate = transform.substring(transform.indexOf("(")+1, transform.indexOf(")")).split(",");
+    return translate
+}
+
 
 
 //GenerateSwingState - start
