@@ -862,6 +862,21 @@ var mouseoutThemestopic = d => {
         d3.select('#' + states[j] + '-' + themeName).classed("ThemeHighlighted", false);
     }
 }
+
+function clickThemestopic(d){
+    d3.selectAll('.ThemeSelected').classed("ThemeSelected", false);
+    var selected = true;
+    var themeName = d.split(" ").join("_")
+    d3.select('#' + themeName + "-h").classed("ThemeSelected", selected);
+    d3.select('#' + themeName + "-f").classed("ThemeSelected", selected);
+
+    var states  = findState(themeName);
+    var j;
+    for (j = 0; j < states.length; j++) {
+        d3.select('#' + states[j] + '-s').classed("ThemeSelected", selected);
+        d3.select('#' + states[j] + '-' + themeName).classed("ThemeSelected", selected);
+    }
+}
 function mouseoverThemesRect () {
     var id = d3.select(this).attr('id').split(" ").join("_").split('-')
     d3.select('#' + id[1] + "-h").classed("ThemeHighlighted", true);
@@ -888,6 +903,19 @@ function mouseoverThemesSide (d) {
         d3.select('#' + themes[j] + '-h').classed("ThemeHighlighted", true);
         d3.select('#' + themes[j] + '-f').classed("ThemeHighlighted", true);
         d3.select('#' + state + '-' + themes[j]).classed("ThemeHighlighted", true);
+    }
+}
+
+function clickThemesSide(d){
+    d3.selectAll('.ThemeSelected').classed("ThemeSelected", false);
+    var state = d3.select(this).attr('id').split('-')[0];
+    d3.select('#' + state + "-s").classed("ThemeSelected", true);
+    var themes = findThemes(state);    
+    var j;
+    for (j = 0; j < themes.length; j++) {
+        d3.select('#' + themes[j] + '-h').classed("ThemeSelected", true);
+        d3.select('#' + themes[j] + '-f').classed("ThemeSelected", true);
+        d3.select('#' + state + '-' + themes[j]).classed("ThemeSelected", true);
     }
 }
 
@@ -1092,19 +1120,18 @@ function CreateThemesChart(data) {
       
     d3.selectAll('.TopicHeaderText').on('mouseover', mouseoverThemestopic);
     d3.selectAll('.TopicHeaderText').on('mouseout', mouseoutThemestopic);
-
-    d3.selectAll('.TopicHeaderText').on('click', function(d){
-        
-    });
+    d3.selectAll('.TopicHeaderText').on('click', clickThemestopic);
 
     d3.selectAll('.TopicFooterText').on('mouseover', mouseoverThemestopic);
     d3.selectAll('.TopicFooterText').on('mouseout', mouseoutThemestopic);
+    d3.selectAll('.TopicFooterText').on('click', clickThemestopic);
 
     d3.selectAll('.TopicRankRect').on('mouseover', mouseoverThemesRect);
     d3.selectAll('.TopicRankRect').on('mouseout', mouseoutThemesRect);
 
     d3.selectAll('.TopicSiderText').on('mouseover', mouseoverThemesSide);
     d3.selectAll('.TopicSiderText').on('mouseout', mouseoutThemesSide);
+    d3.selectAll('.TopicSiderText').on('click', clickThemesSide);
 
 }
 

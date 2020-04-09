@@ -183,7 +183,7 @@
     right:0;
 }
 
-.ThemeHighlighted{
+.ThemeHighlighted, .ThemeSelected{
     fill:dodgerblue !important;
     color: dodgerblue !important;
 }
