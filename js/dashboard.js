@@ -20,27 +20,27 @@ var debate = 0, colour_scheme = 0, state_index;
 
 // Add background for click zoom out functionality, visualize borders
 svg01.append('rect').attr('class', 'background').attr('width', width01).attr('height', height01).on('click', clicked);
-svg02.append('rect').attr('class', 'background').attr('width', width02).attr('height', height02);
-svg03.append('rect').attr('class', 'background').attr('width', width03).attr('height', height03);
-svg04.append('rect').attr('class', 'background').attr('width', width04).attr('height', height04);
+// svg02.append('rect').attr('class', 'background').attr('width', width02).attr('height', height02);
+// svg03.append('rect').attr('class', 'background').attr('width', width03).attr('height', height03);
+// svg04.append('rect').attr('class', 'background').attr('width', width04).attr('height', height04);
 // State name on hover
 svg02.append('text').attr('class','statehover').attr('x',10).attr('y',50).attr("fill", "#46b5d1");
 svg02.append('text').attr('class','statedetails preferreddetails').attr('x',10).attr('y',90).attr("fill", "white").style("font-weight",'bold');
-svg02.append('text').attr('class','statedetails actualdetails').attr('x',168).attr('y',90).attr("fill", "white").style("font-weight",'bold');
+svg02.append('text').attr('class','statedetails actualdetails').attr('x',180).attr('y',90).attr("fill", "white").style("font-weight",'bold');
 svg02.append('svg:image').attr('class','statedetails statepreferred').attr('x',45).attr('y',105).attr('width',75).attr('height',75);
 svg02.append('svg:image').attr('class','statedetails elected').attr('x',168).attr('y',105).attr('width',75).attr('height',75);
 svg02.append('text').attr('class','statedetails statepolarity').attr("fill", "white").style("font-weight",'bold').style('font-size','22px').attr('x',10).attr('y',220);
 svg02.append('text').attr('class','statedetails statesubjectivity').attr("fill", "white").style("font-weight",'bold').style('font-size','22px').attr('x',10).attr('y',250);
 svg02.append('text').attr('class','statedetails top-themes').attr("fill", "white").style("font-weight",'bold').style('font-size','22px').attr('x',10).attr('y',300);
-svg02.append('text').attr('class','statedetails theme1').attr('x',10).attr('y',328).attr("fill", "white");
-svg02.append('text').attr('class','statedetails theme2').attr('x',10).attr('y',349).attr("fill", "white");
-svg02.append('text').attr('class','statedetails theme3').attr('x',10).attr('y',370).attr("fill", "white");
+svg02.append('text').attr('class','statedetails theme1').attr('x',10).attr('y',328).attr("fill", "white").style('font-size','18px');
+svg02.append('text').attr('class','statedetails theme2').attr('x',10).attr('y',351).attr("fill", "white").style('font-size','18px');
+svg02.append('text').attr('class','statedetails theme3').attr('x',10).attr('y',374).attr("fill", "white").style('font-size','18px');
 // Titles
 svg03.append('text').attr('x',33).attr('y',40).attr('fill','white').style("font-weight",'bold').text('Subjectivity');
 svg03.append('text').attr('x',166).attr('y',40).attr('fill','white').style("font-weight",'bold').text('Polarity');
 svg04.append('text').attr('x',53).attr('y',20).attr('fill','white').style("font-weight",'bold').text('Candidate');
 svg04.append('text').attr('x',29).attr('y',40).attr('fill','white').style("font-weight",'bold').text('Preference Score');
-svg04.append('text').attr('x',25).attr('y',100).attr('fill','white').style("font-weight",'bold').style('font-size','26px').text('Select map layer');
+svg04.append('text').attr('x',5).attr('y',110).attr('fill','white').style("font-weight",'bold').style('font-size','24px').text('Select map layer:');
 
 // Legends, scales, axes
 var thickness = 20; var legendlength = 400;
@@ -92,28 +92,52 @@ var sliderStep = d3.sliderBottom().min(1).max(5).width(300).tickFormat(tickForma
                       debate = val - 1;
                       update_map();
                     });
-buttonsLayer.selectAll('text').data(layers).enter().append('text')
-          .attr('x', 25)
-          .attr('y', function(d,i) {return 130 + i*26})
-          .text(function(d) {return d;})
-          .style('font-size','18px')
-          .style('fill', function(d,i) {return i==0 ? 'cyan' : 'white';})
+// buttonsLayer.selectAll('text').data(layers).enter().append('text')
+//           .attr('x', 250)
+//           .attr('y', function(d,i) {return 140 + i*26})
+//           .text(function(d) {return d;})
+//           .style('font-size','18px')
+//           .style('fill', function(d,i) {return i==0 ? 'cyan' : 'white';})
+//           .on('click', click_button)
+//           .on('mouseover', function() {d3.select(this).style('cursor', 'pointer');});
+buttonsLayer.append('text')
+          .attr('x', 220)
+          .attr('y', 110)
+          .text(layers[0])
+          .style('font-size','20px')
+          .style('fill', 'cyan')
           .on('click', click_button)
           .on('mouseover', function() {d3.select(this).style('cursor', 'pointer');});
-slideLayer.call(sliderStep)
-          .attr('transform', 'translate(290,100)')
-          .style("fill", "white")
-          .append('text').text('Selected Event:')
-          .style('font-size','24px')
-          .style("font-weight", "bold")
-          .style("fill", "white")
-          .attr('transform', 'translate(-10,50)')
-slideLayer.append('text').text(debates[debate]) // Display selected event
-          .attr('class', 'selected_event')
-          .attr('font-size','24px')
-          .attr("font-weight", "bold")
-          .style("fill", "cyan")
-          .attr('transform', 'translate(180,50)');
+buttonsLayer.append('text')
+          .attr('x', 440)
+          .attr('y', 110)
+          .text(layers[1])
+          .style('font-size','20px')
+          .style('fill', 'white')
+          .on('click', click_button2)
+          .on('mouseover', function() {d3.select(this).style('cursor', 'pointer');});
+buttonsLayer.append('text')
+          .attr('x', 530)
+          .attr('y', 110)
+          .text(layers[2])
+          .style('font-size','20px')
+          .style('fill', 'white')
+          .on('click', click_button3)
+          .on('mouseover', function() {d3.select(this).style('cursor', 'pointer');});
+// slideLayer.call(sliderStep)
+//           .attr('transform', 'translate(290,100)')
+//           .style("fill", "white")
+//           .append('text').text('Selected Event:')
+//           .style('font-size','24px')
+//           .style("font-weight", "bold")
+//           .style("fill", "white")
+//           .attr('transform', 'translate(-10,50)')
+// slideLayer.append('text').text(debates[debate]) // Display selected event
+//           .attr('class', 'selected_event')
+//           .attr('font-size','24px')
+//           .attr("font-weight", "bold")
+//           .style("fill", "cyan")
+//           .attr('transform', 'translate(180,50)');
 
 function draw_map(array) {
     geojson = topojson.feature(array[0], array[0].objects.states);
@@ -471,8 +495,20 @@ function mouseout(d){
   };
 };
 
-function click_button(d,i) {
-  colour_scheme = i;
+function click_button() {
+  colour_scheme = 0;
+  update_map();
+  buttonsLayer.selectAll('text').style("fill", "white");
+  d3.select(this).style("fill", "cyan");
+}
+function click_button2() {
+  colour_scheme = 1;
+  update_map();
+  buttonsLayer.selectAll('text').style("fill", "white");
+  d3.select(this).style("fill", "cyan");
+}
+function click_button3() {
+  colour_scheme = 2;
   update_map();
   buttonsLayer.selectAll('text').style("fill", "white");
   d3.select(this).style("fill", "cyan");
