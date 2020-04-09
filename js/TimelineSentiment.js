@@ -733,7 +733,7 @@ function ProcessedThemes(data){
     return data.map(
         function (d) {
 
-            var stateValue = d.state.split(" ").join("_")
+            var stateValue = d.state
             var t1_1 = d.theme_1_1.split(" ").join("_");
             var t2_1 = d.theme_2_1.split(" ").join("_");
             var t3_1 = d.theme_3_1.split(" ").join("_");
@@ -757,20 +757,20 @@ function ProcessedThemes(data){
             var electionDict = {};
 
             firstDict[t1_1] = 1;
-            firstDict[t2_1] = 1;
-            firstDict[t3_1] = 1;
+            firstDict[t2_1] = 2;
+            firstDict[t3_1] = 3;
             vpDict[t1_2] = 1;
-            vpDict[t2_2] = 1;
-            vpDict[t3_2] = 1;
+            vpDict[t2_2] = 2;
+            vpDict[t3_2] = 3;
             secondDict[t1_3] = 1;
-            secondDict[t2_3] = 1;
-            secondDict[t3_3] = 1;
+            secondDict[t2_3] = 2;
+            secondDict[t3_3] = 3;
             thirdDict[t1_4] = 1;
-            thirdDict[t2_4] = 1;
-            thirdDict[t3_4] = 1;
+            thirdDict[t2_4] = 2;
+            thirdDict[t3_4] = 3;
             electionDict[t1_5] = 1;
-            electionDict[t2_5] = 1;
-            electionDict[t3_5] = 1;
+            electionDict[t2_5] = 2;
+            electionDict[t3_5] = 3;
 
             return{
                 state:stateValue,
@@ -813,6 +813,97 @@ function IntializeThemesChart(){
     })
 }
 
+function findState(theme) {
+    var stateResults = [];
+    d3.selectAll('.TopicRankRect').nodes().forEach(function(d,i) { 
+        var rectID = d['id'].split('-');
+        var state = rectID[0];
+        if(theme == rectID[1] && !stateResults.includes(state)){
+            stateResults.push(state);
+        }
+    });
+    return stateResults;
+}
+
+function findThemes(state) {
+    var themeResults = [];
+    d3.selectAll('.TopicRankRect').nodes().forEach(function(d,i) { 
+        var rectID = d['id'].split('-');
+        var theme = rectID[1];
+        if(state == rectID[0] && !themeResults.includes(theme)){
+            themeResults.push(theme);
+        }
+    });
+    return themeResults;
+}
+
+
+var mouseoverThemestopic = d => {
+    var themeName = d.split(" ").join("_")
+    d3.select('#' + themeName + "-h").classed("ThemeHighlighted", true);
+    d3.select('#' + themeName + "-f").classed("ThemeHighlighted", true);
+
+    var states  = findState(themeName);
+    var j;
+    for (j = 0; j < states.length; j++) {
+        d3.select('#' + states[j] + '-s').classed("ThemeHighlighted", true);
+        d3.select('#' + states[j] + '-' + themeName).classed("ThemeHighlighted", true);
+    }
+}
+
+var mouseoutThemestopic = d => {
+    var themeName = d.split(" ").join("_")
+    d3.select('#' + d.split(" ").join("_") + "-h").classed("ThemeHighlighted", false);
+    d3.select('#' + d.split(" ").join("_") + "-f").classed("ThemeHighlighted", false);
+    var states  = findState(themeName);
+    var j;
+    for (j = 0; j < states.length; j++) {
+        d3.select('#' + states[j] + '-s').classed("ThemeHighlighted", false);
+        d3.select('#' + states[j] + '-' + themeName).classed("ThemeHighlighted", false);
+    }
+}
+function mouseoverThemesRect () {
+    var id = d3.select(this).attr('id').split(" ").join("_").split('-')
+    d3.select('#' + id[1] + "-h").classed("ThemeHighlighted", true);
+    d3.select('#' + id[1] + "-f").classed("ThemeHighlighted", true);
+    d3.select('#' + id[0] + "-s").classed("ThemeHighlighted", true);
+    d3.select(this).classed("ThemeHighlighted", true);
+}
+
+function mouseoutThemesRect () {
+    var id = d3.select(this).attr('id').split(" ").join("_").split('-')
+    d3.select('#' + id[1] + "-h").classed("ThemeHighlighted", false);
+    d3.select('#' + id[1] + "-f").classed("ThemeHighlighted", false);
+    d3.select('#' + id[0] + "-s").classed("ThemeHighlighted", false);
+    d3.select(this).classed("ThemeHighlighted", false);
+}
+
+
+function mouseoverThemesSide (d) {
+    var state = d3.select(this).attr('id').split('-')[0];
+    d3.select('#' + state + "-s").classed("ThemeHighlighted", true);
+    var themes = findThemes(state);    
+    var j;
+    for (j = 0; j < themes.length; j++) {
+        d3.select('#' + themes[j] + '-h').classed("ThemeHighlighted", true);
+        d3.select('#' + themes[j] + '-f').classed("ThemeHighlighted", true);
+        d3.select('#' + state + '-' + themes[j]).classed("ThemeHighlighted", true);
+    }
+}
+
+function mouseoutThemesSide (d) {
+    var state = d3.select(this).attr('id').split('-')[0];
+    d3.select('#' + state + "-s").classed("ThemeHighlighted", false);
+    var themes = findThemes(state);    
+    var j;
+    for (j = 0; j < themes.length; j++) {
+        d3.select('#' + themes[j] + '-h').classed("ThemeHighlighted", false);
+        d3.select('#' + themes[j] + '-f').classed("ThemeHighlighted", false);
+        d3.select('#' + state + '-' + themes[j]).classed("ThemeHighlighted", false);
+    }
+}
+
+
 function CreateThemesChart(data) {
 
     d3.select("#ThemesChart").html("");
@@ -821,7 +912,7 @@ function CreateThemesChart(data) {
     ]
 
     var themesWidth = 1200;
-    var themesHeight = 1400;
+    var themesHeight = 1600;
 
     var tThemes = d3.transition().duration(500);
 
@@ -836,9 +927,50 @@ function CreateThemesChart(data) {
         .attr('height', themesHeight)
         .append('g')
 
+    var legend  = ThemesChart
+        .append('g')
+        .attr('class', 'themeslegend');
+
+        legend.append("rect")
+            .attr("width", 30)
+            .attr("height", 10)
+            .attr('transform', 'translate(0,10)')
+            .attr("fill", 'purple');
+
+        legend.append("text")
+            .attr('transform', 'translate(40,18)')
+            .text('Rank 1st');
+
+        legend.append("rect")
+            .attr("width", 20)
+            .attr("height", 10)
+            .attr('transform', (d, i) => 'translate(150,10)')
+            .attr("fill", 'purple');
+
+        legend.append("text")
+            .attr('transform', 'translate(180,18)')
+            .text('Rank 2nd');
+
+        legend.append("rect")
+            .attr("width", 10)
+            .attr("height", 10)
+            .attr('transform', (d, i) => 'translate(300,10)')
+            .attr("fill", 'purple');
+
+        legend.append("text")
+            .attr('transform', 'translate(320,18)')
+            .text('Rank 3rd');
+        
+
     var header = ThemesChart
         .append('g')
-        .attr('class', 'topicheader');
+        .attr('class', 'topicheader')
+        .attr('transform', `translate(0, 10)`);
+
+    var footer = ThemesChart
+        .append('g')
+        .attr('class', 'topicfooter')
+        .attr('transform', `translate(0, 1100)`);
 
     var Sider = ThemesChart
         .append('g')
@@ -849,11 +981,14 @@ function CreateThemesChart(data) {
         .attr('class', 'topicContent');
 
     var headrGapFactor = 70;
-    var headrAngleFactor = 20;
+    var angleFactor = 20;
     if(IsMobileDevice()){
         headrGapFactor = 32;
-        headrAngleFactor = 40;
+        angleFactor = 40;
     }
+   
+
+
     var TopicHeaderText = header.selectAll('text')
         .data(TOPICS)
         .join(
@@ -863,24 +998,45 @@ function CreateThemesChart(data) {
                 .attr('id', (d, i) => d.split(" ").join("_") )
                 .attr('transform', (d, i) => `translate(${120 + i *headrGapFactor}, 100)`)
                 .append('text')
+                .attr('id', (d, i) => d.split(" ").join("_") + "-h" )
+                .attr("transform", `rotate(-${angleFactor})`)
                 .attr('class', 'TopicHeaderText')
                 .transition(tThemes)
                 .text((d, i) => d)
                 .attr('text-anchor', 'start')
                 .attr('font-weight','bold')
-                .style('fill', 'black')
-                .attr("transform", `rotate(-${headrAngleFactor})`)
+                .style('fill', 'black');
             },
 
             update => {
                 
             },
-
-            exit => {
-                
-            }
         )
-   
+
+    
+    var TopicFooterText = footer.selectAll('text')
+        .data(TOPICS)
+        .join(
+            enter => {
+                enter
+                .append('g')
+                .attr('transform', (d, i) => `translate(${120 + i *headrGapFactor}, 50)`)
+                .append('text')
+                .attr('id', (d, i) => d.split(" ").join("_") + "-f" )
+                .attr("transform", `rotate(${angleFactor})`)
+                .attr('class', 'TopicFooterText')
+                .transition(tThemes)
+                .text((d, i) => d)
+                .attr('text-anchor', 'start')
+                .attr('font-weight','bold')
+                .style('fill', 'black')
+            },
+
+            update => {
+                
+            },
+        )
+ 
     var TopicSiderText = Sider.selectAll('text')
         .data(data)
         .join(
@@ -893,6 +1049,7 @@ function CreateThemesChart(data) {
                 .attr('class', 'TopicSiderText')
                 .transition(tThemes)
                 .text((d, i) => d.state)
+                .attr('id', (d, i) => d.state.split(" ").join("_") + '-s')
                 .attr('text-anchor', 'start')
                 .attr('font-weight','bold')
                 .style('fill', 'black')
@@ -901,10 +1058,6 @@ function CreateThemesChart(data) {
             update => {
                 
             },
-
-            exit => {
-                
-            }
         )
 
     var selectBtns = $('.btnDebateSelected');
@@ -912,7 +1065,7 @@ function CreateThemesChart(data) {
     var i;
     for (i = 0; i < data.length; i++) {
         var row = data[i];
-        var state = row.state;
+        var state = row.state.split(" ").join("_");
        
         var CY = GetTranslate(state)[1];
         var eventData = row[eventName];
@@ -924,19 +1077,42 @@ function CreateThemesChart(data) {
            
             Content
                 .append('g')
-                .attr('id', state + '_' + themeName)
-                .attr('transform', (d, i) => `translate(${CX}, ${CY})`)
+                .attr('transform', `translate(${CX}, ${CY})`)
                 .append("rect")
-                .attr("width", 30)
+                .attr('class', 'TopicRankRect')
+                .attr('id', state + '-' + themeName)
+                .attr("width", eventData[themeName] * 10)
                 .attr("height", 10)
                 .attr('y', -10)
-                .attr("fill", 'dodgerblue');
+                .attr("fill", 'purple');
         }
 
     }
+
+      
+    d3.selectAll('.TopicHeaderText').on('mouseover', mouseoverThemestopic);
+    d3.selectAll('.TopicHeaderText').on('mouseout', mouseoutThemestopic);
+
+    d3.selectAll('.TopicHeaderText').on('click', function(d){
+        
+    });
+
+    d3.selectAll('.TopicFooterText').on('mouseover', mouseoverThemestopic);
+    d3.selectAll('.TopicFooterText').on('mouseout', mouseoutThemestopic);
+
+    d3.selectAll('.TopicRankRect').on('mouseover', mouseoverThemesRect);
+    d3.selectAll('.TopicRankRect').on('mouseout', mouseoutThemesRect);
+
+    d3.selectAll('.TopicSiderText').on('mouseover', mouseoverThemesSide);
+    d3.selectAll('.TopicSiderText').on('mouseout', mouseoutThemesSide);
+
 }
 
 function GetTranslate(idString){
+    if(idString == ""){
+        var abc = 1;
+        return;
+    }
     var transform = d3.select('#' + idString).attr("transform");
     var translate = transform.substring(transform.indexOf("(")+1, transform.indexOf(")")).split(",");
     return translate
@@ -1748,6 +1924,8 @@ function RefreshGraph(resolve) {
             GenerateTopThemeGraphChart(cachedtopthemes, resolve);
         })
     }
+
+    CreateThemesChart(cachedthemes);
 
     Promise.all([GenerateNumberchangesPromise(), GenerateSwingStatePromise(), GenerateTopThemeGraphChartPromise()]).then(() => {
         if(resolve != null){

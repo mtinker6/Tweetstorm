@@ -183,6 +183,11 @@
     right:0;
 }
 
+.ThemeHighlighted{
+    fill:dodgerblue !important;
+    color: dodgerblue !important;
+}
+
 .btnDebate,
 #divPolaritySubjectivity,
 #divThemesSwing,
