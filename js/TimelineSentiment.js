@@ -22,10 +22,10 @@ var startProductBarPos=-1;
           if(pageYOffset>startProductBarPos){
                bar.style.position='fixed';
                if($(window).width() < 800){
-                    $('#fixedElement').css({top: 60});
+                    $('#fixedElement').css({top: 50});
                }
                else{
-                    $('#fixedElement').css({top: 90});
+                    $('#fixedElement').css({top: 80});
                }
           }
           else{
