@@ -54,12 +54,11 @@ http://www.templatemo.com/tm-492-app-starter
 			<ul class="nav navbar-nav navbar-right">
 				<li><a href="#home" class="smoothScroll">Home</a></li>
 				<li><a href="#about" class="smoothScroll">About</a></li>
-				<li><a href="#Graph1" class="smoothScroll">Graph 1</a></li>
-                    <li><a href="#Graph2" class="smoothScroll">Graph 2</a></li>
-                    <li><a href="#Graph3" class="smoothScroll">Graph 3</a></li>
-                    <li><a href="#Graph4" class="smoothScroll">Graph 4</a></li>
-                    <li><a href="#Graph5" class="smoothScroll">Graph 5</a></li>
-                    <li><a href="#Graph6" class="smoothScroll">Graph 6</a></li>
+				<li><a href="#Graph1" class="smoothScroll">Geo Sentiment</a></li>
+                    <li><a href="#Graph2" class="smoothScroll">Time Series</a></li>
+                    <li><a href="#Graph3" class="smoothScroll">Themes</a></li>
+                    <li><a href="#Graph5" class="smoothScroll">Network</a></li>
+                    <li><a href="#Graph6" class="smoothScroll">Emoji Analysis</a></li>
 			</ul>
 		</div>
 
@@ -74,18 +73,26 @@ http://www.templatemo.com/tm-492-app-starter
 	<div class="container">
 		<div class="row">
 
-               <div class="wow fadeInUp col-md-6 col-sm-5 col-xs-10 col-xs-offset-1 col-sm-offset-0" data-wow-delay="0.2s">
+               <div id="div_img" class="wow fadeInUp col-md-6 col-sm-5 col-xs-10 col-xs-offset-1 col-sm-offset-0" data-wow-delay="0.2s"style="padding-top:40px;">
                     <img src="images/picture1.png" class="img-responsive" alt="Home">
                </div>
 
                <div class="col-md-6 col-sm-7 col-xs-12">
                     <div class="home-thumb">
                          <h1 class="wow fadeInUp" data-wow-delay="0.6s">Tweetstorm</h1>
-                         <p class="wow fadeInUp" data-wow-delay="0.8s">A platform to analyze the link between social media posts and the outcome of events.</p>
-                         <a href="#Graph2" class="wow fadeInUp section-btn btn btn-success smoothScroll" data-wow-delay="1s">Test...</a>
+                         <p class="wow fadeInUp" data-wow-delay="0.8s"><strong>Social media is becoming a bigger influence in the information that we receive and how people discuss world events.</strong></p>
+                         <p class="wow fadeInUp" data-wow-delay="0.8s">In our project, team 26 has built a model that conducts sentiment analysis on posts on Twitter, and then created a platform to visualize the link between social media posts and the outcome of events.</p>
                     </div>
                </div>
+		<div class="row">
 
+               <div class="wow fadeInUp col-md-12 col-sm-12" data-wow-delay="0.8s">
+					<br></br>
+                        <p class="wow fadeInUp" data-wow-delay="0.8s">We have focused particularly on the 2016 US Presidential Election however it is our hope that this work can be applied to any form of event to provide users insight into the impact social media can have.</p>
+                    <p class="wow fadeInUp" data-wow-delay="0.8s">Whilst we have developed our platform to work across browsers, including mobile browsers we have tested on Google Chrome and Mozilla Firefox and recommend these browsers for the best experience.</p>
+                    <a href="#Graph2" class="wow fadeInUp section-btn btn btn-success smoothScroll" data-wow-delay="1s">Download a copy of the final report</a>
+				</div>
+            </div>
 		</div>
 	</div>
 </section>
@@ -106,11 +113,14 @@ http://www.templatemo.com/tm-492-app-starter
 
                <div class="wow fadeInUp col-md-6 col-sm-12" data-wow-delay="0.4s">
                    <h2>Our Project</h2>
-                   <h3 class="wow fadeInUp" data-wow-delay="0.8s">In recent times there has been a lot of discussion about the influence of the increased sharing of information and the platforms available to do this including how influential ‘fake news’ can be (Allcott, Gentzkow, 2017). Research on this topic has been conflicting including work that identified certain groups to only have a minor influence (Karlsen, Steen-Johnsen, Wollebæk, Enjolras, 2017), as well as others that found that social media can create network structures called polarized crowds, particularly around divisive topics (Zannettou, Caulfield,  De Cristofaro,  Sirivianos, Stringhini, Blackburn, 2019).  While there have been these conflicting views the quantum of research that has found social media to be influential far outweighs those that don’t including research that found that sentiment of the public and the voting preferences of users can be identified by the volume of tweets (Tumasjan, Sprenger, Sandner, Welpe, 2010). 
-
-Twitter, “a popular microblogging service where users create status messages (called “tweets”)” (Go, Bhayani, Huang, 2009) offers access to services that allows for the analysis of tweets and can be used to assess the platforms influence.  There have been several pieces of research conducted and reviewing the methods currently used there is both value and shortcomings of each. 
-
-              
+                   <h3 class="wow fadeInUp" data-wow-delay="0.8s"><font color="white">In recent times there has been a lot of discussion about the influence of information sharing on social media, including ‘fake news’ (Allcott, Gentzkow, 2017). The quantum of research that has found social media to be influential far outweighs those that don’t including research that found that sentiment of the public and the voting preferences of users can be identified by the volume of tweets (Tumasjan, Sprenger, Sandner, Welpe, 2010). 
+					<br></br>
+					Twitter, “a popular microblogging service where users create status messages (called “tweets”)” (Go, Bhayani, Huang, 2009) offers access to services that allows for the analysis of tweets and can be used to assess the platforms influence.  Team 26 has used these services to create a model to understand the sentiment of tweets and then visualize these for users to assess.  
+					<br></br>
+					To demonstrate this platform we have used Tweets from the 2016 US Presidential election to showcase what our model would have suggested to be the likely outcome.
+					<br></br>
+					Our team of five present to you, Project Tweetstorm.					
+					</font>
                </div>
 
                <div class="wow fadeInUp col-md-3 col-sm-6" data-wow-delay="0.4s">
@@ -119,83 +129,48 @@ Twitter, “a popular microblogging service where users create status messages (
                               <div class="about-overlay">
                                    <h3>Matthew Tinker</h3>
                                    <h4>Team Coordinator</h4>
-                                   <ul class="social-icon">
-                                        <li><a href="#" class="fa fa-facebook"></a></li>
-                                        <li><a href="#" class="fa fa-instagram"></a></li>
-                                        <li><a href="#" class="fa fa-twitter"></a></li>
-                                   </ul>
+										<p>Ensured team deliverables were met, coordination of check-ins, report drafting and submission.</p>
                               </div>
                     </div>
                </div>
 
                 <div class="wow fadeInUp col-md-3 col-sm-6" data-wow-delay="0.4s">
                     <div class="about-thumb">
-                         <img src="images/team-img1.jpg" class="img-responsive" alt="Team">
+                         <img src="images/minhao.jpg" class="img-responsive" alt="Team">
                               <div class="about-overlay">
                                    <h3>Minhao Leong</h3>
                                    <h4>Data Specialist</h4>
-                                   <ul class="social-icon">
-                                        <li><a href="#" class="fa fa-pinterest"></a></li>
-                                        <li><a href="#" class="fa fa-behance"></a></li>
-                                        <li><a href="#" class="fa fa-google-plus"></a></li>
-                                   </ul>
+										<p>Identified suitable datasets, prepared and curated data, developed analytic models.</p>
                               </div>
                     </div>
                </div>
-<div class="wow fadeInUp col-md-3 col-sm-6" data-wow-delay="0.4s">
+				<div class="wow fadeInUp col-md-3 col-sm-6" data-wow-delay="0.4s">
                     <div class="about-thumb">
-                         <img src="images/team-img1.jpg" class="img-responsive" alt="Team">
+                         <img src="images/jeff.jpg" class="img-responsive" alt="Team">
                               <div class="about-overlay">
-                                   <h3>Matthew Tinker</h3>
-                                   <h4>Team Coordinator</h4>
-                                   <ul class="social-icon">
-                                        <li><a href="#" class="fa fa-facebook"></a></li>
-                                        <li><a href="#" class="fa fa-instagram"></a></li>
-                                        <li><a href="#" class="fa fa-twitter"></a></li>
-                                   </ul>
+                                   <h3>Jeffrey Lee</h3>
+                                   <h4>Data Specialist</h4>
+										<p>Identified suitable datasets, prepared and curated data, developed analytic models.</p>
                               </div>
                     </div>
                </div>
 
                 <div class="wow fadeInUp col-md-3 col-sm-6" data-wow-delay="0.4s">
                     <div class="about-thumb">
-                         <img src="images/team-img1.jpg" class="img-responsive" alt="Team">
+                         <img src="images/Jun_Xiong.jpg" class="img-responsive" alt="Team">
                               <div class="about-overlay">
-                                   <h3>Minhao Leong</h3>
-                                   <h4>Data Specialist</h4>
-                                   <ul class="social-icon">
-                                        <li><a href="#" class="fa fa-pinterest"></a></li>
-                                        <li><a href="#" class="fa fa-behance"></a></li>
-                                        <li><a href="#" class="fa fa-google-plus"></a></li>
-                                   </ul>
+                                   <h3>Jun Xiong Tan</h3>
+                                   <h4>Front-end Developer</h4>
+										<p>Developed interactive visualizations and web interface.</p>
                               </div>
                     </div>
                </div><div class="wow fadeInUp col-md-3 col-sm-6" data-wow-delay="0.4s">
                     <div class="about-thumb">
-                         <img src="images/team-img1.jpg" class="img-responsive" alt="Team">
+                         <img src="images/dennis.jpg" class="img-responsive" alt="Team">
                               <div class="about-overlay">
-                                   <h3>Matthew Tinker</h3>
-                                   <h4>Team Coordinator</h4>
-                                   <ul class="social-icon">
-                                        <li><a href="#" class="fa fa-facebook"></a></li>
-                                        <li><a href="#" class="fa fa-instagram"></a></li>
-                                        <li><a href="#" class="fa fa-twitter"></a></li>
-                                   </ul>
-                              </div>
-                    </div>
-               </div>
-
-                <div class="wow fadeInUp col-md-3 col-sm-6" data-wow-delay="0.4s">
-                    <div class="about-thumb">
-                         <img src="images/team-img1.jpg" class="img-responsive" alt="Team">
-                              <div class="about-overlay">
-                                   <h3>Minhao Leong</h3>
-                                   <h4>Data Specialist</h4>
-                                   <ul class="social-icon">
-                                        <li><a href="#" class="fa fa-pinterest"></a></li>
-                                        <li><a href="#" class="fa fa-behance"></a></li>
-                                        <li><a href="#" class="fa fa-google-plus"></a></li>
-                                   </ul>
+                                   <h3>Jinchao Lin</h3>
+                                   <h4>Front-end Developer</h4>
+										<p>Developed interactive visualizations and web interface.</p>
                               </div>
                     </div>
                </div>
@@ -211,9 +186,78 @@ Twitter, “a popular microblogging service where users create status messages (
 <section id="divider">
      <div class="container">
           <div class="row">
-               <div class="col-md-offset-2 col-md-8 col-sm-12">
-                    <h1 class="wow fadeInUp" data-wow-delay="0.4s">Our Approach</h1>
+                    <div class="wow bounceIn section-title">
+                    <h1>Our Approach</h1>
+					<hr>
+               </div>	   
+
+          </div>
+          <div class="row">
+               <div class="wow fadeInUp col-md-3 col-sm-12" data-wow-delay="0.4s">
+                   <h2>Problem Statement</h2>
                </div>
+
+               <div class="wow fadeInUp col-md-9 col-sm-6" data-wow-delay="0.4s">
+                   <h3 class="wow fadeInUp" data-wow-delay="0.8s"><font color="white">The problem that has been addressed by this piece of work is to develop understanding of how influential social media can be on world events.  Presented in a way useful for many audiences to consume.
+               </div>			   
+
+          </div>
+          <div class="row">
+               <div class="wow fadeInUp col-md-3 col-sm-12" data-wow-delay="0.4s">
+                   <h2>Data Approach</h2>
+               </div>
+
+               <div class="wow fadeInUp col-md-9 col-sm-6" data-wow-delay="0.4s">
+                   <h3 class="wow fadeInUp" data-wow-delay="0.8s"><font color="white">Over 10 million tweets from key stages of the 2016 US Presidential Election were obtained by using the ID’s captured by the Harvard Dataverse (Littman, Wrubel, Kerchner, 2016) and then using these tweet ID’s the team called the Twitter API to hydrate the IDs to obtain the full tweets.  Once these tweets were extracted, they were run through a series of cleansing processes which were conducted to remove tags, links, and non-useful labels including “RT” for retweet.  These steps then provided a clean and useful dataset to allow us to progress to the next stage.  <br></br>
+   The further expansion upon this data preparation was to commence classifying characters produced as a result of the use of emoji’s.  Characters used in combination that could be classified as emoji’s were left in the dataset for the use of the analysis.  These tweets were store on an SQLite Database.
+
+               </div>			   
+
+          </div>		  
+          <div class="row">
+               <div class="wow fadeInUp col-md-3 col-sm-12" data-wow-delay="0.4s">
+                   <h2>Observations</h2>
+               </div>
+
+               <div class="wow fadeInUp col-md-9 col-sm-6" data-wow-delay="0.4s">
+                   <h3 class="wow fadeInUp" data-wow-delay="0.8s"><font color="white"><b>Are Emoji's useful additions to the sentiment analysis model?</b>
+				   <br></br>
+				   Further development could continue to add features including sarcasm handling into the model however it does generally provide value to the model.
+				   <br></br>
+				   <b>Can polarity and subjectivity measures from sentiment analysis on Tweets help to predict the outcome of events?</b>
+				   <br></br>
+				   At the point that the election was held, the sentiment analysis model was able to predict 29 states of the 52 correctly.  Whilst that may not indicate a resounding success what it did demonstrate is a likely win by Donald Trump throughout the majority of the election campaign which would have been more successful than most voter polls.  This also demonstrates success of the project which was centered on being able to use tweets to correctly predict the outcome of events.
+				   <br></br>
+               </div>			   
+          <div class="row">
+               <div class="wow fadeInUp col-md-3 col-sm-12" data-wow-delay="0.4s">
+                   <h2>Sentiment Model</h2>
+               </div>
+
+               <div class="wow fadeInUp col-md-9 col-sm-6" data-wow-delay="0.4s">
+                   <h3 class="wow fadeInUp" data-wow-delay="0.8s"><font color="white">Our team produced a sentiment analysis model using a Naïve Bayes Classifier.  This approach was taken in order that we were able to expand the model beyond just standard text analysis into the classification of a combination of characters as either positive or negative sentiment text.  The model then developed assigned both a polarity and a sentiment score to each tweet.  The underlying approach works in the manner of a lookup table on a library of words and phrases which provided the polarity, subjectivity and intensity.  For each word these scores are applied in the following way:
+				   <table>
+					  <tr>
+						<th>Category</th>
+						<th>Scoring</th>
+					  </tr>
+					  <tr>
+						<td>Polarity</td>
+						<td>A score between -1 and 1, with the higher score representing a more positive sentiment.</td>
+					  </tr>
+					  <tr>
+						<td>Subjectivity </td>
+						<td>A score between 0 and 1, 0 being objective, 1 being subjective.</td>
+					  </tr>
+					  <tr>
+						<td>Intensity</td>
+						<td>A score which is a multiplier between 0.5 and 2 and considers a word and its influence on the following word.</td>
+					  </tr>
+					</table>
+
+               </div>			   
+
+          </div>
           </div>
      </div>
 </section>
@@ -230,23 +274,34 @@ Twitter, “a popular microblogging service where users create status messages (
 <!-- Graph1 Section -->
 
 <section id="Graph1">
-     <div class="row">
-          <div class="col-md-12 col-sm-12">
-               <div class="section-title" style="padding-top:140px;">
-                    <div class="wow bounceIn section-title"><h1>Graph 1</h1></div>
-               </div>
-               <div class="wow fadeInUp Graph1Shrink" style="width:1450px;margin: auto;">
-                    <div style="display: inline-block;height: 600px;width:700px;" class=" Graph1Shrink">
-                         <div class="dashboard1 Graph1Shrink" id='dashboard1' style="width:640px;height: 400px;"></div>
-                         <div class="dashboard4 Graph1Shrink" id='dashboard4' style="width:640px;height: 400px;"></div>
-                    </div>
-                    <div style="display: inline-block;height: 600px;width:700px" class=" Graph1Shrink">
-                         <div class="dashboard3" id='dashboard3' style="width:260px;height: 600px;display: inline-block;"></div>
-                         <div class="dashboard2" id='dashboard2' style="width:370px;height: 600px;display: inline-block;"></div>
-                    </div>
-               </div>
-          </div>
-     </div>
+     <div class="container">
+		 <div class="row">
+			  <div class="col-md-12 col-sm-12">
+
+						<div class="row">
+						<div class="wow bounceIn section-title">
+						<h1>Geographic Sentiment</h1>
+						<hr>
+						<h3 class="wow fadeInUp col-md-12 col-sm-12" data-wow-delay="0.8s"><font color="white">The following visualization provides a view of the polarity, subjectivity and candidate preference predictions that the tweetstorm model has made.  To use the visualization:<br></br>
+						1. Hover over each state to see the model outputs, 2. The candidate preference is displayed beneath the map, the polarity and subjectivity to the right, 3. You can choose the map overlay by using the options beneath the map, 4. Click on a state to zoom in and see the candidate outcomes and top themes for the state, 5. Click again to zoom out, 6. Use the options at the top of the page to move between the different time periods.
+						</div>	 
+						<div class="wow fadeInUp Graph1Shrink" style="width:1450px;margin: auto;">
+						<div style="display: inline-block;height: 600px;width:700px;" class=" Graph1Shrink">
+							 <div class="dashboard1 Graph1Shrink" id='dashboard1' style="width:640px;height: 400px;"></div>
+							 <div class="dashboard4 Graph1Shrink" id='dashboard4' style="width:640px;height: 400px;"></div>
+						</div>
+						<div style="display: inline-block;height: 600px;width:700px" class=" Graph1Shrink">
+							 <div class="dashboard3" id='dashboard3' style="width:260px;height: 600px;display: inline-block;"></div>
+							 <div class="dashboard2" id='dashboard2' style="width:370px;height: 600px;display: inline-block;"></div>
+						</div>
+						<div class="row">
+						<div class="wow bounceIn section-title col-md-12 col-sm-12">
+						<h3 class="wow fadeInUp" data-wow-delay="0.8s"><font color="white">This visualization provides an overview of the change in sentiment over time in each State.  The model provides good insight into the candidate preference and also demonstrates that the eventual winner, Donald Trump, maintained a candidate preference lead througout most of the key Election stages.  This visualization along with all the rest that you will see below provide an ability to easily adapt the platform for any scenario where there has or will be a binary outcome as a result of an event.
+				   </div>	 
+				   </div>
+			  </div>
+		 </div>
+	</div>
 </section>
 
 
@@ -256,9 +311,12 @@ Twitter, “a popular microblogging service where users create status messages (
      <div class="container">
           <div class="row">
                <div class="col-md-12 col-sm-12">
-                    <div class="wow bounceIn section-title"  style="padding-top:120px;">
-                         <h1>Overall Polarity And Subjectivity</h1>
-                    </div>
+			  <div class="row">
+						<div class="wow bounceIn section-title">
+						<h1>Polarity and Subjectivity Time Series</h1>
+						<hr>
+						<h3 class="wow fadeInUp" data-wow-delay="0.8s"><font color="white">The following visualization provides a time series view as to the change in sentiment based on five key events over the course of the US Presidential election.  There are a number of options available for this visualization including: 1. Toggling the number labels can be done via the checkbox at the top of the chart, 2. Toggling between polarity and subjectivity can be done via the two buttons available, 3. Finally, you can take a look at the specific details related to the key events through the options at the top of the page or selecting this event time period on the chart.
+				   </div>	
                     <div id='divPolaritySubjectivity' style="width:100%;padding-top:60px;" class="wow fadeInUp">
                          <div id="divLineChartGraph" style="display:inline-block;position:relative;width: 750px;">
                               <div id="divNumberDisplay" style="position:relative;margin-bottom:-10px;width:20%;padding-left: 30px;">
@@ -321,6 +379,10 @@ Twitter, “a popular microblogging service where users create status messages (
                          </div>
                     </div>
                </div>
+			  <div class="row">
+						<div class="wow bounceIn section-title">
+						<h3 class="wow fadeInUp" data-wow-delay="0.8s"><font color="white">This visualization demonstrates the movement of subjectivity and polarity over time.  The two values are almost inverse to each other with polarity peaking at the time of the Election whilst the subjectivity reached its lowest point at this time.
+				   </div>	
           </div>
      </div>
 </section>
@@ -330,12 +392,16 @@ Twitter, “a popular microblogging service where users create status messages (
 
 <section id="Graph3">
      <div class="overlay"></div>
-     <div class="container">
+       <div class="container">
           <div class="row">
                <div class="col-md-12 col-sm-12">
-                    <div class="wow bounceIn section-title"  style="padding-top:120px;">
-                         <h1><span  style="color: black !important;">Top Themes</span> </h1>
-                    </div>
+			  <div class="row">
+						<div class="wow bounceIn section-title">
+						<h1>Tweet Theme Analysis</h1>
+						<hr>
+						<h3 class="wow fadeInUp" data-wow-delay="0.8s"><font color="white">This theme analysis provides users a view of the top three themes discussed on Twitter over the five key stages of the election. Below the bar chart this has then been visualized at a state vs topic level in a matrix.  To view the top themes for each key event over the Election campaign please use the options at the top of the page.  To assist with readability the topics and States can be selected in the Matrix to highlight the relevant topics.
+				   </div>	
+
                     
                     <div class="wow fadeInUp">
                          <div style="display: inline-block;;vertical-align: top;position: relative; ">
@@ -359,40 +425,31 @@ Twitter, “a popular microblogging service where users create status messages (
                               </div>
                          </div>
                     </div>
-                    
+                      <div class="wow bounceIn section-title">
+						<h3 class="wow fadeInUp" data-wow-delay="0.8s"><font color="white">This visualization assists to understand the key topics over the election and the impact they had in each state.  What it also demonstrates is the messages which mean the most to the areas and where the candidates could have focused their attention.  An interesting observation following the second debate was that the topic of "Women" was the top theme at a time that Hilary Clinton appeared to take candidate preference from Donald Trump, however whilst it was the top theme overall iit was only the top theme in the states of Nebraska and Wyoming although it was in the top three in all other states except for five. 
                </div>
+			
+		    </div>	
           </div>
      </div>
+	</div>
 </section>
 
 <!-- Graph4 Section -->
 
-<section id="Graph4">
-     <div class="overlay"></div>
-     <div class="container">
-          <div class="row">
-               <div class="col-md-12 col-sm-12">
-                    <div class="wow bounceIn section-title" style="padding-top: 50px;">
-                         <h1><span  style="color: black !important;">Word Cloud</span></h1>
-                    </div>
-                    <div class="wow fadeInUp" style="width: 1450px;">
-                         <iframe id="bubbleChartIFrame" src="BubbleChart.html?width=1400" style="width: 1450px;height: 1000px;" frameBorder="0"></iframe>
-                    </div>
-               </div>
-          </div>
-     </div>
-</section>
 
 <!-- Graph5 Section -->
 
 <section id="Graph5">
-     <div class="overlay"></div>
      <div class="container">
           <div class="row">
                <div class="col-md-12 col-sm-12">
-                    <div class="wow bounceIn section-title"  style="padding-top:50px;">
-                         <h1><span  style="color: steelblue !important;">Graph 5</span></h1>
-                    </div>
+			    <div class="row">
+						<div class="wow bounceIn section-title">
+                        <h1><span  style="color: steelblue;">Network Analysis</span></h1>
+						<hr><span  style="color: steelblue;"></span></hr>
+						<h3 class="wow fadeInUp" data-wow-delay="0.8s"><font color="steelblue">The below visualization demonstrates the networks of Twitter users and their connection throughout the key periods of the US Presidential election.  It shows that over time the groups change significantly moving from a larger network (with a large tweet volume) associated to Hilary Clinton's account in the first debtate to a larger network building towards Donald Trump over the later key points.  To us this visualization you can filter by the minimum tweet count at the top of the visualization and to see the networks in greater detail you can double click on any node for it to stick to the canvas.  The changes over the key time points can be viewed by using the buttons at the top of the page.
+				   </div>	
                     <div class="wow fadeInUp section-title" style="color: steelblue;font-size:30px;">
                          <label >Filter: Count More Than </label>&nbsp;&nbsp;&nbsp;
                          <a class="Minus" style="font-size: 35px;font-weight: bold;">-</a>&nbsp;&nbsp;
@@ -400,6 +457,9 @@ Twitter, “a popular microblogging service where users create status messages (
                          <a class="Plus" style="font-size: 35px;font-weight: bold;">+</a>
                     </div>
                     <div id="forceDirectedGraph"  style="width: 1400px;height: 1000px;" class="wow fadeInUp"></div>
+					<div class="wow bounceIn section-title">
+						<h3 class="wow fadeInUp" data-wow-delay="0.8s"><font color="steelblue">The interesting aspect of this visualization is that at the early stages (using a larger tweet volume of > 30) we can see the network of Hilary Clinton as being larger than that of Donald Trump.  This is not the case when factoring in a lower number of tweets, however over time this seemed to shrink as the campaign of Donald Trump gained momentum.
+				   </div>	
                </div>
           </div>
      </div>
@@ -412,18 +472,28 @@ Twitter, “a popular microblogging service where users create status messages (
      <div class="container">
           <div class="row">
                <div class="col-md-12 col-sm-12">
-                    <div class="wow bounceIn section-title">
-                         <div class="wow bounceIn section-title" style="padding-top:180px;"></div>
-                              <h1><span  style="color: black !important;">Emoji Analysis</span></h1>
-                         </div>
+					<div class="wow bounceIn section-title">
+                        <h1><span  style="color: steelblue !important;">Emoji Analysis</span></h1>
+						<hr>
+						<h3 class="wow fadeInUp" data-wow-delay="0.8s"><font color="steelblue">The innovation of this piece of work was that of the development of Emoji Analysis.  Whilst the emoji analysis was built into the sentiment modelling we also developed som visualizations demonstrating emooji use at the different time points.  To view the change in the use of emoji's throughout the various stages of the election, please use the options at the top of the page.
+				   </div>	
                          <div class="DivEmojiChart" style="display:block;height: 600px;margin-top: 50px;">
                               <div id='RadarChart' style="height: 600px;width: 600px;margin: auto;vertical-align: middle;" class="wow fadeInUp"></div>
                          </div>
+						 <div class="wow bounceIn section-title">
+						<h3 class="wow fadeInUp" data-wow-delay="0.8s"><font color="steelblue">The first chart was a spider web analysis looking at the use of emoji's based on Team 26's categorization.  The emoji use peaked on the day of the election with surprise really increasing in use.  The below donut chart then looks at the emoji use in greater detail.
+						</div>	
                          <div class="DivEmojiChart" style="display:block;height: 600px;margin-top: 50px;">
                               <div id='TEmoji' style="height: 600px;width: 600px;margin: auto;vertical-align: middle;" class="wow fadeInUp"></div>
                          </div>
+						 <div class="wow bounceIn section-title">
+						<h3 class="wow fadeInUp" data-wow-delay="0.8s"><font color="steelblue">The final visualization provides a dendogram as another view to see the use of emoji's and also make it clear to the user as to the categorization of the particular emoji's in our analysis.
+						</div>	
                          <div class="DivEmojiChart" style="display:block;margin: 50px 0px;">
-                              <div id='TreeChart' style="width: 600px;margin: auto;vertical-align: middle;" class="wow fadeInUp"></div>
+                              <div id='TreeChart' style="height: 1200px;width: 600px;margin: auto;vertical-align: middle;" class="wow fadeInUp"></div>
+						 <div class="wow bounceIn section-title">
+						<h3 class="wow fadeInUp" data-wow-delay="0.8s"><font color="steelblue">
+						</div>	
                          </div>
                     </div>
                </div>
@@ -441,6 +511,11 @@ Twitter, “a popular microblogging service where users create status messages (
                          <p>Copyright &copy; 2020 Tweetstorm
                          <span>||</span> 
                          Team 26</a></p>
+						 <a href="https://www.thesitewizard.com/" target="_blank">Matthew Tinker,  </a>
+						 <a href="https://www.thesitewizard.com/" target="_blank">Minhao Leong,  </a>
+						 <a href="https://www.thesitewizard.com/" target="_blank">Jeffrey Lee,  </a>
+						 <a href="https://www.thesitewizard.com/" target="_blank">Jun Xiong Tan,  </a>
+						 <a href="https://www.thesitewizard.com/" target="_blank">Jinchao Lin</a>
                     </div>
                </div>
 		</div>

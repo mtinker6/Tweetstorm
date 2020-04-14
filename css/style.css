@@ -68,6 +68,10 @@ hr {
   font-size: 18px;
   font-weight: bold;
   letter-spacing: 1px;
+  width: 40%;
+  margin-left: 30%;
+  margin-right: 30%;
+  text-align: center;
   padding: 14px 36px;
   margin-top: 26px;
   transition: all 0.4s ease-in-out;
@@ -80,6 +84,9 @@ hr {
   border-bottom-color: #ffffff;
   border-left-color: #222;
   color: #ffffff;
+  width: 40%;
+  margin-left: 30%;
+  margin-right: 30%
 }
 
 
@@ -136,16 +143,22 @@ a:hover, a:active, a:focus {
 #Graph1,
 #divider,
 #Graph2,
-#Graph3 {
+#Graph3, #Graph5, #Graph6 {
   padding-top: 100px;
   padding-bottom: 100px;
 }
 
 #divider,
 #Graph2 {
-  text-align: center;
+  text-align: left;
 }
 
+table{ 
+  display: table;
+  border-collapse: separate;
+  border-spacing: 15px;
+  border-color: white;
+}
 
 /*---------------------------------------
     Preloader section              
@@ -314,10 +327,16 @@ a:hover, a:active, a:focus {
 
 #home .section-btn {
   background: #1dc9e3;
+  width: 40%;
+  margin-left: 30%;
+  margin-right: 30%
 }
 
 #home .section-btn:hover {
   background: transparent !important;
+  width: 40%;
+  margin-left: 30%;
+  margin-right: 30%
 }
 
 
@@ -387,7 +406,7 @@ a:hover, a:active, a:focus {
   width: 100%;
   padding-bottom: 1rem;
   background-color: #151965;
-  height: 1100px;
+  height: 1400px;
 }
 
 #Graph1 img {
@@ -511,7 +530,7 @@ color: #ffffff;
 #Graph3 {
   background-color: lightgray;
   color: #000000;
-  height: 2000px;
+  height: 1600px;
 }
 
 #Graph3 .Graph2-plan {
@@ -551,7 +570,7 @@ color: #ffffff;
   color: #000000;
   background:  #ffffff;
   position: relative;
-  height: 1300px;
+  height: 00px;
 }
 
 #Graph4 .overlay {
@@ -733,7 +752,7 @@ circle {
 
   #about, #divider,
   #Graph1,
-  #Graph2, #Graph3 {
+  #Graph2, #Graph3, #Graph5, #Graph6 {
     padding-top: 20px;
     padding-bottom: 20px;
   }
