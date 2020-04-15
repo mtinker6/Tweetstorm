@@ -747,7 +747,7 @@ circle {
   }
   
   .section-btn {
-    padding: 10px 34px 12px;
+    padding: 10px 10px 12px;
   }
 
   #home, #home .overlay {
@@ -808,7 +808,7 @@ circle {
   }
 
   #home, #home .overlay {
-    height: 100vh;
+    height: 140vh;
   }
 
   #home img {
@@ -846,7 +846,15 @@ circle {
   }
 
   #home{
-    margin-top: 50px;;
+    margin-top: 50px !important;
+  }
+
+  #div_img{
+    padding-top: 80px !important;
+  }
+
+  #div_front{
+    padding-top: 0px !important;
   }
 }
 
