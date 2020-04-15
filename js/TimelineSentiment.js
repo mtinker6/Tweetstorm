@@ -18,7 +18,7 @@ var startProductBarPos=-1;
      window.onscroll=function(){
           var bar = document.getElementById('fixedElement');
           if(startProductBarPos<0) { 
-            startProductBarPos=findPosY(bar) - 50;
+            startProductBarPos=findPosY(bar) - 60;
           }
 
           if(pageYOffset>startProductBarPos){
