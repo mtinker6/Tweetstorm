@@ -9,7 +9,7 @@ function IsMobileDevice(){
 $(function() {
     if(IsMobileDevice()) {
          widthIframe =  WindowScreen() * 0.9;
-         $('#bubbleChartIFrame').attr('src', 'BubbleChart.html?width=' + widthIframe);
+         //$('#bubbleChartIFrame').attr('src', 'BubbleChart.html?width=' + widthIframe);
          $('#TEmoji').css('width', widthIframe);
     }
 })
@@ -17,7 +17,9 @@ $(function() {
 var startProductBarPos=-1;
      window.onscroll=function(){
           var bar = document.getElementById('fixedElement');
-          if(startProductBarPos<0) startProductBarPos=findPosY(bar);
+          if(startProductBarPos<0) { 
+            startProductBarPos=findPosY(bar) - 50;
+          }
 
           if(pageYOffset>startProductBarPos){
                bar.style.position='fixed';
@@ -120,7 +122,7 @@ function UpdateLineChart() {
         .transition().duration(1000)
         .attr('width', widthLine + marginLine.right + marginLine.left)
         .attr('height', heightLine + marginLine.top + marginLine.bottom)
-        .attr('transform', `translate(${marginLine.left - 150}, 0)`);
+        .attr('transform', `translate(${marginLine.left}, 0)`);
 
     lineGraph
         .transition().duration(1000) 
@@ -157,7 +159,7 @@ function InitLineGraphFrame(){
         .append('svg')
         .attr('width', widthLine + marginLine.right + marginLine.left)
         .attr('height', heightLine + marginLine.top + marginLine.bottom)
-        .attr('transform', `translate(${marginLine.left - 150}, 10)`);;
+        .attr('transform', `translate(${marginLine.left}, 10)`);;
 
     lineGraph = lineGraphFrame.append('g')
         .attr('transform', `translate(${marginLine.left}, ${marginLine.top})`);
@@ -211,7 +213,6 @@ function InitLineGraph(){
 
     tip = d3.tip().attr('class', 'd3-tip').html( d => displayToolTip(d));
     tip.offset([-10, 0])
-    svg = d3.select('body').append('svg').call(tip);
 
     lineCircleBarsTrump = lineCircles.append('g').attr('class', 'lineCircleBarsTrump');
     lineCirclesTrump = lineCircles.append('g').attr('class', 'lineCirclesTrump');
@@ -571,7 +572,7 @@ function GenerateLineGraph(dataSet, firstLoad = false) {
                 if(i == 0){
                     d3.select('#First_debate').attr('class', 'btnLineChartLabel btnLineChartLabelSelected');
                 }
-                d3.select(this).on("click", lineChartNodeClick);
+                //d3.select(this).on("click", lineChartNodeClick);
             });
     }
 
@@ -939,13 +940,13 @@ function CreateThemesChart(data) {
         'Racial Issues','Tax', 'The Wall', 'Women'
     ]
 
-    var themesWidth = 1200;
-    var themesHeight = 1600;
+    var themesWidth = 1050;
+    var themesHeight = 1300;
 
     var tThemes = d3.transition().duration(500);
 
     if(IsMobileDevice()) {
-        themesWidth =  WindowScreen() * 0.98
+        themesWidth =  WindowScreen() * 0.90
     }
 
     var ThemesChart = d3
@@ -1011,11 +1012,9 @@ function CreateThemesChart(data) {
     var headrGapFactor = 70;
     var angleFactor = 20;
     if(IsMobileDevice()){
-        headrGapFactor = 32;
+        headrGapFactor = 23;
         angleFactor = 40;
     }
-   
-
 
     var TopicHeaderText = header.selectAll('text')
         .data(TOPICS)
@@ -1421,10 +1420,22 @@ function GenerateNumberchanges(data){
         var t = d3.transition().duration(500);
 
         //Trump Bar
-        var gradient = this.svg
+        var gradient = trumpPolarityBar
             .append('defs')
             .append('svg:linearGradient')
             .attr('id', 'gradient')
+            .attr('x1', '100%')
+            .attr('y1', '0%')
+            .attr('x2', '100%')
+            .attr('y2', '100%')
+            .attr('spreadMethod', 'pad')
+
+            
+        //Hillary Bar
+        var gradientH = hillaryPolarityBar
+            .append('defs')
+            .append('svg:linearGradient')
+            .attr('id', 'gradientH')
             .attr('x1', '100%')
             .attr('y1', '0%')
             .attr('x2', '100%')
@@ -1518,17 +1529,6 @@ function GenerateNumberchanges(data){
                 exit => {
                 }
             );
-
-        //Hillary Bar
-        var gradientH = this.svg
-            .append('defs')
-            .append('svg:linearGradient')
-            .attr('id', 'gradientH')
-            .attr('x1', '100%')
-            .attr('y1', '0%')
-            .attr('x2', '100%')
-            .attr('y2', '100%')
-            .attr('spreadMethod', 'pad')
 
         var lowColorH = d3.interpolateOranges(0);
         var highColorH = d3.interpolateOranges(0.8);
@@ -1781,29 +1781,29 @@ function lineChartNodeClick(d, resolve = null){
     );
 
     var graphPromise = () => {
-            return new Promise((resolve, reject) => {
-                RefreshGraph(resolve);
+            return new Promise((resolve1, reject) => {
+                RefreshGraph(resolve1);
         })
     }
 
     var lineGraphPromise = () => {
-        return new Promise((resolve, reject) => {
+        return new Promise((resolve2, reject) => {
             RefreshLineGraph();
-            resolve();
+            resolve2();
         })
     }
 
     var FDGraphPromise = () => {
-        return new Promise((resolve, reject) => {
+        return new Promise((resolve3, reject) => {
             BuildFDGraph(cachedFDGraph);
-            resolve();
+            resolve3();
         })
     }
 
     var EmojiAnalysisPromise = () => {
-        return new Promise((resolve, reject) => {
+        return new Promise((resolve4, reject) => {
             CreateEmojiAnalysisDist(d);
-            resolve();
+            resolve4();
         })
     }
 
@@ -2864,6 +2864,10 @@ function BuildRadarChart(data){
     var w = 600,
     h = 600;
 
+    if(IsMobileDevice()) {
+        w = WindowScreen();
+        h = WindowScreen();
+    }
     var scaler = d3.scaleLinear().domain([0.00, 42000]).range([0.50, 1.00]); 
     var colorscaleRader = d3.scaleSequential(
         (d) => d3.interpolateBlues(scaler(d))

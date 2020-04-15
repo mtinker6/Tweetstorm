@@ -462,7 +462,7 @@ table{
   color: #ffffff;
   background-color: skyblue;
   position: relative;
-  height: 1100px;
+  height: 1200px;
 }
 
 #Graph2 .overlay {
@@ -530,7 +530,7 @@ color: #ffffff;
 #Graph3 {
   background-color: lightgray;
   color: #000000;
-  height: 1600px;
+  height: 2500px;
 }
 
 #Graph3 .Graph2-plan {
@@ -708,7 +708,14 @@ circle {
 -----------------------------------------*/
 @media (max-width: 1200px) {
   .container {
-	width: 100%;
+	    width: 100%;
+  }
+}
+
+
+@media (min-width: 1200px) {
+  .headerMenu {
+      width: 1350px !important;
   }
 }
 
@@ -817,15 +824,8 @@ circle {
     font-size: 16px;
   }
 
-}
-
-@media only screen and (max-width: 1000px){
-  
-  #Graph6{
-      height: 1500px !important;
-  }
-
-  #Graph1{
-      height: 1500px !important;
+  #home{
+    margin-top: 50px;;
   }
 }
+

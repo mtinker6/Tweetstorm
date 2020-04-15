@@ -3,9 +3,9 @@ var width01 = 640, height01 = 400, width02 = 370, height02 = 600,
     width03 = 260, height03 = 600, width04 = 640, height04 = 200, centered, geojson, topo, counts, g2, g3, g4, k = 1;
 
 if(window_width < 640){
-  width04 = width01 = window_width *0.9
-  width02 = window_width *0.9 * 1 / 2
-  width02 = window_width *0.9 * 1 / 2
+  width04 = window_width *0.95;
+  width01 = window_width *0.9;
+  width02 = window_width *0.9 * 1 / 2;
 }
 
 var svg01 = d3.select(".dashboard1").append("svg").attr("width", width01).attr("height", height01);
@@ -40,7 +40,7 @@ svg03.append('text').attr('x',33).attr('y',40).attr('fill','white').style("font-
 svg03.append('text').attr('x',166).attr('y',40).attr('fill','white').style("font-weight",'bold').text('Polarity');
 svg04.append('text').attr('x',53).attr('y',20).attr('fill','white').style("font-weight",'bold').text('Candidate');
 svg04.append('text').attr('x',29).attr('y',40).attr('fill','white').style("font-weight",'bold').text('Preference Score');
-svg04.append('text').attr('x',5).attr('y',110).attr('fill','white').style("font-weight",'bold').style('font-size','24px').text('Select map layer:').attr('class', 'Selectmaplayer');
+svg04.append('text').attr('x',5).attr('y',140).attr('fill','white').style("font-weight",'bold').style('font-size','24px').text('Select map layer:').attr('class', 'Selectmaplayer');
 
 // Legends, scales, axes
 var thickness = 20; var legendlength = 400;
@@ -70,11 +70,11 @@ svg03.append('g')
     .style("fill", "url(#linear-gradient2)")
     .attr('transform', 'rotate(270 130 70)');
 svg04.append('g')
-    .attr("transform", 'translate(190,16)')
+    .attr("transform", 'translate(10,50)')
     .append("rect").attr("width", legendlength*1.1).attr("height", thickness-5)
     .style("fill", "url(#linear-gradient3)");
 
-var path01 = d3.geoPath().projection(d3.geoAlbersUsa().translate([width01/2, height01/2]).scale([700]));
+var path01 = d3.geoPath().projection(d3.geoAlbersUsa().translate([width01/2, height01/2]).scale([window_width < 640 ? window_width : 700]));
 
 var g = svg01.append('g');
 var mapLayer = g.append('g').classed('map-layer', true);
@@ -102,13 +102,16 @@ var sliderStep = d3.sliderBottom().min(1).max(5).width(300).tickFormat(tickForma
 //           .on('mouseover', function() {d3.select(this).style('cursor', 'pointer');});
 var layer1 = 440;
 var layer2 = 530;
+var layer0 = 220;
 if(window_width < 1000){
-  layer1 = 400;
-  layer2 = 470;
+  var widthPortion = window_width / 4;
+  layer0 = widthPortion
+  layer1 = widthPortion * 2 + 25;
+  layer2 = widthPortion * 3 - 40;
 }
 buttonsLayer.append('text')
-          .attr('x', 220)
-          .attr('y', 110)
+          .attr('x', layer0)
+          .attr('y', 140)
           .text(layers[0])
           .attr('class', 'layeroption')
           .style('font-size','20px')
@@ -117,7 +120,7 @@ buttonsLayer.append('text')
           .on('mouseover', function() {d3.select(this).style('cursor', 'pointer');});
 buttonsLayer.append('text')
           .attr('x', layer1)
-          .attr('y', 110)
+          .attr('y', 140)
           .text(layers[1])
           .attr('class', 'layeroption')
           .style('font-size','20px')
@@ -126,7 +129,7 @@ buttonsLayer.append('text')
           .on('mouseover', function() {d3.select(this).style('cursor', 'pointer');});
 buttonsLayer.append('text')
           .attr('x', layer2)
-          .attr('y', 110)
+          .attr('y', 140)
           .text(layers[2])
           .attr('class', 'layeroption')
           .style('font-size','20px')
@@ -318,10 +321,10 @@ function draw_map(array) {
         .attr("d", d3.symbol().type(d3.symbolTriangle).size(150))
         .style("fill", "red")
         .attr('class','preferred')
-        .attr("transform", "translate(" + 386 + "," + 36 + ")");
+        .attr("transform", "translate(" + 386 + "," + 76 + ")");
     svg04.append('svg:image')
           .attr('x', 366)
-          .attr('y',37)
+          .attr('y',77)
           .attr('width',35)
           .attr('height',35)
           .attr('class', 'thumbnail')
@@ -329,7 +332,7 @@ function draw_map(array) {
           .attr('opacity', 0);
     svg04.append('text')
           .attr('x',400)
-          .attr('y',62)
+          .attr('y',78)
           .attr('fill','white')
           .text('')
           .attr('class','candidate_score');
@@ -484,7 +487,7 @@ function mouseover(d){
   };
   
   // Preferred candidate animation
-  d3.select('.preferred').transition().duration(300).attr("transform", "translate(" + (190 + candidateAxis(d.properties.candidate_score[debate])) + "," + 36 + ")");
+  d3.select('.preferred').transition().duration(300).attr("transform", "translate(" + (190 + candidateAxis(d.properties.candidate_score[debate])) + "," + 76 + ")");
   d3.select('.thumbnail').classed('opaque', true).transition().duration(300).attr('x', (172 + candidateAxis(d.properties.candidate_score[debate]))).attr("xlink:href", d.properties.candidate_score[debate]>=0 ? './images/trump.png' : './images/clinton.png');
   d3.select('.candidate_score').transition().duration(300).text(Math.abs(d.properties.candidate_score[debate].toFixed(3))).attr('x', (215 + candidateAxis(d.properties.candidate_score[debate])));
   // Set cursor

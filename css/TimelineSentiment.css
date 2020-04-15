@@ -318,13 +318,31 @@ animation: spin 2s linear infinite;
 }
 
 @media only screen and (max-width: 1000px){
+    #Graph6{
+        height: 1500px !important;
+    }
+  
+    #Graph1{
+        height: 1900px !important;
+    }
+  
+    #Graph2{
+        height: 1700px !important;
+    }
+  
+    #Graph3{
+        height: 2800px !important;
+    }
+
     .btnDebate{
         width: 18%;
+        font-size: 12px;
     }
     .DivEmojiChart{
         width:90% !important;
         display: block !important; 
     }
+
     #forceDirectedGraph{
         width: 90% !important;
     }
@@ -332,12 +350,23 @@ animation: spin 2s linear infinite;
     .navbar-fixed-bottom .navbar-collapse, .navbar-fixed-top .navbar-collapse{
         min-height: 380px;
     }
+ 
+    #TopThemeGraph , #TEmoji{
+        width: 90% !important;
+    }
+
+    #ThemesChart, #RadarChart, #TreeChart{
+        width: 95% !important;
+    }
+
+    .section-title{
+        padding-top: 100px !important;
+    }
 }
 
 @media only screen and (max-width: 600px) {
     #divLineChartGraph {
-        width: 600px !important;
-        margin-left: -100px !important;
+        width: 90% !important;
     }
 
     #divNumberDisplay{
@@ -350,4 +379,10 @@ animation: spin 2s linear infinite;
     .TopThemeName{
         font-size: 10px !important;
     }
+    .btn-success{
+        width: 80% !important;
+        margin-left: 0 !important;
+        margin-right: 0 !important;
+    }
+
   }

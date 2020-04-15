@@ -39,8 +39,7 @@ http://www.templatemo.com/tm-492-app-starter
 <!-- Navigation Section -->
 
 <div class="navbar navbar-default navbar-fixed-top">
-	<div class="container">
-
+	<div class="container headerMenu">
 		<div class="navbar-header">
 			<button class="navbar-toggle" data-toggle="collapse" data-target=".navbar-collapse">
 				<span class="icon icon-bar"></span>
@@ -53,7 +52,8 @@ http://www.templatemo.com/tm-492-app-starter
 		<div class="collapse navbar-collapse">
 			<ul class="nav navbar-nav navbar-right">
 				<li><a href="#home" class="smoothScroll">Home</a></li>
-				<li><a href="#about" class="smoothScroll">About</a></li>
+                    <li><a href="#about" class="smoothScroll">About</a></li>
+                    <li><a href="#divider" class="smoothScroll">View Our Approach</a></li>
 				<li><a href="#Graph1" class="smoothScroll">Geo Sentiment</a></li>
                     <li><a href="#Graph2" class="smoothScroll">Time Series</a></li>
                     <li><a href="#Graph3" class="smoothScroll">Themes</a></li>
@@ -84,17 +84,17 @@ http://www.templatemo.com/tm-492-app-starter
                          <p class="wow fadeInUp" data-wow-delay="0.8s">In our project, team 26 has built a model that conducts sentiment analysis on posts on Twitter, and then created a platform to visualize the link between social media posts and the outcome of events.</p>
                     </div>
                </div>
+          </div>
 		<div class="row">
-
                <div class="wow fadeInUp col-md-12 col-sm-12" data-wow-delay="0.8s">
-					<br></br>
-                        <p class="wow fadeInUp" data-wow-delay="0.8s">We have focused particularly on the 2016 US Presidential Election however it is our hope that this work can be applied to any form of event to provide users insight into the impact social media can have.</p>
+                    <br></br>
+                    <p class="wow fadeInUp" data-wow-delay="0.8s">We have focused particularly on the 2016 US Presidential Election however it is our hope that this work can be applied to any form of event to provide users insight into the impact social media can have.</p>
                     <p class="wow fadeInUp" data-wow-delay="0.8s">Whilst we have developed our platform to work across browsers, including mobile browsers we have tested on Google Chrome and Mozilla Firefox and recommend these browsers for the best experience.</p>
                     <a href="#Graph2" class="wow fadeInUp section-btn btn btn-success smoothScroll" data-wow-delay="1s">Download a copy of the final report</a>
-				</div>
-            </div>
-		</div>
-	</div>
+               </div>
+          </div>
+     </div>
+	
 </section>
 
 
@@ -228,7 +228,8 @@ http://www.templatemo.com/tm-492-app-starter
 				   <br></br>
 				   At the point that the election was held, the sentiment analysis model was able to predict 29 states of the 52 correctly.  Whilst that may not indicate a resounding success what it did demonstrate is a likely win by Donald Trump throughout the majority of the election campaign which would have been more successful than most voter polls.  This also demonstrates success of the project which was centered on being able to use tweets to correctly predict the outcome of events.
 				   <br></br>
-               </div>			   
+               </div>
+          </div>			   
           <div class="row">
                <div class="wow fadeInUp col-md-3 col-sm-12" data-wow-delay="0.4s">
                    <h2>Sentiment Model</h2>
@@ -258,7 +259,6 @@ http://www.templatemo.com/tm-492-app-starter
                </div>			   
 
           </div>
-          </div>
      </div>
 </section>
 
@@ -275,32 +275,41 @@ http://www.templatemo.com/tm-492-app-starter
 
 <section id="Graph1">
      <div class="container">
-		 <div class="row">
-			  <div class="col-md-12 col-sm-12">
-
-						<div class="row">
-						<div class="wow bounceIn section-title">
-						<h1>Geographic Sentiment</h1>
-						<hr>
-						<h3 class="wow fadeInUp col-md-12 col-sm-12" data-wow-delay="0.8s"><font color="white">The following visualization provides a view of the polarity, subjectivity and candidate preference predictions that the tweetstorm model has made.  To use the visualization:<br></br>
-						1. Hover over each state to see the model outputs, 2. The candidate preference is displayed beneath the map, the polarity and subjectivity to the right, 3. You can choose the map overlay by using the options beneath the map, 4. Click on a state to zoom in and see the candidate outcomes and top themes for the state, 5. Click again to zoom out, 6. Use the options at the top of the page to move between the different time periods.
-						</div>	 
-						<div class="wow fadeInUp Graph1Shrink" style="width:1450px;margin: auto;">
-						<div style="display: inline-block;height: 600px;width:700px;" class=" Graph1Shrink">
-							 <div class="dashboard1 Graph1Shrink" id='dashboard1' style="width:640px;height: 400px;"></div>
-							 <div class="dashboard4 Graph1Shrink" id='dashboard4' style="width:640px;height: 400px;"></div>
-						</div>
-						<div style="display: inline-block;height: 600px;width:700px" class=" Graph1Shrink">
-							 <div class="dashboard3" id='dashboard3' style="width:260px;height: 600px;display: inline-block;"></div>
-							 <div class="dashboard2" id='dashboard2' style="width:370px;height: 600px;display: inline-block;"></div>
-						</div>
-						<div class="row">
-						<div class="wow bounceIn section-title col-md-12 col-sm-12">
-						<h3 class="wow fadeInUp" data-wow-delay="0.8s"><font color="white">This visualization provides an overview of the change in sentiment over time in each State.  The model provides good insight into the candidate preference and also demonstrates that the eventual winner, Donald Trump, maintained a candidate preference lead througout most of the key Election stages.  This visualization along with all the rest that you will see below provide an ability to easily adapt the platform for any scenario where there has or will be a binary outcome as a result of an event.
-				   </div>	 
-				   </div>
-			  </div>
-		 </div>
+          <div class="row">
+               <div class="col-md-12 col-sm-12">
+                    <div class="wow bounceIn section-title" style="padding-top: 80px;">
+                         <h1>Geographic Sentiment</h1>
+                         <hr>
+                         <h3 class="wow fadeInUp col-md-12 col-sm-12" data-wow-delay="0.8s">
+                              <font color="white">The following visualization provides a view of the polarity, subjectivity and candidate preference predictions that the tweetstorm 
+                                   model has made. To use the visualization:<br>
+                                   1. Hover over each state to see the model outputs, 2. The candidate preference is displayed beneath the map, the polarity and subjectivity to 
+                                   the right, 3. You can choose the map overlay by using the options beneath the map, 4. Click on a state to zoom in and see the candidate outcomes 
+                                   and top themes for the state, 5. Click again to zoom out, 6. Use the options at the top of the page to move between the different time periods.
+                              </font>
+                         </h3>
+                    </div>	 
+                    <div class="wow fadeInUp Graph1Shrink" style="width:1450px;margin: auto;padding-top:60px;">
+                         <div style="display: inline-block;height: 600px;width:700px;" class=" Graph1Shrink">
+                                   <div class="dashboard1 Graph1Shrink" id='dashboard1' style="width:640px;height: 400px;"></div>
+                                   <div class="dashboard4 Graph1Shrink" id='dashboard4' style="width:640px;height: 400px;"></div>
+                         </div>
+                         <div style="display: inline-block;height: 600px;width:700px" class=" Graph1Shrink">
+                                   <div class="dashboard3" id='dashboard3' style="width:260px;height: 600px;display: inline-block;"></div>
+                                   <div class="dashboard2" id='dashboard2' style="width:370px;height: 600px;display: inline-block;"></div>
+                         </div>
+                    </div>
+                    <div class="wow bounceIn section-title col-md-12 col-sm-12">
+                         <h3 class="wow fadeInUp" data-wow-delay="0.8s">
+                              <font color="white">This visualization provides an overview of the change in sentiment over time in each State.  The model provides good insight into
+                                    the candidate preference and also demonstrates that the eventual winner, Donald Trump, maintained a candidate preference lead througout most of 
+                                    the key Election stages.  This visualization along with all the rest that you will see below provide an ability to easily adapt the platform for 
+                                    any scenario where there has or will be a binary outcome as a result of an event.
+                              </font>
+                         </h3>
+                    </div>
+               </div>
+          </div>
 	</div>
 </section>
 
@@ -311,78 +320,91 @@ http://www.templatemo.com/tm-492-app-starter
      <div class="container">
           <div class="row">
                <div class="col-md-12 col-sm-12">
-			  <div class="row">
-						<div class="wow bounceIn section-title">
-						<h1>Polarity and Subjectivity Time Series</h1>
-						<hr>
-						<h3 class="wow fadeInUp" data-wow-delay="0.8s"><font color="white">The following visualization provides a time series view as to the change in sentiment based on five key events over the course of the US Presidential election.  There are a number of options available for this visualization including: 1. Toggling the number labels can be done via the checkbox at the top of the chart, 2. Toggling between polarity and subjectivity can be done via the two buttons available, 3. Finally, you can take a look at the specific details related to the key events through the options at the top of the page or selecting this event time period on the chart.
-				   </div>	
-                    <div id='divPolaritySubjectivity' style="width:100%;padding-top:60px;" class="wow fadeInUp">
-                         <div id="divLineChartGraph" style="display:inline-block;position:relative;width: 750px;">
-                              <div id="divNumberDisplay" style="position:relative;margin-bottom:-10px;width:20%;padding-left: 30px;">
-                                   <label class="containerInner">Number
-                                        <input id="cbShowNumber" type="checkbox" checked="checked">
-                                        <span class="checkmark"></span>
-                                   </label>
+                    <div class="row">
+                         <div class="wow bounceIn section-title" style="padding-top: 80px;">
+                              <h1>Polarity and Subjectivity Time Series</h1>
+                              <hr>
+                              <h3 class="wow fadeInUp" data-wow-delay="0.8s">
+                                   <font color="white">The following visualization provides a time series view as to the change in sentiment based on five key events over the 
+                                        course of the US Presidential election. There are a number of options available for this visualization including:</br> 1. Toggling the number 
+                                        labels can be done via the checkbox at the top of the chart, 2. Toggling between polarity and subjectivity can be done via the two buttons 
+                                        available, 3. Click the images to filter candidates, 4. Finally, you can take a look at the specific details related to the key events through the options at the top of the page or 
+                                        selecting this event time period on the chart.
+                                   </font>
+                              </h3>
+                         </div>	
+                         <div id='divPolaritySubjectivity' style="width:100%;padding-top:60px;" class="wow fadeInUp">
+                              <div id="divLineChartGraph" style="display:inline-block;position:relative;width: 750px;">
+                                   <div id="divNumberDisplay" style="position:relative;margin-bottom:-10px;width:20%;padding-left: 30px;">
+                                        <label class="containerInner">Number
+                                             <input id="cbShowNumber" type="checkbox" checked="checked">
+                                             <span class="checkmark"></span>
+                                        </label>
+                                   </div>
+                                   <div style="position:absolute;top:50%;left: 50%;width: 100%; height: 100%;" class="loaderContainer">
+                                        <div class="loader"></div>
+                                   </div>
                               </div>
-                              <div style="position:absolute;top:50%;left: 50%;width: 100%; height: 100%;" class="loaderContainer">
-                                   <div class="loader"></div>
+                              <div id="TrumpAndHillaryGraph" style="text-align:left;display:inline-block;padding:10px 0 0 10px;vertical-align: top;width:360px;">
+                                   <table>
+                                        <tr>
+                                             <td style="width: 70px;padding-bottom: 2em;padding-right:40px;">
+               
+                                             </td>
+                                             <td style="width: 160px;text-align: center;padding-bottom: 2em;padding-right:40px;">
+                                                  <button class="btnSentiment btnSentimentSelected" event="overall_polarity" id="PolarityButton">Polarity</button>
+                                             </td>
+                                             <td style="width: 160px;text-align: center;padding-bottom: 2em;padding-right:40px;">
+                                                  <button class="btnSentiment" event="overall_subjectivity"  statsid="2" id="SubjectivityButton">Subjectivity</button>
+                                             </td>
+                                        </tr>
+                                        <tr style="height: 140px;">
+                                             <td style="width: 60px;padding-bottom: 2em;padding-right: 40px;height: 120px;">
+                                                  <img src="images/Trump.jpg" id="imgTrumpLine" width="40" height="40" class="LineChartImage LineChartImageSelectedTrump TrumpSurround" style="vertical-align: bottom;">
+                                             </td>
+                                             <td style="width: 80px;text-align: center;padding-right:40px;" class="TrumpPsGraph">
+                                                  <div style="width: 75px;margin: auto;height: 100%;padding:10px 0px;border-radius: 5px;height: 120px;" class="PolarityCell PolarityButtonClass">
+                                                       <label class="displayNumber" id="lbTrumpPolarity" style="color:green;font-weight: bold;" ></label>
+                                                       <span class="spanTrumpPolarity" style="float: right;"></span>
+                                                  </div>
+                                             </td>
+                                             <td style="width: 120px;text-align: center;padding-right:40px;" class="TrumpPsGraph">
+                                                  <div style="width: 120px;margin: auto;height: 100%;padding:10px 0px;border-radius: 5px;" class="SubjectivityCell SubjectivityButtonClass">
+                                                       <svg id="fillgaugeTrumpSubjectivity" width="97%" height="100"></svg>
+                                                  </div>
+                                             </td>
+                                        </tr>
+                                        <tr style="height: 140px;">
+                                             <td style="width: 60px;padding-right:40px;padding-right:40px;height: 120px;">
+                                                  <img src="images/Hillary.jpg" id="imgHillaryLine" width="40" height="40" class="LineChartImage LineChartImageSelectedHillary HillarySurround" style="vertical-align: bottom;">
+                                             </td>
+                                             <td  style="width: 80px;text-align: center;padding-right:40px;" class="HillaryPsGraph">
+                                                  <div style="width: 75px;margin: auto;height: 100%;padding:10px 0px;border-radius: 5px;height: 120px;" class="PolarityCell PolarityButtonClass">
+                                                       <label class="displayNumber" id="lbHillaryPolarity" style="color:orange;font-weight: bold;"></label>
+                                                       <span class="spanHillaryPolarity" style="float: right;"></span>
+                                                  </div>
+                                             </td>
+                                             <td  style="width:120px;text-align: center;padding-right:40px;" class="HillaryPsGraph">
+                                                  <div style="width: 120px;margin: auto;height: 100%;padding:10px 0px;border-radius: 5px;" class="SubjectivityCell SubjectivityButtonClass">
+                                                       <!-- <label class="displayNumber" id="lbHillarySubjectivity" style="color:orange;font-weight: bold;"></label> -->
+                                                       <svg id="fillgaugeHillarySubjectivity" width="97%" height="100"></svg>
+                                                  </div>
+                                             </td>
+                                        </tr style="height: 150px;">
+                                   </table>
                               </div>
-                         </div>
-                         <div id="TrumpAndHillaryGraph" style="text-align:left;display:inline-block;padding:10px 0 0 10px;vertical-align: top;width:360px;">
-                              <table>
-                                   <tr>
-                                        <td style="width: 70px;padding-bottom: 2em;padding-right:40px;">
-          
-                                        </td>
-                                        <td style="width: 160px;text-align: center;padding-bottom: 2em;padding-right:40px;">
-                                             <button class="btnSentiment btnSentimentSelected" event="overall_polarity" id="PolarityButton">Polarity</button>
-                                        </td>
-                                        <td style="width: 160px;text-align: center;padding-bottom: 2em;padding-right:40px;">
-                                             <button class="btnSentiment" event="overall_subjectivity"  statsid="2" id="SubjectivityButton">Subjectivity</button>
-                                        </td>
-                                   </tr>
-                                   <tr style="height: 140px;">
-                                        <td style="width: 60px;padding-bottom: 2em;padding-right: 40px;height: 120px;">
-                                             <img src="images/Trump.jpg" id="imgTrumpLine" width="40" height="40" class="LineChartImage LineChartImageSelectedTrump TrumpSurround" style="vertical-align: bottom;">
-                                        </td>
-                                        <td style="width: 80px;text-align: center;padding-right:40px;" class="TrumpPsGraph">
-                                             <div style="width: 75px;margin: auto;height: 100%;padding:10px 0px;border-radius: 5px;height: 120px;" class="PolarityCell PolarityButtonClass">
-                                                  <label class="displayNumber" id="lbTrumpPolarity" style="color:green;font-weight: bold;" ></label>
-                                                  <span class="spanTrumpPolarity" style="float: right;"></span>
-                                             </div>
-                                        </td>
-                                        <td style="width: 120px;text-align: center;padding-right:40px;" class="TrumpPsGraph">
-                                             <div style="width: 120px;margin: auto;height: 100%;padding:10px 0px;border-radius: 5px;" class="SubjectivityCell SubjectivityButtonClass">
-                                                  <svg id="fillgaugeTrumpSubjectivity" width="97%" height="100"></svg>
-                                             </div>
-                                        </td>
-                                   </tr>
-                                   <tr style="height: 140px;">
-                                        <td style="width: 60px;padding-right:40px;padding-right:40px;height: 120px;">
-                                             <img src="images/Hillary.jpg" id="imgHillaryLine" width="40" height="40" class="LineChartImage LineChartImageSelectedHillary HillarySurround" style="vertical-align: bottom;">
-                                        </td>
-                                        <td  style="width: 80px;text-align: center;padding-right:40px;" class="HillaryPsGraph">
-                                             <div style="width: 75px;margin: auto;height: 100%;padding:10px 0px;border-radius: 5px;height: 120px;" class="PolarityCell PolarityButtonClass">
-                                                  <label class="displayNumber" id="lbHillaryPolarity" style="color:orange;font-weight: bold;"></label>
-                                                  <span class="spanHillaryPolarity" style="float: right;"></span>
-                                             </div>
-                                        </td>
-                                        <td  style="width:120px;text-align: center;padding-right:40px;" class="HillaryPsGraph">
-                                             <div style="width: 120px;margin: auto;height: 100%;padding:10px 0px;border-radius: 5px;" class="SubjectivityCell SubjectivityButtonClass">
-                                                  <!-- <label class="displayNumber" id="lbHillarySubjectivity" style="color:orange;font-weight: bold;"></label> -->
-                                                  <svg id="fillgaugeHillarySubjectivity" width="97%" height="100"></svg>
-                                             </div>
-                                        </td>
-                                   </tr style="height: 150px;">
-                              </table>
                          </div>
                     </div>
-               </div>
-			  <div class="row">
-						<div class="wow bounceIn section-title">
-						<h3 class="wow fadeInUp" data-wow-delay="0.8s"><font color="white">This visualization demonstrates the movement of subjectivity and polarity over time.  The two values are almost inverse to each other with polarity peaking at the time of the Election whilst the subjectivity reached its lowest point at this time.
-				   </div>	
+                    <div class="row">
+                         <div class="wow bounceIn section-title">
+                              <h3 class="wow fadeInUp" data-wow-delay="0.8s">
+                                   <font color="white">This visualization demonstrates the movement of subjectivity and polarity over time.  The two values are almost inverse to each 
+                                        other with polarity peaking at the time of the Election whilst the subjectivity reached its lowest point at this time.
+                                   </font>
+                              </h3>
+                         </div>
+                    </div>
+               </div>	
           </div>
      </div>
 </section>
@@ -392,47 +414,58 @@ http://www.templatemo.com/tm-492-app-starter
 
 <section id="Graph3">
      <div class="overlay"></div>
-       <div class="container">
+     <div class="container">
           <div class="row">
                <div class="col-md-12 col-sm-12">
-			  <div class="row">
-						<div class="wow bounceIn section-title">
-						<h1>Tweet Theme Analysis</h1>
-						<hr>
-						<h3 class="wow fadeInUp" data-wow-delay="0.8s"><font color="white">This theme analysis provides users a view of the top three themes discussed on Twitter over the five key stages of the election. Below the bar chart this has then been visualized at a state vs topic level in a matrix.  To view the top themes for each key event over the Election campaign please use the options at the top of the page.  To assist with readability the topics and States can be selected in the Matrix to highlight the relevant topics.
-				   </div>	
-
-                    
-                    <div class="wow fadeInUp">
-                         <div style="display: inline-block;;vertical-align: top;position: relative; ">
-                              <div id="TopThemeGraph" style="margin:10px auto;height:350px">
-                                   <div style="position:absolute;top:50%;left: 50%;width: 100%; height: 100%;" class="loaderContainer">
-                                        <div class="loader"></div>
+                    <div class="row">
+                         <div class="wow bounceIn section-title" style="padding-top: 80px;">
+                              <h1>Tweet Theme Analysis</h1>
+                              <hr>
+                              <h3 class="wow fadeInUp" data-wow-delay="0.8s">
+                                   <font color="white">
+                                        This theme analysis provides users a view of the top three themes discussed on Twitter over the five key stages of the election. 
+                                        Below the bar chart this has then been visualized at a state vs topic level in a matrix. To view the top themes for each key event over the 
+                                        Election campaign please use the options at the top of the page.  To assist with readability the topics and States 
+                                        can be selected in the Matrix to highlight or click the relevant topics.
+                                   </font>
+                              </h3>
+                         </div>	
+                         <div class="wow fadeInUp">
+                              <div style="width: 100%;">
+                                   <div id="TopThemeGraph" style="margin:10px auto;height:350px;width: 700px;">
+                                        <div style="position:absolute;top:50%;left: 50%;width: 100%; height: 100%;" class="loaderContainer">
+                                             <div class="loader"></div>
+                                        </div>
+                                   </div>
+                                   <div id="ThemesChart" style="margin:50px auto 10px auto;width: 1050px;">
+                                        
                                    </div>
                               </div>
-                              <div id="ThemesChart" style="margin:50px auto 10px auto;">
-                                   
+                              <div style="display: none;height:300px;">
+                                   <div style="margin:30px auto 0px auto; width: 200px;">
+                                        <div>Swing State 1</div>
+                                        <svg id="svgSwingStateGraph1" width="200" height="60" style="min-height: 60px;"></svg>
+                                        <div>Swing State 2</div>
+                                        <svg id="svgSwingStateGraph2" width="200" height="60" style="min-height: 60px;"></svg>
+                                        <div>Swing State 3</div>
+                                        <svg id="svgSwingStateGraph3" width="200" height="60" style="min-height: 60px;"></svg>
+                                   </div>
                               </div>
                          </div>
-                         <div style="display: none;height:300px;">
-                              <div style="margin:30px auto 0px auto; width: 200px;">
-                                   <div>Swing State 1</div>
-                                   <svg id="svgSwingStateGraph1" width="200" height="60" style="min-height: 60px;"></svg>
-                                   <div>Swing State 2</div>
-                                   <svg id="svgSwingStateGraph2" width="200" height="60" style="min-height: 60px;"></svg>
-                                   <div>Swing State 3</div>
-                                   <svg id="svgSwingStateGraph3" width="200" height="60" style="min-height: 60px;"></svg>
-                              </div>
+                         <div class="wow bounceIn section-title">
+                              <h3 class="wow fadeInUp" data-wow-delay="0.8s">
+                                   <font color="white">This visualization assists to understand the key topics over the election and the impact they had in each state.  
+                                        What it also demonstrates is the messages which mean the most to the areas and where the candidates could have focused their attention.  
+                                        An interesting observation following the second debate was that the topic of "Women" was the top theme at a time that Hilary Clinton appeared 
+                                        to take candidate preference from Donald Trump, however whilst it was the top theme overall iit was only the top theme in the states of Nebraska 
+                                        and Wyoming although it was in the top three in all other states except for five. 
+                                   </font>
+                              </h3>
                          </div>
                     </div>
-                      <div class="wow bounceIn section-title">
-						<h3 class="wow fadeInUp" data-wow-delay="0.8s"><font color="white">This visualization assists to understand the key topics over the election and the impact they had in each state.  What it also demonstrates is the messages which mean the most to the areas and where the candidates could have focused their attention.  An interesting observation following the second debate was that the topic of "Women" was the top theme at a time that Hilary Clinton appeared to take candidate preference from Donald Trump, however whilst it was the top theme overall iit was only the top theme in the states of Nebraska and Wyoming although it was in the top three in all other states except for five. 
-               </div>
-			
 		    </div>	
           </div>
      </div>
-	</div>
 </section>
 
 <!-- Graph4 Section -->
@@ -445,21 +478,43 @@ http://www.templatemo.com/tm-492-app-starter
           <div class="row">
                <div class="col-md-12 col-sm-12">
 			    <div class="row">
-						<div class="wow bounceIn section-title">
-                        <h1><span  style="color: steelblue;">Network Analysis</span></h1>
+                         <div class="wow bounceIn section-title" style="padding-top: 80px;">
+                              <h1><span  style="color: steelblue;">Network Analysis</span></h1>
 						<hr><span  style="color: steelblue;"></span></hr>
-						<h3 class="wow fadeInUp" data-wow-delay="0.8s"><font color="steelblue">The below visualization demonstrates the networks of Twitter users and their connection throughout the key periods of the US Presidential election.  It shows that over time the groups change significantly moving from a larger network (with a large tweet volume) associated to Hilary Clinton's account in the first debtate to a larger network building towards Donald Trump over the later key points.  To us this visualization you can filter by the minimum tweet count at the top of the visualization and to see the networks in greater detail you can double click on any node for it to stick to the canvas.  The changes over the key time points can be viewed by using the buttons at the top of the page.
-				   </div>	
-                    <div class="wow fadeInUp section-title" style="color: steelblue;font-size:30px;">
-                         <label >Filter: Count More Than </label>&nbsp;&nbsp;&nbsp;
-                         <a class="Minus" style="font-size: 35px;font-weight: bold;">-</a>&nbsp;&nbsp;
-                         <label id="lbNodeFilter"></label>&nbsp;&nbsp;
-                         <a class="Plus" style="font-size: 35px;font-weight: bold;">+</a>
+						<h3 class="wow fadeInUp" data-wow-delay="0.8s">
+                                   <font color="steelblue">The below visualization demonstrates the networks of Twitter users and their connection throughout the key periods 
+                                        of the US Presidential election.  It shows that over time the groups change significantly moving from a larger network (with a large 
+                                        tweet volume) associated to Hilary Clinton's account in the first debtate to a larger network building towards Donald Trump over the 
+                                        later key points.  To us this visualization you can filter by the minimum tweet count at the top of the visualization and to see the 
+                                        networks in greater detail you can double click on any node for it to stick to the canvas.  The changes over the key time points can be 
+                                        viewed by using the buttons at the top of the page.
+                                   </font>
+                              </h3>
+				     </div>	
+                         <div class="wow fadeInUp section-title" style="color: steelblue;font-size:30px;">
+                              <label >Filter: Count More Than </label>&nbsp;&nbsp;&nbsp;
+                              <a class="Minus" style="font-size: 35px;font-weight: bold;cursor: pointer;display: inline-block;">
+                                   &#8722;
+                              </a>
+                              &nbsp;&nbsp;
+                              <label id="lbNodeFilter"></label>
+                              &nbsp;&nbsp;
+                              <a class="Plus" style="font-size: 35px;font-weight: bold;cursor: pointer;display: inline-block;">
+                                   &#43;
+                              </a>
+                              &nbsp;&nbsp;
+                         </div>
+                         <div id="forceDirectedGraph"  style="width: 1400px;height: 1000px;margin: auto;" class="wow fadeInUp"></div>
+                              <div class="wow bounceIn section-title">
+                                   <h3 class="wow fadeInUp" data-wow-delay="0.8s">
+                                        <font color="steelblue">The interesting aspect of this visualization is that at the early stages (using a larger tweet volume of > 30) 
+                                             we can see the network of Hilary Clinton as being larger than that of Donald Trump.  This is not the case when factoring in a lower 
+                                             number of tweets, however over time this seemed to shrink as the campaign of Donald Trump gained momentum.
+                                        </font>
+                                   </h3>
+                              </div>	
+                         </div>
                     </div>
-                    <div id="forceDirectedGraph"  style="width: 1400px;height: 1000px;" class="wow fadeInUp"></div>
-					<div class="wow bounceIn section-title">
-						<h3 class="wow fadeInUp" data-wow-delay="0.8s"><font color="steelblue">The interesting aspect of this visualization is that at the early stages (using a larger tweet volume of > 30) we can see the network of Hilary Clinton as being larger than that of Donald Trump.  This is not the case when factoring in a lower number of tweets, however over time this seemed to shrink as the campaign of Donald Trump gained momentum.
-				   </div>	
                </div>
           </div>
      </div>
@@ -472,29 +527,43 @@ http://www.templatemo.com/tm-492-app-starter
      <div class="container">
           <div class="row">
                <div class="col-md-12 col-sm-12">
-					<div class="wow bounceIn section-title">
-                        <h1><span  style="color: steelblue !important;">Emoji Analysis</span></h1>
-						<hr>
-						<h3 class="wow fadeInUp" data-wow-delay="0.8s"><font color="steelblue">The innovation of this piece of work was that of the development of Emoji Analysis.  Whilst the emoji analysis was built into the sentiment modelling we also developed som visualizations demonstrating emooji use at the different time points.  To view the change in the use of emoji's throughout the various stages of the election, please use the options at the top of the page.
-				   </div>	
-                         <div class="DivEmojiChart" style="display:block;height: 600px;margin-top: 50px;">
-                              <div id='RadarChart' style="height: 600px;width: 600px;margin: auto;vertical-align: middle;" class="wow fadeInUp"></div>
-                         </div>
-						 <div class="wow bounceIn section-title">
-						<h3 class="wow fadeInUp" data-wow-delay="0.8s"><font color="steelblue">The first chart was a spider web analysis looking at the use of emoji's based on Team 26's categorization.  The emoji use peaked on the day of the election with surprise really increasing in use.  The below donut chart then looks at the emoji use in greater detail.
-						</div>	
-                         <div class="DivEmojiChart" style="display:block;height: 600px;margin-top: 50px;">
-                              <div id='TEmoji' style="height: 600px;width: 600px;margin: auto;vertical-align: middle;" class="wow fadeInUp"></div>
-                         </div>
-						 <div class="wow bounceIn section-title">
-						<h3 class="wow fadeInUp" data-wow-delay="0.8s"><font color="steelblue">The final visualization provides a dendogram as another view to see the use of emoji's and also make it clear to the user as to the categorization of the particular emoji's in our analysis.
-						</div>	
-                         <div class="DivEmojiChart" style="display:block;margin: 50px 0px;">
-                              <div id='TreeChart' style="height: 1200px;width: 600px;margin: auto;vertical-align: middle;" class="wow fadeInUp"></div>
-						 <div class="wow bounceIn section-title">
-						<h3 class="wow fadeInUp" data-wow-delay="0.8s"><font color="steelblue">
-						</div>	
-                         </div>
+                    <div class="wow bounceIn section-title" style="padding-top: 80px;">
+                         <h1><span  style="color: steelblue !important;">Emoji Analysis</span></h1>
+                         <hr>
+                         <h3 class="wow fadeInUp" data-wow-delay="0.8s">
+                              <font color="steelblue">The innovation of this piece of work was that of the development of 
+                                   Emoji Analysis.  Whilst the emoji analysis was built into the sentiment modelling we also developed som visualizations demonstrating emooji 
+                                   use at the different time points.  To view the change in the use of emoji's throughout the various stages of the election, please use the 
+                                   options at the top of the page.
+                              </font>
+                         </h3>
+                    </div>	
+                    <div class="DivEmojiChart" style="display:block;margin: 50px auto 0px auto;">
+                         <div id='RadarChart' style="width: 600px;margin: auto;vertical-align: middle;" class="wow fadeInUp"></div>
+                    </div>
+                    <div class="wow bounceIn section-title">
+                         <h3 class="wow fadeInUp" data-wow-delay="0.8s">
+                              <font color="steelblue">The first chart was a spider web analysis looking at the use of emoji's based on Team 26's categorization.  
+                                   The emoji use peaked on the day of the election with surprise really increasing in use.  The below donut chart then looks at the 
+                                   emoji use in greater detail.
+                              </font>
+                         </h3>
+                    </div>	
+                    <div class="DivEmojiChart" style="display:block;margin: 50px auto 0px auto;">
+                         <div id='TEmoji' style="width: 600px;margin: auto;vertical-align: middle;" class="wow fadeInUp"></div>
+                    </div>
+                    <div class="wow bounceIn section-title"  style="display:block;margin: 50px 0px 0px 0px;">
+                         <h3 class="wow fadeInUp" data-wow-delay="0.8s">
+                              <font color="steelblue">The final visualization provides a dendogram as another view to see the 
+                                   use of emoji's and also make it clear to the user as to the categorization of the particular emoji's in our analysis.
+                              </font>
+                         </h3>
+                    </div>	
+                    <div class="DivEmojiChart" style="display:block;margin: 50px auto 0px auto;">
+                         <div id='TreeChart' style="width: 600px;margin: auto;vertical-align: middle;" class="wow fadeInUp"></div>
+                         <div class="wow bounceIn section-title">
+                              <h3 class="wow fadeInUp" data-wow-delay="0.8s"><font color="steelblue">
+                         </div>	
                     </div>
                </div>
           </div>
