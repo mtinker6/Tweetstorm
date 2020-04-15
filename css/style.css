@@ -32,9 +32,14 @@ h1 {
     margin-bottom: 0px;
 }
 
+h1.main-tweet {
+  color: #96def0;
+}
+
 h2 {
   color: #f0f0f0;
   font-size: 32px;
+  font-weight: bold;
 }
 
 h3 {
@@ -45,7 +50,16 @@ h3 {
 }
 
 h4 {
-  font-weight: bold;
+  font-weight: normal;
+  line-height: 0.7cm;
+}
+
+h5 {
+  line-height: 0.6cm;
+  font-family: 'Lato', sans-serif;
+  font-size: 18px;
+  font-weight: 140;
+  line-height: 26px;
 }
 
 p {
@@ -297,9 +311,9 @@ table{
 }
 
 #home .overlay {
-  background: #4776E6; /* fallback for old browsers */
-  background: -webkit-linear-gradient(to left, #4776E6 , #8E54E9); /* Chrome 10-25, Safari 5.1-6 */ 
-  background: linear-gradient(to left, #4776E6 , #8E54E9); /* W3C, IE 10+/ Edge, Firefox 16+, Chrome 26+, Opera 12+, Safari 7+ */
+  background: #32407b; /* fallback for old browsers */
+  background: -webkit-linear-gradient(to bottom, #004f99 , #0779e4); /* Chrome 10-25, Safari 5.1-6 */ 
+  background: linear-gradient(to bottom, #004f99 , #0779e4); /* W3C, IE 10+/ Edge, Firefox 16+, Chrome 26+, Opera 12+, Safari 7+ */
   opacity: 0.9;
   position: absolute;
   width: 100%;
@@ -345,7 +359,7 @@ table{
 -----------------------------------------*/
 
 #divider {
-  background-color: #1dc9e3;
+  background-color: #46b5d1;
 }
 
 #divider p {
@@ -637,8 +651,8 @@ color: #ffffff;
 -----------------------------------------*/
 
 footer {
-  padding-top: 60px;
-  padding-bottom: 60px;
+  padding-top: 40px;
+  padding-bottom: 40px;
 }
 
 footer span {
@@ -648,6 +662,13 @@ footer span {
 
 footer p {
   padding-top: 16px;
+  color: white;
+  font-weight: bold;
+}
+
+footer a {
+  color: white;
+  font-size: 18px;
 }
 
 

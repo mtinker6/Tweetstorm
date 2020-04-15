@@ -38,8 +38,8 @@ svg02.append('text').attr('class','statedetails theme3').attr('x',10).attr('y',3
 // Titles
 svg03.append('text').attr('x',33).attr('y',40).attr('fill','white').style("font-weight",'bold').text('Subjectivity');
 svg03.append('text').attr('x',166).attr('y',40).attr('fill','white').style("font-weight",'bold').text('Polarity');
-svg04.append('text').attr('x',53).attr('y',20).attr('fill','white').style("font-weight",'bold').text('Candidate');
-svg04.append('text').attr('x',29).attr('y',40).attr('fill','white').style("font-weight",'bold').text('Preference Score');
+svg04.append('text').attr('x',293).attr('y',20).attr('fill','white').style("font-weight",'bold').text('Candidate');
+svg04.append('text').attr('x',269).attr('y',40).attr('fill','white').style("font-weight",'bold').text('Preference Score');
 svg04.append('text').attr('x',5).attr('y',140).attr('fill','white').style("font-weight",'bold').style('font-size','24px').text('Select map layer:').attr('class', 'Selectmaplayer');
 
 // Legends, scales, axes
@@ -70,7 +70,7 @@ svg03.append('g')
     .style("fill", "url(#linear-gradient2)")
     .attr('transform', 'rotate(270 130 70)');
 svg04.append('g')
-    .attr("transform", 'translate(10,50)')
+    .attr("transform", 'translate(100,50)')
     .append("rect").attr("width", legendlength*1.1).attr("height", thickness-5)
     .style("fill", "url(#linear-gradient3)");
 
@@ -332,7 +332,7 @@ function draw_map(array) {
           .attr('opacity', 0);
     svg04.append('text')
           .attr('x',400)
-          .attr('y',78)
+          .attr('y',100)
           .attr('fill','white')
           .text('')
           .attr('class','candidate_score');
@@ -487,9 +487,9 @@ function mouseover(d){
   };
   
   // Preferred candidate animation
-  d3.select('.preferred').transition().duration(300).attr("transform", "translate(" + (190 + candidateAxis(d.properties.candidate_score[debate])) + "," + 76 + ")");
-  d3.select('.thumbnail').classed('opaque', true).transition().duration(300).attr('x', (172 + candidateAxis(d.properties.candidate_score[debate]))).attr("xlink:href", d.properties.candidate_score[debate]>=0 ? './images/trump.png' : './images/clinton.png');
-  d3.select('.candidate_score').transition().duration(300).text(Math.abs(d.properties.candidate_score[debate].toFixed(3))).attr('x', (215 + candidateAxis(d.properties.candidate_score[debate])));
+  d3.select('.preferred').transition().duration(300).attr("transform", "translate(" + (100 + candidateAxis(d.properties.candidate_score[debate])) + "," + 76 + ")");
+  d3.select('.thumbnail').classed('opaque', true).transition().duration(300).attr('x', (82 + candidateAxis(d.properties.candidate_score[debate]))).attr("xlink:href", d.properties.candidate_score[debate]>=0 ? './images/trump.png' : './images/clinton.png');
+  d3.select('.candidate_score').transition().duration(300).text(Math.abs(d.properties.candidate_score[debate].toFixed(3))).attr('x', (125 + candidateAxis(d.properties.candidate_score[debate])));
   // Set cursor
   if (k == 1) {
     d3.select(this).style('cursor', 'zoom-in');
