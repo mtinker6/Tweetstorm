@@ -184,8 +184,8 @@
 }
 
 .ThemeHighlighted, .ThemeSelected{
-    fill:dodgerblue !important;
-    color: dodgerblue !important;
+    fill: rgb(106, 255, 47) !important;
+    color: rgb(106, 255, 47) !important;
 }
 
 .btnDebate,
@@ -386,3 +386,8 @@ animation: spin 2s linear infinite;
     }
 
   }
+
+.TopThemeName {
+    fill: white;
+    font-size: 17px;
+}

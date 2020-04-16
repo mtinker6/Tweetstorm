@@ -673,13 +673,13 @@ function GenerateTopThemeGraphChart(dataSet, chartResolve){
             enter => {
                 enter
                     .append('rect')
-                    .attr('class', 'bar')
+                    .attr('class', '#efb1ff')
                     .attr('y', d => yScale(d[0]))
                     .attr('height', yScale.bandwidth())
-                    .style('fill', 'lightcyan')
+                    .style('fill', 'white')
 
                     .transition(t)
-                    .style('fill', 'dodgerblue')
+                    .style('fill', '#efb1ff')
                     .attr('width', d => xScale(d[1]))
                     .on("end", response => {
                         if(chartResolve != undefined)
@@ -964,31 +964,37 @@ function CreateThemesChart(data) {
             .attr("width", 30)
             .attr("height", 10)
             .attr('transform', 'translate(0,10)')
-            .attr("fill", 'purple');
+            .attr("fill", '#efb1ff');
 
         legend.append("text")
             .attr('transform', 'translate(40,18)')
-            .text('Rank 1st');
+            .text('Rank 1st')
+            .attr("fill", 'white')
+            .style("font-size", "18px");
 
         legend.append("rect")
             .attr("width", 20)
             .attr("height", 10)
             .attr('transform', (d, i) => 'translate(150,10)')
-            .attr("fill", 'purple');
+            .attr("fill", '#efb1ff');
 
         legend.append("text")
             .attr('transform', 'translate(180,18)')
-            .text('Rank 2nd');
+            .text('Rank 2nd')
+            .style("font-size", "18px")
+            .attr("fill", 'white');
 
         legend.append("rect")
             .attr("width", 10)
             .attr("height", 10)
             .attr('transform', (d, i) => 'translate(300,10)')
-            .attr("fill", 'purple');
+            .attr("fill", '#efb1ff');
 
         legend.append("text")
             .attr('transform', 'translate(320,18)')
-            .text('Rank 3rd');
+            .text('Rank 3rd')
+            .style("font-size", "18px")
+            .attr("fill", 'white');
         
 
     var header = ThemesChart
@@ -1032,7 +1038,7 @@ function CreateThemesChart(data) {
                 .text((d, i) => d)
                 .attr('text-anchor', 'start')
                 .attr('font-weight','bold')
-                .style('fill', 'black');
+                .style('fill', 'white');
             },
 
             update => {
@@ -1056,7 +1062,7 @@ function CreateThemesChart(data) {
                 .text((d, i) => d)
                 .attr('text-anchor', 'start')
                 .attr('font-weight','bold')
-                .style('fill', 'black')
+                .style('fill', 'white')
             },
 
             update => {
@@ -1079,7 +1085,7 @@ function CreateThemesChart(data) {
                 .attr('id', (d, i) => d.state.split(" ").join("_") + '-s')
                 .attr('text-anchor', 'start')
                 .attr('font-weight','bold')
-                .style('fill', 'black')
+                .style('fill', 'white')
             },
 
             update => {
@@ -1111,7 +1117,7 @@ function CreateThemesChart(data) {
                 .attr("width", eventData[themeName] * 10)
                 .attr("height", 10)
                 .attr('y', -10)
-                .attr("fill", 'purple');
+                .attr("fill", '#efb1ff');
         }
 
     }
