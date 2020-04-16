@@ -1,5 +1,5 @@
 body {
-		background: #1c1c1c;
+		background: #151965;
     font-family: 'Source Sans Pro', sans-serif;
     font-style: normal;
 		font-weight: 300;
@@ -33,7 +33,7 @@ h1 {
 }
 
 h1.main-tweet {
-  color: #96def0;
+  color: #57c2f3;
 }
 
 h2 {
@@ -43,24 +43,36 @@ h2 {
 }
 
 h3 {
-  color: #535bd4;
-  font-size: 22px;
+  font-size: 19px;
   line-height: 32px;
   padding-bottom: 4px;
-  font-weight: 300;
+  font-weight: 200;
+}
+
+h3.names {
+  color: #535bd4;
+  font-size: 25px;
+  font-weight: 600;
 }
 
 h4 {
-  font-weight: 140;
-  color: #a8e4f3;
+  font-weight: 120;
+  font-size: 19px;
+  color: #c9ebf5;
   line-height: 30px;
+}
+
+h4.names {
+  color: #0779e4;
+  font-size: 18px;
+  font-weight: 600;
 }
 
 h5 {
   line-height: 0.6cm;
   font-family: 'Lato', sans-serif;
   font-size: 17px;
-  font-weight: 120;
+  font-weight: 160;
   line-height: 26px;
 }
 
@@ -262,7 +274,7 @@ table{
 }
 
 .navbar-default .navbar-nav > li a:hover {
-    color: #73b9fa;
+    color: #80bef8;
 }
 
 .navbar-default .navbar-nav > li > a:hover {
@@ -271,14 +283,14 @@ table{
 }
 
 .navbar-default .navbar-nav > li > a:focus {
-    color: #73b9fa;
+    color: #80bef8;
     background-color: transparent;
 }
 
 .navbar-default .navbar-nav > .active > a,
 .navbar-default .navbar-nav > .active > a:hover,
 .navbar-default .navbar-nav > .active > a:focus {
-    color: #73b9fa;
+    color: #80bef8;
     background-color: transparent;
 }
 
@@ -320,12 +332,12 @@ table{
 
 #home .overlay {
   background: #32407b; /* fallback for old browsers */
-  background: -webkit-linear-gradient(to bottom, #32407b , #0779e4); /* Chrome 10-25, Safari 5.1-6 */ 
-  background: linear-gradient(to bottom, #32407b , #0779e4); /* W3C, IE 10+/ Edge, Firefox 16+, Chrome 26+, Opera 12+, Safari 7+ */
+  background: -webkit-linear-gradient(to bottom, #32407b , #515585); /* Chrome 10-25, Safari 5.1-6 */ 
+  background: linear-gradient(to bottom, #32407b , #515585); /* W3C, IE 10+/ Edge, Firefox 16+, Chrome 26+, Opera 12+, Safari 7+ */
   opacity: 0.9;
   position: absolute;
   width: 100%;
-  height: 80vh;
+  height: 90vh;
   top: 0;
   left: 0;
   right: 0;
@@ -367,7 +379,7 @@ table{
 -----------------------------------------*/
 
 #divider {
-  background-color: #46b5d1;
+  background-color: #515585;
 }
 
 #divider p {
@@ -380,6 +392,9 @@ table{
 /*---------------------------------------
    About section              
 -----------------------------------------*/
+#about {
+  background: rgb(43, 42, 42);
+}
 
 #about img {
   width: 100%;
@@ -408,17 +423,20 @@ table{
 
 #about .about-thumb:hover .about-overlay {
   height: 100%;
-  background-color: #ffffff;
+  background-color: #e4e3e3;
   color: #222;
-  padding-top: 30%;
+  padding-top: 10%;
   opacity: 0.9;
 }
 
 #about .about-thumb:hover h4 {
-  color: #1dc9e3;
+  color: #3891e4;
 }
 
-
+.about-overlay p {
+  color: #2b274b;
+  font-weight: 450;
+}
 /*---------------------------------------
     Graph1 section              
 -----------------------------------------*/
@@ -427,7 +445,7 @@ table{
   display: block;
   width: 100%;
   padding-bottom: 1rem;
-  background-color: #151965;
+  background-color: #32407b;
   height: 1400px;
 }
 
@@ -482,7 +500,7 @@ table{
   background-size: cover;
   background-position: center center;
   color: #ffffff;
-  background-color: skyblue;
+  background-color: #515585;
   position: relative;
   height: 1200px;
 }
@@ -550,7 +568,7 @@ color: #ffffff;
 -----------------------------------------*/
 
 #Graph3 {
-  background-color: #515585;
+  background-color: #32407b;
   color: #000000;
   height: 2500px;
 }
@@ -867,3 +885,10 @@ circle {
   }
 }
 
+th {
+  color: rgb(164, 241, 255);
+}
+
+th {
+  border-bottom: 1.5px solid #ddd;
+}

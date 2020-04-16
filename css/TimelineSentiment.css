@@ -31,21 +31,27 @@
 }
 
 .btnSentiment {
-    border: 1px solid steelblue;
-    background-color: white;
-    color: steelblue;
+    border: 1px solid #7f78d2;
+    background-color: #827397;
+    color: white;
     padding: 8px;
-    font-size: 12px !important;
+    font-size: 20px !important;
+    font-weight: 500;
     cursor: pointer;
     outline: none;
-    width: 80px;
+    width: 120px;
     border-radius: 5px;
 }
 
-.btnDebateSelected, .btnDebate:hover, .btnSentimentSelected, .btnSentiment:hover{
+.btnSentimentSelected, .btnSentiment:hover{
+    background-color: #7f78d2;
+    color: white;
+}
+
+
+.btnDebateSelected, .btnDebate:hover{
     background-color: steelblue;
     color: white;
-
 }
 
 .btnDebateSelected{
@@ -97,20 +103,20 @@
 }
 
 .LineChartImageSelectedTrump{
-    -webkit-box-shadow: 0px 0px 5px 5px green;
-    -moz-box-shadow: 0px 0px 5px 5px green;
-    box-shadow: 0px 0px 5px 5px green;
+    -webkit-box-shadow: 0px 0px 5px 5px limegreen;
+    -moz-box-shadow: 0px 0px 5px 5px limegreen;
+    box-shadow: 0px 0px 5px 5px limegreen;
     opacity: 1;
 }
 .btnLineChartLabel{
-    color:grey;
+    color:white;
     width: 60px;
     cursor: pointer;
     font-size: 12px;
     text-decoration: underline;
 }
 .btnLineChartLabelSelected{
-    color:steelblue;
+    color:#97e5ef;
     width: 60px;
     cursor: pointer;
     font-size: 13px;
@@ -118,7 +124,7 @@
     text-decoration: none;
 }
 .btnLineChartLabel:hover{
-    color:steelblue;
+    color:#97e5ef;
     font-size: 13px;
     font-weight: bold;
     cursor: pointer;
@@ -152,12 +158,12 @@
 }
 
 .PolarityButtonClass:hover{
-    background-color: rgba(70, 130, 180, 0.1);
+    background-color: #827397;
     cursor: pointer;
 }
 
 .SubjectivityButtonClass:hover{
-    background-color: rgba(70, 130, 180, 0.1);
+    background-color: #827397;
     cursor: pointer;
 }
 
@@ -166,14 +172,14 @@
     border: grey !important;
 }
 .GreyOut:hover{
-    background-color:steelblue !important;
+    background-color:#827397 !important;
     border: steelblue !important;
     color: white !important;
 }
 
 .fixedElement {
-    border: solid 1px black;
-    background-color: rgb(220,243,255, 0.9);
+    /* border: solid 1px black; */
+    background-color: #32407b;
     text-align:center;
     padding: 5px 0;
     margin: 0 auto;

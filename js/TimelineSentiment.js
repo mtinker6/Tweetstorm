@@ -173,8 +173,8 @@ function InitLineGraphFrame(){
         .append('tspan')
         .attr('x', widthLine/2 - 70)
         .attr('dy', 15)
-        .style('font-size', 15)
-        .style('fill', 'steelblue');
+        .style('font-size', 21)
+        .style('fill', '#efb1ff');
 
     headerLine.text('Sentiment Overall');
 
@@ -205,7 +205,7 @@ function InitLineGraph(){
         .attr('class', 'x_axis')
         .attr('transform', `translate(0 ${heightLine})`);
 
-    yAxisDrawLine = lineGraph.append('g').attr('class', 'y axis');
+    yAxisDrawLine = lineGraph.append('g').attr('class', 'y_axis');
 
     lineCircles = lineGraph.append('g').attr('class', 'lineCircles');
 
@@ -265,7 +265,7 @@ function GenerateLineGraph(dataSet, firstLoad = false) {
     {
         var eventid = +d3.selectAll('.btnDebateSelected').attr('eventid');
         return {
-            Color: i ==  eventid ? (d.name == 'Trump'? 'green' : 'orange') : 'white',
+            Color: i ==  eventid ? (d.name == 'Trump'? 'limegreen' : 'orange') : 'white',
             FontWeight:i == eventid ? 'bold' : 'normal',
             FontSize:i == eventid ? '14px' : '12px',
 
@@ -288,11 +288,11 @@ function GenerateLineGraph(dataSet, firstLoad = false) {
                     .attr('x', d => xScaleLine(d.event))
                     .attr('y', -30)
                     .attr('width', xScaleLine.bandwidth())
-                    .style('fill', 'lightcyan')
+                    .style('fill', 'white')
                     .style("opacity", (d, i) => getLinChartData(d, i, dataSet).BarChartOpacity)
                     .attr('height', totalHeightLine - 55)
                     .transition(t)
-                    .style('fill', 'steelblue');
+                    .style('fill', 'white');
             },
 
             update => {
@@ -321,7 +321,7 @@ function GenerateLineGraph(dataSet, firstLoad = false) {
                     .attr('class', d => 'lineCircle lineCircleTrump lineCircle' + d.event.replace(' ', '_'))
                     .transition(t)
                     .attr("r", (d, i) => getLinChartData(d, i, dataTrump).Radius)
-                    .style('fill',  'green');
+                    .style('fill',  'limegreen');
             },
 
             update => {
@@ -349,7 +349,7 @@ function GenerateLineGraph(dataSet, firstLoad = false) {
                         .style('fill', 'none')
                         .style('stroke', 'none')
                         .transition(tFast)
-                        .style('stroke',  'green');
+                        .style('stroke',  'limegreen');
                 },
 
                 update => {
@@ -377,10 +377,10 @@ function GenerateLineGraph(dataSet, firstLoad = false) {
                     .attr("y", d => yScaleLine(d.score) - 5)
                     .text("Trump")
                     .attr('class', (d, i) =>  'lineTextTrump lineTextSelected ')
-                    .attr("stroke", "white")
+                    // .attr("stroke", "white")
                     .style("opacity", (d, i) => getLinChartData(d, i, dataTrump).TextOpacity)
                     .transition(tFast)
-                    .style('stroke',  'green')
+                    .style('fill',  'limegreen')
             },
 
             update => {
@@ -505,10 +505,10 @@ function GenerateLineGraph(dataSet, firstLoad = false) {
                     .attr("x", d => xScaleLine(d.event) + xScaleLine.bandwidth()/2 + 10)
                     .attr("y", d => yScaleLine(d.score) - 5)
                     .text("Hillary")
-                    .attr("stroke", "white")
+                    // .attr("stroke", "white")
                     .style("opacity", (d, i) => getLinChartData(d, i, dataTrump).TextOpacity)
                     .transition(tFast)
-                    .attr('stroke',  'orange')
+                    .style('fill',  'orange')
             },
 
             update => {
@@ -634,7 +634,7 @@ var xAxisDraw = TopThemeGraph.append('g').attr('class', 'x axis');
 
 var yAxis = d3.axisLeft(yScale).tickSize(0);
 
-var yAxisDraw = TopThemeGraph.append('g').attr('class', 'y axis');
+var yAxisDraw = TopThemeGraph.append('g').attr('class', 'y_axis');
 
 function GenerateTopThemeGraphChart(dataSet, chartResolve){
     var selectBtns = $('.btnDebateSelected');
@@ -1396,9 +1396,9 @@ function GenerateNumberchanges(data){
         }
         else{
             var configSubjectivity = liquidFillGaugeDefaultSettings();
-            configSubjectivity.circleColor = "green";
+            configSubjectivity.circleColor = "limegreen";
             configSubjectivity.textColor = "white";
-            configSubjectivity.waveTextColor = "grey";
+            configSubjectivity.waveTextColor = "black";
             configSubjectivity.waveColor = "#90ee90";
             configSubjectivity.circleThickness = 0.2;
             configSubjectivity.textVertPosition = 0.2;
@@ -1414,7 +1414,7 @@ function GenerateNumberchanges(data){
             var configSubjectivityH = liquidFillGaugeDefaultSettings();
             configSubjectivityH.circleColor = "orange";
             configSubjectivityH.textColor = "white";
-            configSubjectivityH.waveTextColor = "grey";
+            configSubjectivityH.waveTextColor = "black";
             configSubjectivityH.waveColor = "#fed8b1";
             configSubjectivityH.circleThickness = 0.2;
             configSubjectivityH.textVertPosition = 0.2;
