@@ -262,15 +262,15 @@ table{
 
 .navbar-default .navbar-nav li a {
     color: white;
-    font-size: 22px;
+    font-size: 20px;
     font-weight: 500;
     font-family: 'PT Sans';
     line-height: 50px;
     letter-spacing: 0.008cm;
     -webkit-transition: all 0.4s ease-in-out;
     transition: all 0.4s ease-in-out;
-    padding-right: 20px;
-    padding-left: 20px;
+    padding-right: 18px;
+    padding-left: 18px;
 }
 
 .navbar-default .navbar-nav > li a:hover {
