@@ -269,8 +269,8 @@ table{
     letter-spacing: 0.008cm;
     -webkit-transition: all 0.4s ease-in-out;
     transition: all 0.4s ease-in-out;
-    padding-right: 5px;
-    padding-left: 50px;
+    padding-right: 2px;
+    padding-left: 46px;
 }
 
 .navbar-default .navbar-nav > li a:hover {
